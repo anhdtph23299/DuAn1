@@ -49,7 +49,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\FPoly\Fall2022\Block2\PRO1041\New Folder\CuaHangDienThoai\src\main\resources\icon\bg-login.png"/>
+              <Image iconType="2" name="C:\Users\hoant\OneDrive\Desktop\DuAn1\CuaHangDienThoai\src\main\resources\icon\bg-login.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -186,7 +186,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\FPoly\Fall2022\Block2\PRO1041\New Folder\CuaHangDienThoai\src\main\resources\icon\icons8_user_20px_1.png"/>
+              <Image iconType="2" name="C:\Users\hoant\OneDrive\Desktop\DuAn1\CuaHangDienThoai\src\main\resources\icon\icons8_user_20px_1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -243,7 +243,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="34" y="216" width="290" height="40"/>
+              <AbsoluteConstraints x="34" y="216" width="250" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -251,7 +251,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\FPoly\Fall2022\Block2\PRO1041\New Folder\CuaHangDienThoai\src\main\resources\icon\icons8_invisible_20px_1.png"/>
+              <Image iconType="2" name="C:\Users\hoant\OneDrive\Desktop\DuAn1\CuaHangDienThoai\src\main\resources\icon\icons8_eye_20px_1.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
@@ -262,7 +262,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="335" y="216" width="40" height="40"/>
+              <AbsoluteConstraints x="330" y="210" width="50" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -270,7 +270,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\FPoly\Fall2022\Block2\PRO1041\New Folder\CuaHangDienThoai\src\main\resources\icon\icons8_eye_20px_1.png"/>
+              <Image iconType="2" name="C:\Users\hoant\OneDrive\Desktop\DuAn1\CuaHangDienThoai\src\main\resources\icon\icons8_invisible_20px_1.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>

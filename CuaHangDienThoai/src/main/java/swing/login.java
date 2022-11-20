@@ -62,7 +62,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FPoly\\Fall2022\\Block2\\PRO1041\\New Folder\\CuaHangDienThoai\\src\\main\\resources\\icon\\bg-login.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\bg-login.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 35, 500, 340));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
@@ -109,7 +109,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 147, 300, 39));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\FPoly\\Fall2022\\Block2\\PRO1041\\New Folder\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_user_20px_1.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_user_20px_1.png")); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 147, 40, 39));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -125,20 +125,20 @@ public class login extends javax.swing.JFrame {
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("_________________________________________");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 216, 290, 40));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 216, 250, 40));
 
         disable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        disable.setIcon(new javax.swing.ImageIcon("D:\\FPoly\\Fall2022\\Block2\\PRO1041\\New Folder\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_invisible_20px_1.png")); // NOI18N
+        disable.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_eye_20px_1.png")); // NOI18N
         disable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         disable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 disableMouseClicked(evt);
             }
         });
-        jPanel2.add(disable, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 216, 40, 40));
+        jPanel2.add(disable, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 50, 50));
 
         show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        show.setIcon(new javax.swing.ImageIcon("D:\\FPoly\\Fall2022\\Block2\\PRO1041\\New Folder\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_eye_20px_1.png")); // NOI18N
+        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_invisible_20px_1.png")); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
