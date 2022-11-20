@@ -316,6 +316,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         jLabel8.setText("Trang chủ");
 
         javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);
@@ -393,6 +394,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/selling.png"))); // NOI18N
         jLabel9.setText(" Bán hàng");
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
@@ -402,8 +404,8 @@ public class Home extends javax.swing.JFrame {
             .addGroup(btn_2Layout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 31, Short.MAX_VALUE))
         );
         btn_2Layout.setVerticalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,6 +445,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/smartphone-call.png"))); // NOI18N
         jLabel10.setText("Điện thoại");
 
         javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
@@ -453,7 +456,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel10)
-                .addGap(0, 41, Short.MAX_VALUE))
+                .addGap(0, 42, Short.MAX_VALUE))
         );
         btn_3Layout.setVerticalGroup(
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,6 +497,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/headphone.png"))); // NOI18N
         jLabel11.setText(" Phụ kiện");
 
         javax.swing.GroupLayout btn_4Layout = new javax.swing.GroupLayout(btn_4);
@@ -504,7 +508,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel11)
-                .addGap(0, 50, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
         btn_4Layout.setVerticalGroup(
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,6 +575,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bill.png"))); // NOI18N
         jLabel19.setText("Hóa đơn");
 
         javax.swing.GroupLayout btn_5Layout = new javax.swing.GroupLayout(btn_5);
@@ -581,7 +586,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel19)
-                .addGap(0, 49, Short.MAX_VALUE))
+                .addGap(0, 48, Short.MAX_VALUE))
         );
         btn_5Layout.setVerticalGroup(
             btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -648,6 +653,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insurance.png"))); // NOI18N
         jLabel21.setText("Bảo hành");
 
         javax.swing.GroupLayout btn_6Layout = new javax.swing.GroupLayout(btn_6);
@@ -725,6 +731,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/price-tag.png"))); // NOI18N
         jLabel23.setText("Khuyến mãi");
 
         javax.swing.GroupLayout btn_7Layout = new javax.swing.GroupLayout(btn_7);
@@ -735,7 +742,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(ind_10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel23)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(0, 37, Short.MAX_VALUE))
         );
         btn_7Layout.setVerticalGroup(
             btn_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -802,6 +809,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/staff.png"))); // NOI18N
         jLabel25.setText("Nhân viên");
 
         javax.swing.GroupLayout btn_8Layout = new javax.swing.GroupLayout(btn_8);
@@ -826,6 +834,8 @@ public class Home extends javax.swing.JFrame {
         );
 
         side_pane.add(btn_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 160, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imge_1.jpg"))); // NOI18N
         side_pane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 60, 60));
 
         btn_9.setBackground(new java.awt.Color(23, 35, 51));
@@ -883,6 +893,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bar-chart.png"))); // NOI18N
         jLabel27.setText("Thống kê");
 
         javax.swing.GroupLayout btn_9Layout = new javax.swing.GroupLayout(btn_9);
@@ -961,6 +972,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/people.png"))); // NOI18N
         jLabel29.setText("Khách hàng");
 
         javax.swing.GroupLayout btn_10Layout = new javax.swing.GroupLayout(btn_10);
@@ -971,7 +983,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(ind_16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel29)
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
         btn_10Layout.setVerticalGroup(
             btn_10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
