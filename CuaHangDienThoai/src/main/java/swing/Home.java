@@ -19,6 +19,7 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    //Tuấn Anh code
     public Home() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
