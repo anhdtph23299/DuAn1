@@ -1,8 +1,7 @@
- package com.mycompany.hibernate.hibernateDemo;
+package repository;
 
-import com.mycompany.hibernate.model.SinhVien;
+
 import java.util.Properties;
-import com.mycompany.hibernate.model.LopHoc;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -27,8 +26,6 @@ public class HibernatUtil {
 //        properties.put(Environment.HBM2DDL_AUTO, "create");
 
         conf.setProperties(properties);
-        conf.addAnnotatedClass(LopHoc.class);
-        conf.addAnnotatedClass(SinhVien.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
