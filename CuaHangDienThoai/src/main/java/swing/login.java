@@ -62,7 +62,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\bg-login.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg-login.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 35, 500, 340));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
@@ -70,11 +70,11 @@ public class login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(25, 118, 211));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("X");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -109,7 +109,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 147, 300, 39));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_user_20px_1.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_20px_1.png"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 147, 40, 39));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -128,7 +128,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 216, 250, 40));
 
         disable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        disable.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_eye_20px_1.png")); // NOI18N
+        disable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_eye_20px_1.png"))); // NOI18N
         disable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         disable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -138,7 +138,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(disable, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 50, 50));
 
         show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Desktop\\DuAn1\\CuaHangDienThoai\\src\\main\\resources\\icon\\icons8_invisible_20px_1.png")); // NOI18N
+        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_invisible_20px_1.png"))); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,11 +158,11 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(cbRemember, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 261, -1, -1));
 
-        lbForgetPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        lbForgetPassword.setForeground(new java.awt.Color(199, 226, 255));
         lbForgetPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbForgetPassword.setText("Quên Mật Khẩu ?");
         lbForgetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbForgetPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        lbForgetPassword.setForeground(new java.awt.Color(199, 226, 255));
         lbForgetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbForgetPasswordMouseClicked(evt);
@@ -170,11 +170,11 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(lbForgetPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 261, 121, 27));
 
+        btnLogin.setText("Đăng Nhập");
         btnLogin.setBackground(new java.awt.Color(255, 255, 255));
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(25, 118, 211));
-        btnLogin.setText("Đăng Nhập");
-        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);

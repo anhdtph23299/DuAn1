@@ -107,6 +107,7 @@ public class Home extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         btn_exit = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
         pnlSearch = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         pnlTong = new javax.swing.JPanel();
@@ -371,8 +372,8 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_1.setOpaque(false);
         ind_1.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_1.setOpaque(false);
 
         javax.swing.GroupLayout ind_1Layout = new javax.swing.GroupLayout(ind_1);
         ind_1.setLayout(ind_1Layout);
@@ -385,9 +386,9 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         jLabel8.setText("Trang chủ");
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);
         btn_1.setLayout(btn_1Layout);
@@ -422,11 +423,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_2.setOpaque(false);
         ind_2.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_2.setOpaque(false);
 
-        ind_5.setOpaque(false);
         ind_5.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_5.setOpaque(false);
 
         javax.swing.GroupLayout ind_5Layout = new javax.swing.GroupLayout(ind_5);
         ind_5.setLayout(ind_5Layout);
@@ -439,8 +440,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Bán hàng");
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_2Layout = new javax.swing.GroupLayout(ind_2);
         ind_2.setLayout(ind_2Layout);
@@ -463,9 +464,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/selling.png"))); // NOI18N
         jLabel9.setText(" Bán hàng");
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
@@ -500,8 +501,8 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_3.setOpaque(false);
         ind_3.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_3.setOpaque(false);
 
         javax.swing.GroupLayout ind_3Layout = new javax.swing.GroupLayout(ind_3);
         ind_3.setLayout(ind_3Layout);
@@ -514,9 +515,9 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/smartphone-call.png"))); // NOI18N
         jLabel10.setText("Điện thoại");
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
         btn_3.setLayout(btn_3Layout);
@@ -552,8 +553,8 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_4.setOpaque(false);
         ind_4.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_4.setOpaque(false);
 
         javax.swing.GroupLayout ind_4Layout = new javax.swing.GroupLayout(ind_4);
         ind_4.setLayout(ind_4Layout);
@@ -566,9 +567,9 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/headphone.png"))); // NOI18N
         jLabel11.setText(" Phụ kiện");
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_4Layout = new javax.swing.GroupLayout(btn_4);
         btn_4.setLayout(btn_4Layout);
@@ -603,11 +604,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_6.setOpaque(false);
         ind_6.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_6.setOpaque(false);
 
-        ind_7.setOpaque(false);
         ind_7.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_7.setOpaque(false);
 
         javax.swing.GroupLayout ind_7Layout = new javax.swing.GroupLayout(ind_7);
         ind_7.setLayout(ind_7Layout);
@@ -620,8 +621,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Bán hàng");
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_6Layout = new javax.swing.GroupLayout(ind_6);
         ind_6.setLayout(ind_6Layout);
@@ -644,9 +645,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bill.png"))); // NOI18N
         jLabel19.setText("Hóa đơn");
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_5Layout = new javax.swing.GroupLayout(btn_5);
         btn_5.setLayout(btn_5Layout);
@@ -681,11 +682,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_8.setOpaque(false);
         ind_8.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_8.setOpaque(false);
 
-        ind_9.setOpaque(false);
         ind_9.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_9.setOpaque(false);
 
         javax.swing.GroupLayout ind_9Layout = new javax.swing.GroupLayout(ind_9);
         ind_9.setLayout(ind_9Layout);
@@ -698,8 +699,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Bán hàng");
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_8Layout = new javax.swing.GroupLayout(ind_8);
         ind_8.setLayout(ind_8Layout);
@@ -722,9 +723,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insurance.png"))); // NOI18N
         jLabel21.setText("Bảo hành");
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_6Layout = new javax.swing.GroupLayout(btn_6);
         btn_6.setLayout(btn_6Layout);
@@ -759,11 +760,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_10.setOpaque(false);
         ind_10.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_10.setOpaque(false);
 
-        ind_11.setOpaque(false);
         ind_11.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_11.setOpaque(false);
 
         javax.swing.GroupLayout ind_11Layout = new javax.swing.GroupLayout(ind_11);
         ind_11.setLayout(ind_11Layout);
@@ -776,8 +777,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Bán hàng");
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_10Layout = new javax.swing.GroupLayout(ind_10);
         ind_10.setLayout(ind_10Layout);
@@ -800,9 +801,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/price-tag.png"))); // NOI18N
         jLabel23.setText("Khuyến mãi");
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_7Layout = new javax.swing.GroupLayout(btn_7);
         btn_7.setLayout(btn_7Layout);
@@ -837,11 +838,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_12.setOpaque(false);
         ind_12.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_12.setOpaque(false);
 
-        ind_13.setOpaque(false);
         ind_13.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_13.setOpaque(false);
 
         javax.swing.GroupLayout ind_13Layout = new javax.swing.GroupLayout(ind_13);
         ind_13.setLayout(ind_13Layout);
@@ -854,8 +855,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Bán hàng");
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_12Layout = new javax.swing.GroupLayout(ind_12);
         ind_12.setLayout(ind_12Layout);
@@ -878,9 +879,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/staff.png"))); // NOI18N
         jLabel25.setText("Nhân viên");
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_8Layout = new javax.swing.GroupLayout(btn_8);
         btn_8.setLayout(btn_8Layout);
@@ -921,11 +922,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_14.setOpaque(false);
         ind_14.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_14.setOpaque(false);
 
-        ind_15.setOpaque(false);
         ind_15.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_15.setOpaque(false);
 
         javax.swing.GroupLayout ind_15Layout = new javax.swing.GroupLayout(ind_15);
         ind_15.setLayout(ind_15Layout);
@@ -938,8 +939,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Bán hàng");
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_14Layout = new javax.swing.GroupLayout(ind_14);
         ind_14.setLayout(ind_14Layout);
@@ -962,9 +963,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bar-chart.png"))); // NOI18N
         jLabel27.setText("Thống kê");
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_9Layout = new javax.swing.GroupLayout(btn_9);
         btn_9.setLayout(btn_9Layout);
@@ -1000,11 +1001,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ind_16.setOpaque(false);
         ind_16.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_16.setOpaque(false);
 
-        ind_17.setOpaque(false);
         ind_17.setPreferredSize(new java.awt.Dimension(3, 43));
+        ind_17.setOpaque(false);
 
         javax.swing.GroupLayout ind_17Layout = new javax.swing.GroupLayout(ind_17);
         ind_17.setLayout(ind_17Layout);
@@ -1017,8 +1018,8 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Bán hàng");
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ind_16Layout = new javax.swing.GroupLayout(ind_16);
         ind_16.setLayout(ind_16Layout);
@@ -1041,9 +1042,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/people.png"))); // NOI18N
         jLabel29.setText("Khách hàng");
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_10Layout = new javax.swing.GroupLayout(btn_10);
         btn_10.setLayout(btn_10Layout);
@@ -1072,6 +1073,11 @@ public class Home extends javax.swing.JFrame {
         });
         side_pane.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 640, -1, 46));
 
+        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel98.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Exit_25px.png"))); // NOI18N
+        jLabel98.setText("Đăng xuất");
+        side_pane.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, 86, 37));
+
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 810));
 
         pnlSearch.setBackground(new java.awt.Color(71, 120, 197));
@@ -1087,9 +1093,9 @@ public class Home extends javax.swing.JFrame {
         });
 
         jTextField1.setBackground(new java.awt.Color(123, 156, 225));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
         jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));
 
         javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
@@ -1139,8 +1145,8 @@ public class Home extends javax.swing.JFrame {
 
         pnlDienThoai.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel44.setText("Tìm Kiếm");
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton11.setText("Tìm Kiếm");
 
@@ -1164,8 +1170,8 @@ public class Home extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable4);
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel46.setText("Tên Điện Thoại");
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1182,70 +1188,70 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
         );
 
-        jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel51.setText("Giá Nhập");
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel62.setText("Giá Bán");
+        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel63.setText("VNĐ");
+        jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel64.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel64.setText("VNĐ");
+        jLabel64.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel65.setText("Mã Điện Thoại");
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel66.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel66.setText("Mô Tả");
+        jLabel66.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane7.setViewportView(jTextArea3);
 
-        jLabel67.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel67.setText("Số Lượng");
+        jLabel67.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel68.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel68.setText("Tên Hãng");
+        jLabel68.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         cbbTenHang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel69.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel69.setText("Tên Nhà Cung Cấp");
+        jLabel69.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         cbbTenNCC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel70.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel70.setText("RAM");
+        jLabel70.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel71.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel71.setText("ROM");
+        jLabel71.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel72.setText("Hệ Điều Hành");
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel73.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel73.setText("CPU");
+        jLabel73.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel74.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel74.setText("Màn Hình");
+        jLabel74.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel75.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel75.setText("Camera");
+        jLabel75.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel76.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel76.setText("Pin");
+        jLabel76.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel77.setText("Màu Sắc");
+        jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel78.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel78.setText("Bảo Hành");
+        jLabel78.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel79.setText("Trạng Thái");
+        jLabel79.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         cbbTrangThai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -1466,10 +1472,10 @@ public class Home extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(120, 168, 252));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Điện Thoại");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1519,10 +1525,10 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 316, Short.MAX_VALUE)
         );
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Sản phẩm");
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1537,10 +1543,10 @@ public class Home extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 0, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Hoá đơn");
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 51));
 
         javax.swing.GroupLayout pnlBanHangLayout = new javax.swing.GroupLayout(pnlBanHang);
         pnlBanHang.setLayout(pnlBanHangLayout);
@@ -1601,11 +1607,11 @@ public class Home extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel15.setText("Tìm kiếm");
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton1.setText("Search");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1626,44 +1632,44 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel33.setText("Tên phụ kiện");
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel34.setText("Giá nhập");
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel35.setText("Giá bán");
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel36.setText("VND");
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel37.setText("VND");
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel38.setText("Số lượng tồn");
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel39.setText("Mô tả");
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setText("Tên hãng");
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel41.setText("Mã phụ kiện");
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel42.setText("Thời gian bảo hành");
+        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel43.setText("Trạng thái");
+        jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -1834,9 +1840,9 @@ public class Home extends javax.swing.JFrame {
                         .addGap(24, 24, 24))))
         );
 
+        jLabel4.setText("Phụ Kiện");
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(71, 120, 197));
-        jLabel4.setText("Phụ Kiện");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1944,14 +1950,14 @@ public class Home extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("Nhân Viên");
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel7.setText("Nhân Viên");
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(71, 120, 197));
-        jLabel7.setText("Nhân Viên");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1986,11 +1992,11 @@ public class Home extends javax.swing.JFrame {
 
         jButton12.setText("Thêm");
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel48.setText("Mã NV");
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel49.setText("Số điện thoại");
+        jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton13.setText("Sửa");
 
@@ -2009,8 +2015,8 @@ public class Home extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable3);
 
-        jLabel54.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel54.setText("Ngày sinh");
+        jLabel54.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton15.setText("Clear");
 
@@ -2018,11 +2024,11 @@ public class Home extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane5.setViewportView(jTextArea2);
 
-        jButton20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton20.setText("Search");
+        jButton20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel53.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel53.setText("Địa chỉ");
+        jLabel53.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -2043,8 +2049,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel47.setText("Họ và tên");
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton19.setText("<<");
 
@@ -2052,35 +2058,35 @@ public class Home extends javax.swing.JFrame {
 
         jButton16.setText("|<");
 
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel52.setText("Giới tính");
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel55.setText("Tìm kiếm");
+        jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel56.setText("Email");
+        jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel57.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel57.setText("Mật khẩu");
+        jLabel57.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel58.setText("Tên tài khoản");
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jRadioButton1.setText("Nam");
 
         jRadioButton2.setText("Nữ");
 
-        jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel59.setText("Chức vụ");
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel60.setText("Trạng thái");
+        jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel61.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel61.setText("CCCD");
+        jLabel61.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -2318,13 +2324,13 @@ public class Home extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(255, 255, 204));
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel80.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel80.setText("Doanh Thu");
+        jLabel80.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel80.setPreferredSize(new java.awt.Dimension(100, 32));
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel31.setText("150.0000.000 Đồng");
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -2352,14 +2358,14 @@ public class Home extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(255, 255, 204));
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel81.setText("Số Hoá Đơn");
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel81.setPreferredSize(new java.awt.Dimension(100, 32));
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel82.setText("12");
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -2387,14 +2393,14 @@ public class Home extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(255, 255, 204));
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel83.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel83.setText("Tổng khách hàng");
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel83.setPreferredSize(new java.awt.Dimension(100, 32));
 
-        jLabel84.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel84.setText("15");
+        jLabel84.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2422,14 +2428,14 @@ public class Home extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 255, 204));
         jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel85.setText("Số hoá đơn huỷ");
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel85.setPreferredSize(new java.awt.Dimension(100, 32));
 
-        jLabel86.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
         jLabel86.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel86.setText("1");
+        jLabel86.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -2457,11 +2463,11 @@ public class Home extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel87.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel87.setText("Ngày bắt đầu");
+        jLabel87.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel88.setText("Ngày kết thúc");
+        jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton29.setText("Lọc");
         jButton29.addActionListener(new java.awt.event.ActionListener() {
@@ -2472,8 +2478,8 @@ public class Home extends javax.swing.JFrame {
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thời Gian", "Doanh Thu", "Hoá Đơn" }));
 
-        jLabel89.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel89.setText("Sắp xếp theo");
+        jLabel89.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -3266,6 +3272,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
