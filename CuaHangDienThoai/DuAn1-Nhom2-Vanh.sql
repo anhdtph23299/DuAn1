@@ -120,7 +120,7 @@ CREATE TABLE PhuKien(
 	SoLuongTon INT NULL,
 	GiaBan MONEY NULL,
 	Anh IMAGE NULL,
-	ThoiGianBaoHanh DATE NULL,
+	ThoiGianBaoHanh INT NULL,
 	Mota NVARCHAR(MAX) NULL,
 	TrangThai INT NULL,
 	IDHang UNIQUEIDENTIFIER
@@ -142,7 +142,7 @@ CREATE TABLE DienThoai(
 	Anh IMAGE,
 	QR NVARCHAR(MAX),
 	GiaBan MONEY,
-	ThoiGianBaoHanh DATE,
+	ThoiGianBaoHanh INT,
 	MoTa NVARCHAR(MAX),
 	TrangThai INT,
 	IdHang UNIQUEIDENTIFIER,
