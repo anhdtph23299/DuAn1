@@ -8,7 +8,9 @@ package swing;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -26,7 +28,25 @@ public class Home extends javax.swing.JFrame {
 //        setColor(btn_1);
 //        ind_1.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_4}, new JPanel[]{ind_2, ind_3, ind_4});
+        setTable();
     }
+
+    void setButtonClick(JPanel panelClick) {
+        JPanel panel[] = {btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_10};
+        for (JPanel x : panel) {
+            x.setBackground(new Color(23, 35, 51));
+        }
+        panelClick.setBackground(new Color(40, 57, 80));
+        panelClick.setCursor(new Cursor(Cursor.HAND_CURSOR));
+//        JOptionPane.showMessageDialog(this, "Hello");
+    }
+    void setTable(){
+        tblThongKe.getTableHeader().setReorderingAllowed(false);
+        tblThongKe.setShowHorizontalLines(true);
+        tblThongKe.setOpaque(true);
+        tblThongKe.setBorder(new EmptyBorder(0, 0, 0, 0));
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,7 +95,7 @@ public class Home extends javax.swing.JFrame {
         ind_13 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblAnh = new javax.swing.JLabel();
         btn_9 = new javax.swing.JPanel();
         ind_14 = new javax.swing.JPanel();
         ind_15 = new javax.swing.JPanel();
@@ -273,8 +293,11 @@ public class Home extends javax.swing.JFrame {
         jLabel88 = new javax.swing.JLabel();
         jButton29 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jLabel89 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblThongKe = new javax.swing.JTable();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
 
@@ -857,8 +880,8 @@ public class Home extends javax.swing.JFrame {
 
         side_pane.add(btn_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 160, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imge_1.jpg"))); // NOI18N
-        side_pane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 60, 60));
+        lblAnh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imge_1.jpg"))); // NOI18N
+        side_pane.add(lblAnh, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 60, 60));
 
         btn_9.setBackground(new java.awt.Color(23, 35, 51));
         btn_9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2437,8 +2460,10 @@ public class Home extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        jLabel87.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel87.setText("Ngày bắt đầu");
 
+        jLabel88.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel88.setText("Ngày kết thúc");
 
         jButton29.setText("Lọc");
@@ -2448,6 +2473,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thời Gian", "Doanh Thu", "Hoá Đơn" }));
+
+        jLabel89.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel89.setText("Sắp xếp theo");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -2455,13 +2485,19 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(70, 70, 70)
                 .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(320, 320, 320)
+                .addGap(29, 29, 29)
+                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
                 .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2470,14 +2506,21 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel88, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel87, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblThongKe.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
                 "Thời gian", "Doanh Thu", "Số hoá đơn thanh toán", "Số hoá đơn huỷ"
@@ -2491,7 +2534,7 @@ public class Home extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane8.setViewportView(jTable5);
+        jScrollPane8.setViewportView(tblThongKe);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -2507,8 +2550,8 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 1335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 1335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 28, Short.MAX_VALUE))
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
@@ -2592,7 +2635,6 @@ public class Home extends javax.swing.JFrame {
 
     private void pnlSearchMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlSearchMouseDragged
         // TODO add your handling code here:
-
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -2601,7 +2643,6 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMousePressed
         // TODO add your handling code here:
-
         System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
 
@@ -2718,7 +2759,8 @@ public class Home extends javax.swing.JFrame {
     private void btn_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseClicked
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) pnlTong.getLayout();
-        layout.show(pnlTong, "cardMain");;
+        layout.show(pnlTong, "cardMain");
+//        setButtonClick(btn_1);
     }//GEN-LAST:event_btn_1MouseClicked
 
     private void btn_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseClicked
@@ -2735,17 +2777,17 @@ public class Home extends javax.swing.JFrame {
 
     private void pnlPhuKienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPhuKienMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_pnlPhuKienMouseClicked
 
     private void pnlHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHoaDonMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_pnlHoaDonMouseClicked
 
     private void pnlBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBaoHanhMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_pnlBaoHanhMouseClicked
 
     private void pnlKhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKhuyenMaiMouseClicked
@@ -2930,7 +2972,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2942,7 +2986,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -3018,6 +3061,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3055,7 +3099,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
@@ -3077,6 +3120,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblAnh;
     private javax.swing.JPanel pnlBanHang;
     private javax.swing.JPanel pnlBaoHanh;
     private javax.swing.JPanel pnlDienThoai;
@@ -3090,6 +3134,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel pnlThongKe;
     private javax.swing.JPanel pnlTong;
     private javax.swing.JPanel side_pane;
+    private javax.swing.JTable tblThongKe;
     private javax.swing.JTextField txtBaoHanh;
     private javax.swing.JTextField txtCPU;
     private javax.swing.JTextField txtCamera;
