@@ -106,8 +106,8 @@ CREATE TABLE NhanVien(
 	Email VARCHAR(50) NULL,
 	SoDienThoai VARCHAR(10) NULL,
 	TrangThai INT NULL,
-	Anh image,
-	QR nvarchar(max),
+	Anh IMAGE,
+	QR NVARCHAR(MAX),
 	IDTaiKhoan UNIQUEIDENTIFIER,
 	IDChucVu UNIQUEIDENTIFIER
 );
@@ -140,7 +140,7 @@ CREATE TABLE DienThoai(
 	Camera VARCHAR(10),
 	HeDieuHanh VARCHAR(10),
 	Anh IMAGE,
-	QR nvarchar(max),
+	QR NVARCHAR(MAX),
 	GiaBan MONEY,
 	ThoiGianBaoHanh DATE,
 	MoTa NVARCHAR(MAX),
@@ -165,7 +165,7 @@ CREATE TABLE KhachHang(
 	Email VARCHAR(30),
 	DiaChi NVARCHAR(100) NOT NULL,
 	DiemTichLuy INT NULL,
-	GioiTinh int
+	GioiTinh INT
 )
 GO
 --KhuyenMai
