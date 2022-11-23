@@ -1,33 +1,27 @@
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\Ca_Luong.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\Check.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\HoaDon.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\Home.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\login.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\Test.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\ThongKe.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\domainmodel\DienThoai.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\ChucVu.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\NhanVien.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\util\RandomCode.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\repository\HibernatUtil.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\KhuyenMai.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\TrangChu.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\repository\IDienThoaiRepository.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\IdNhaCungCap.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\ShowProduct.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\util\ImageHelper.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\Hang.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\PhuKien.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\swing\MaQR.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\domainmodel\HoaDon.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\KhachHang.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\Changepass.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\DienThoai.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\repository\impl\HoaDonRepository.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\BanHang.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\domainmodel\HoaDonChiTiet.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\Service\HoaDonService.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\repository\impl\DienThoaiRepository.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\Login.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\util\EmailSender.java
-C:\Users\dungp\OneDrive\Máy tính\DuAn1\CuaHangDienThoai\src\main\java\View\BaoHanh.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\MaQR.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\Service\IDienThoaiService.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\impl\DienThoaiRepository.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\viewmodel\QLDienThoai.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\IDienThoaiRepository.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\Service\impl\DienThoaiService.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\login.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\viewmodel\QLTaiKhoan.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\domainmodel\DienThoai.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\util\ImageHelper.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\ITaiKhoanRepository.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\Home.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\ViewTaiKhoan.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\Service\impl\TaiKhoanService.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\Service\ITaiKhoanService.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\Service\HoaDonService.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\Check.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\domainmodel\HoaDonChiTiet.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\impl\HoaDonRepository.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\util\EmailSender.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\util\RandomCode.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\domainmodel\HoaDon.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\domainmodel\TaiKhoan.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\HibernatUtil.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\Test.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\repository\impl\TaiKhoanRepository.java
+C:\Users\lethi\OneDrive\Desktop\CuaHangDienThoai\CuaHangDienThoai\src\main\java\swing\ShowProduct.java
