@@ -19,9 +19,13 @@ public interface IDienThoaiRepository {
     DienThoai getOne(UUID IdDienThoai);
 
     boolean save(DienThoai dienThoai);
+//Dung Sua Code
 
-    boolean update(UUID IdDienThoai, DienThoai dienThoai);
+    boolean update(DienThoai dienThoai, UUID idDienThoai);
 
-    boolean delete(UUID IdDienThoai);
-    
+    boolean delete(UUID idDienThoai);
+
+    //Dung Code
+    List<DienThoai> timKiem(String tenDienThoai);
+
 }

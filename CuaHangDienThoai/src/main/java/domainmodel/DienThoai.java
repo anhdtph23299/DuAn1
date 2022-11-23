@@ -57,6 +57,9 @@ public class DienThoai {
 
     @Column(name = "MauSac")
     private String mauSac;
+//Dung Code
+    @Column(name = "Pin")
+    private String pin;
 
     @Column(name = "Camera")
     private String camera;
@@ -66,9 +69,9 @@ public class DienThoai {
 
     @Column(name = "Anh")
     private byte[] anh;
-
-    @Column(name = "QR")
-    private String qr;
+//
+//    @Column(name = "QR")
+//    private String qr;
 
     @Column(name = "GiaBan")
     private BigDecimal giaBan;
@@ -82,12 +85,8 @@ public class DienThoai {
     @Column(name = "TrangThai")
     private int trangThai;
 
-    public BigDecimal getGia(double soLuong){
+    public BigDecimal getGia(double soLuong) {
         return giaBan.multiply(BigDecimal.valueOf(soLuong));
-    }
-    @Override
-    public String toString() {
-        return "DienThoai{" + "idDienThoai=" + idDienThoai + ", maDienThoai=" + maDienThoai + ", tenDienThoai=" + tenDienThoai + ", soLuongTon=" + soLuongTon + ", CPU=" + CPU + ", RAM=" + RAM + ", ROM=" + ROM + ", manHinh=" + manHinh + ", mauSac=" + mauSac + ", camera=" + camera + ", heDieuHanh=" + heDieuHanh + ", anh=" + anh + ", qr=" + qr + ", giaBan=" + giaBan + ", thoiGianBaoHanh=" + thoiGianBaoHanh + ", moTa=" + moTa + ", trangThai=" + trangThai + '}';
     }
 
 }

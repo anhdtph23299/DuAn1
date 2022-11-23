@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import repository.IDienThoaiRepository;
 import domainmodel.DienThoai;
+import org.hibernate.Transaction;
 import repository.HibernatUtil;
 
 /**
@@ -32,7 +33,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
     }
 
     public DienThoai getOne(String ma) {
-     String hql = "FROM DienThoai WHERE maDienThoai =:ma";
+        String hql = "FROM DienThoai WHERE maDienThoai =:ma";
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
             Query q = session.createQuery(hql);
             q.setParameter("ma", ma);
@@ -41,22 +42,54 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;    
+        return null;
     }
+// Code Dung
 
     @Override
     public boolean save(DienThoai dienThoai) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Transaction transaction = null;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.save(dienThoai);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            transaction.rollback();
+            return false;
+        }
     }
 
     @Override
-    public boolean update(UUID IdDienThoai, DienThoai dienThoai) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean update(DienThoai dienThoai, UUID idDienThoai) {
+        Transaction transaction = null;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(String.valueOf(idDienThoai), dienThoai);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            transaction.rollback();
+            return false;
+        }
     }
 
     @Override
-    public boolean delete(UUID IdDienThoai) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean delete(UUID idDienThoai) {
+        Transaction transaction = null;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            DienThoai dienThoai = session.get(DienThoai.class, idDienThoai);
+            session.delete(dienThoai);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            transaction.rollback();
+            return false;
+        }
     }
 
     public static void main(String[] args) {
@@ -69,5 +102,20 @@ public class DienThoaiRepository implements IDienThoaiRepository {
     @Override
     public DienThoai getOne(UUID IdDienThoai) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<DienThoai> timKiem(String tenDienThoai) {
+        List<DienThoai> listTimKiem;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("FROM DienThoai WHERE MaDienThoai LIKE :t");
+            String chuoi = "%" + tenDienThoai + "%";
+            q.setParameter("t", chuoi);
+            listTimKiem = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return listTimKiem;
     }
 }

@@ -2,6 +2,7 @@ package repository;
 
 import domainmodel.DienThoai;
 import domainmodel.HoaDon;
+import domainmodel.TaiKhoan;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -29,6 +30,7 @@ public class HibernatUtil {
         conf.setProperties(properties);
         conf.addAnnotatedClass(DienThoai.class);
         conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(TaiKhoan.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
