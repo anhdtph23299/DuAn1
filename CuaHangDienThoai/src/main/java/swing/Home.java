@@ -3807,7 +3807,6 @@ public class Home extends javax.swing.JFrame {
         UUID idDienThoai = listQLDienThoai.get(row).getIdDienThoai();
         String ma = txtMaDienThoai.getText();
         String ten = txtTenDienThoai.getText();
-        Integer soLuong = Integer.valueOf(txtSoLuongDienThoai.getText());
         String ram = txtRamDT.getText();
         String rom = txtRomDT.getText();
         String cpu = txtCPUDT.getText();
@@ -3842,6 +3841,7 @@ public class Home extends javax.swing.JFrame {
         QLDienThoai.setThoiGianBaoHanh(baoHanh);
         QLDienThoai.setTrangThai(trangThai);
         QLDienThoai.setAnh(personalImage);
+        QLDienThoai.setMota(moTa);
         String add = dienThoaiService.sua(QLDienThoai, idDienThoai);
         JOptionPane.showMessageDialog(this, add);
         showData(listQLDienThoai = dienThoaiService.getAll());
