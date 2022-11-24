@@ -4,6 +4,7 @@
  */
 package domainModel;
 
+import domainmodel.Hang;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
@@ -60,6 +61,10 @@ public class PhuKien {
     
     @Column(name = "TrangThai")
     private int trangThai;
+    
+//    @ManyToOne
+//    @JoinColumn(name = "IDHang")
+//    private Hang hang;
 
 //    public PhuKien(String ma, String ten, int soLuong, BigDecimal giaBan, int thoiGianBaoHanh, String moTa, int trangThai) {
 //        this.ma = ma;
