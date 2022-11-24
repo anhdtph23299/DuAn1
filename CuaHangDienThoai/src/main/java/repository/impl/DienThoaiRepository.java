@@ -11,7 +11,7 @@ import org.hibernate.Session;
 import repository.IDienThoaiRepository;
 import domainmodel.DienThoai;
 import org.hibernate.Transaction;
-import repository.HibernatUtil;
+import util.HibernatUtil;
 
 /**
  *

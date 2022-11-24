@@ -10,7 +10,7 @@ import java.util.UUID;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import repository.HibernatUtil;
+import util.HibernatUtil;
 import repository.ITaiKhoanRepository;
 
 /**
