@@ -177,7 +177,8 @@ CREATE TABLE KhuyenMai(
 	Ma VARCHAR(20) UNIQUE,
 	Ten NVARCHAR(100) NOT NULL,
 	SoTienGiam MONEY ,
-	ChietKhau MONEY ,
+	ChietKhau INT,
+	TrangThai INT,
 	NgayBatDau DATE  NOT NULL,
 	NgayKetThuc DATE  NOT NULL
 )
