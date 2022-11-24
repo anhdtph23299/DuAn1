@@ -159,15 +159,16 @@ GO
 ---- KhachHang
 CREATE TABLE KhachHang(
 	Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    HoVaTen NVARCHAR(15),
-	CCCD varchar(15),
+	CCCD VARCHAR(15),
+	HoVaTen NVARCHAR(30),
+	NgayMua DATE,
 	NamSinh INT NOT NULL,
 	Sdt VARCHAR(30),
 	Email VARCHAR(30),
 	DiaChi NVARCHAR(100) NOT NULL,
+	GhiChu NVARCHAR(MAX),
 	DiemTichLuy INT NULL,
-	GioiTinh INT,
-	GhiChu NVARCHAR(MAX)
+	GioiTinh INT
 )
 GO
 --KhuyenMai
