@@ -26,7 +26,7 @@ public class DienThoaiService implements IDienThoaiService {
     public List<QLDienThoai> getAll() {
         List<QLDienThoai> listDT = new ArrayList<>();
         for (DienThoai dienThoai : dienThoaiRepository.getAll()) {
-            QLDienThoai qlDienThoai = new QLDienThoai(dienThoai.getIdDienThoai(), dienThoai.getMaDienThoai(), dienThoai.getTenDienThoai(), dienThoai.getSoLuongTon(), dienThoai.getCPU(), dienThoai.getRAM(), dienThoai.getROM(), dienThoai.getManHinh(), dienThoai.getMauSac(), dienThoai.getPin(), dienThoai.getCamera(), dienThoai.getHeDieuHanh(), dienThoai.getAnh(), dienThoai.getGiaBan(), dienThoai.getThoiGianBaoHanh(), dienThoai.getMoTa(), dienThoai.getTrangThai());
+            QLDienThoai qlDienThoai = new QLDienThoai(dienThoai.getIdDienThoai(), dienThoai.getMaDienThoai(), dienThoai.getTenDienThoai(), dienThoai.getSoLuong(), dienThoai.getCPU(), dienThoai.getRAM(), dienThoai.getROM(), dienThoai.getManHinh(), dienThoai.getMauSac(), dienThoai.getPin(), dienThoai.getCamera(), dienThoai.getHeDieuHanh(), dienThoai.getAnh(), dienThoai.getGiaBan(), dienThoai.getThoiGianBaoHanh(), dienThoai.getMoTa(), dienThoai.getTrangThai());
             listDT.add(qlDienThoai);
         }
         return listDT;

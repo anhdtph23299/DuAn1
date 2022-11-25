@@ -40,8 +40,8 @@ public class DienThoai {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
 
-    @Column(name = "SoLuongTon")
-    private int soLuongTon;
+    @Column(name = "SoLuong")
+    private int soLuong;
 
     @Column(name = "CPU")
     private String CPU;
