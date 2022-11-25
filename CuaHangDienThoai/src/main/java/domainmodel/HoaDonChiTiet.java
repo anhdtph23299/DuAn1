@@ -40,9 +40,9 @@ public class HoaDonChiTiet {
     @JoinColumn(name = "IdHD")
     private HoaDon hoaDon;
 
-    @ManyToOne
-    @JoinColumn(name = "IdPK")
-    private PhuKien phuKien;
+//    @ManyToOne
+//    @JoinColumn(name = "IdPK")
+//    private PhuKien phuKien;
 
     @Column(name = "SoLuong")
     private int soLuong;
