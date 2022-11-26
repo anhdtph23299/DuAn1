@@ -69,7 +69,7 @@ public class Home extends javax.swing.JFrame {
      */
     //Tuấn Anh code
     DienThoaiRepository dienThoaiRepo = new DienThoaiRepository();
-
+    //Test source tree
     //Hoá Đơn
     HoaDonRepository hoaDonRepo = new HoaDonRepository();
     DefaultTableModel modelHoaDon;
@@ -2353,7 +2353,7 @@ public class Home extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(97, 97, 97)
                 .addComponent(txtTimKiemDienThoai, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnTimKiemDienThoai, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
