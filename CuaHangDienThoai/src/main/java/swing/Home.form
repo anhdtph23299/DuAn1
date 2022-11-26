@@ -1313,7 +1313,6 @@
                               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel27" min="-2" max="-2" attributes="0"/>
                           <Component id="jPanel26" max="32767" attributes="0"/>
@@ -2259,14 +2258,14 @@
                                   <Component id="jScrollPane6" min="-2" pref="311" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnSuaDT" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnXoaDT" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnLamMoiDT" alignment="0" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="btnTrangTruoc" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnPrev" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnTrangSau" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnSuaDT" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnXoaDT" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnLamMoiDT" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="btnThemDT" min="-2" pref="44" max="-2" attributes="0"/>
                                   </Group>
@@ -3062,25 +3061,25 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel50">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="24" style="0"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel111">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec7;n tho&#x1ea1;i"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="20" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c5" green="78" red="47" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec7;n tho&#x1ea1;i"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator6">
