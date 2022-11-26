@@ -5,6 +5,7 @@ import domainmodel.PhuKien;
 import domainmodel.DienThoai;
 import domainmodel.Hang;
 import domainmodel.HoaDon;
+import domainmodel.HoaDonChiTiet;
 import domainmodel.KhachHang;
 import domainmodel.KhuyenMai;
 import domainmodel.TaiKhoan;
@@ -27,7 +28,7 @@ public class HibernatUtil {
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=DuAn1");
         properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "asdqwe123");
+        properties.put(Environment.PASS, "123456");
         properties.put(Environment.SHOW_SQL, "true");
         //gen DB tự động
 //        properties.put(Environment.HBM2DDL_AUTO, "create");
@@ -41,6 +42,7 @@ public class HibernatUtil {
         conf.addAnnotatedClass(KhachHang.class);
         conf.addAnnotatedClass(KhuyenMai.class);
         conf.addAnnotatedClass(Hang.class);
+        conf.addAnnotatedClass(HoaDonChiTiet.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
