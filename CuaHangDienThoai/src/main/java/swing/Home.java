@@ -93,7 +93,7 @@ public class Home extends javax.swing.JFrame {
     private DefaultComboBoxModel dcbmTrangThaiNV = new DefaultComboBoxModel();
     private List<String> listCBBNV = new ArrayList<>();
     //Hết code của Vanh
-  //Code của Hoa
+    //Code của Hoa
     private DefaultTableModel dtmKH = new DefaultTableModel();
     private DefaultTableModel dtmKM = new DefaultTableModel();
     private DefaultComboBoxModel dcmTT = new DefaultComboBoxModel();
@@ -102,6 +102,7 @@ public class Home extends javax.swing.JFrame {
     private KhachHangService khService = new KhachHangServiceImpl();
     private KhuyenMaiService kmService = new KhuyenMaiServiceImpl();
 //Hết code Hoa
+
     public Home() {
         initComponents();
         resetColor(new JPanel[]{btn_2, btn_3, btn_4}, new JPanel[]{ind_2, ind_3, ind_4});
@@ -182,6 +183,7 @@ public class Home extends javax.swing.JFrame {
         }
     }
 //FillData Hoa
+
     private void fillDataKH(int i) {
         KhachHangViewMD kh = listKH.get(i);
         txtCCCD.setText(kh.getCCCD());
@@ -216,6 +218,7 @@ public class Home extends javax.swing.JFrame {
         }
     }
 //getData Hoa
+
     private KhachHangViewMD getDataKH() {
         KhachHangViewMD kh = new KhachHangViewMD();
         kh.setCCCD(txtCCCD.getText());
@@ -256,6 +259,7 @@ public class Home extends javax.swing.JFrame {
     }
 //Hết fill Hoa
     //code Tuấn Anh
+
     void fillToHoaDon() {
         modelHoaDon.setRowCount(0);
         for (HoaDon x : hoaDonRepo.getAll()) {
@@ -1227,8 +1231,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insurance.png"))); // NOI18N
-        jLabel21.setText("Bảo hành");
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_20px_1.png"))); // NOI18N
+        jLabel21.setText("Nhà cung câp");
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout btn_6Layout = new javax.swing.GroupLayout(btn_6);
@@ -1237,16 +1241,19 @@ public class Home extends javax.swing.JFrame {
             btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_6Layout.createSequentialGroup()
                 .addComponent(ind_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel21)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         btn_6Layout.setVerticalGroup(
             btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_6Layout.createSequentialGroup()
                 .addComponent(ind_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 7, Short.MAX_VALUE))
-            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(btn_6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         side_pane.add(btn_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 160, -1));
@@ -1467,7 +1474,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\OneDrive\\Documents\\DuAn1_n2\\CuaHangDienThoai\\src\\main\\resources\\images\\bar-chart.png")); // NOI18N
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bar-chart.png"))); // NOI18N
         jLabel27.setText("Thống kê");
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -3924,8 +3931,6 @@ public class Home extends javax.swing.JFrame {
 
         jPanel21.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\hoant\\Downloads\\CuaHangDienThoai\\src\\main\\resources\\images\\icons8_Search_18px.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -4363,7 +4368,7 @@ public class Home extends javax.swing.JFrame {
         String maHD = "HD" + (tblHoaDon.getRowCount() + 1);
         String maNV = "F8196D15-FAC4-4945-BA20-EDC29534D46A";
         LocalDateTime dateTime = LocalDateTime.now();
-        HoaDon hoaDon = new HoaDon(null, maHD, dateTime, null, 0, 0);
+        HoaDon hoaDon = new HoaDon(null, maHD, dateTime, null, 0, 0, null);
         hoaDonRepo.SaveOrUpdate(hoaDon);
         fillToHoaDon();
     }//GEN-LAST:event_btnTaoHoaDonActionPerformed

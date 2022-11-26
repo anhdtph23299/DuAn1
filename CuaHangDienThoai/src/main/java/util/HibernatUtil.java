@@ -1,7 +1,7 @@
 package util;
 
-import domainModel.NhanVien;
-import domainModel.PhuKien;
+import domainmodel.NhanVien;
+import domainmodel.PhuKien;
 import domainmodel.DienThoai;
 import domainmodel.Hang;
 import domainmodel.HoaDon;

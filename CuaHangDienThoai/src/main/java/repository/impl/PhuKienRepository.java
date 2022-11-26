@@ -4,7 +4,7 @@
  */
 package repository.impl;
 
-import domainModel.PhuKien;
+import domainmodel.PhuKien;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;

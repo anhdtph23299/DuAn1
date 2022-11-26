@@ -4,7 +4,7 @@
  */
 package repository.impl;
 
-import domainModel.NhanVien;
+import domainmodel.NhanVien;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Query;

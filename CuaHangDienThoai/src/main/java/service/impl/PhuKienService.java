@@ -4,7 +4,7 @@
  */
 package service.impl;
 
-import domainModel.PhuKien;
+import domainmodel.PhuKien;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class PhuKienService implements IPhuKienService {
     }
 
     public String add(QLPhuKien qLPhuKien) {
-        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai());
+        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null);
         boolean add = phuKienRe.add(phuKien);
         if (add) {
             return "Add thành công";
@@ -45,7 +45,7 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public String update(QLPhuKien qLPhuKien, UUID id) {
-        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai());
+        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null);
         boolean update = phuKienRe.update(phuKien, id);
         if (update) {
             return "Update thành công";

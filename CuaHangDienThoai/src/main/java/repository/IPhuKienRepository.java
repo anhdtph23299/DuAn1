@@ -4,7 +4,7 @@
  */
 package repository;
 
-import domainModel.PhuKien;
+import domainmodel.PhuKien;
 import java.util.List;
 import java.util.UUID;
 

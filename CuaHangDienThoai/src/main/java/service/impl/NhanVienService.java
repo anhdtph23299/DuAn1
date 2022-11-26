@@ -4,7 +4,7 @@
  */
 package service.impl;
 
-import domainModel.NhanVien;
+import domainmodel.NhanVien;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

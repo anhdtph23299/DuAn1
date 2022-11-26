@@ -32,7 +32,7 @@ public class HangService implements IHangService{
 
     @Override
     public String save(QLHang hang) {
-        Hang newHang = new Hang(null, hang.getMa(), hang.getTen(), hang.getTrangThai());
+        Hang newHang = new Hang(null, hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
         if(hangRe.save(newHang)){
             return "Them thanh cong";
         }else{
@@ -42,7 +42,7 @@ public class HangService implements IHangService{
 
     @Override
     public String update(QLHang hang) {
-        Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai());
+        Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
         if(hangRe.update(newHang)){
             return "Sua thanh cong";
         }else{
@@ -52,7 +52,7 @@ public class HangService implements IHangService{
 
     @Override
     public String delete(QLHang hang) {
-        Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai());
+        Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
         if(hangRe.delete(newHang)){
             return "Them thanh cong";
         }else{

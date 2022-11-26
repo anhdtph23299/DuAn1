@@ -39,7 +39,10 @@ public class Hang implements Serializable{
     @Column(name = "TrangThai")
     private int trangThai;
     
-//    @OneToMany(mappedBy = "hang", fetch = FetchType.LAZY)
-//    private List<PhuKien> phuKien;
+    @OneToMany(mappedBy = "hang", fetch = FetchType.LAZY)
+    private List<PhuKien> phuKien;
+    
+    @OneToMany(mappedBy = "hang", fetch = FetchType.LAZY)
+    private List<DienThoai> dienThoai;
         
 }

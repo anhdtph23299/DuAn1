@@ -6,12 +6,15 @@ package domainmodel;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -49,6 +52,10 @@ public class HoaDon {
 
     @Column(name = "TrangThai")
     private Integer trangThai;
+    
+    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
+    private List<HoaDonChiTiet> list;
+    
 
     public String getTrangThai() {
         return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
