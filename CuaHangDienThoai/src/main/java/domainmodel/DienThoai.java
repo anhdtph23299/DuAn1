@@ -95,7 +95,10 @@ public class DienThoai {
     private Hang hang;
 
     @OneToMany(mappedBy = "dienThoai", fetch = FetchType.LAZY)
-    private List<HoaDonChiTiet> list;
+    private List<HoaDonChiTiet> listHDCT;
+
+//    @OneToMany(mappedBy = "dienThoai", fetch = FetchType.LAZY)
+//    private List<ChiTietKhuyenMai> listCTKM;
 
     public BigDecimal getGia(double soLuong) {
         return giaBan.multiply(BigDecimal.valueOf(soLuong));
