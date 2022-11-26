@@ -70,6 +70,7 @@ public class Home extends javax.swing.JFrame {
     //Tuấn Anh code
     DienThoaiRepository dienThoaiRepo = new DienThoaiRepository();
     //Test source tree
+    //Hoa thêm code
     //Hoá Đơn
     HoaDonRepository hoaDonRepo = new HoaDonRepository();
     DefaultTableModel modelHoaDon;
