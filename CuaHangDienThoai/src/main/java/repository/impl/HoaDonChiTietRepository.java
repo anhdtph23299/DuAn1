@@ -4,9 +4,8 @@
  */
 package repository.impl;
 
-import domainmodel.HoaDon;
+import domainmodel.HoaDonChiTiet;
 import java.util.List;
-import java.util.UUID;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,12 +15,12 @@ import util.HibernatUtil;
  *
  * @author sktfk
  */
-public class HoaDonRepository {
-
-    public List<HoaDon> getAll() {
-        List<HoaDon> list;
+public class HoaDonChiTietRepository {
+    public static List<HoaDonChiTiet> getAll(String maHD) {
+        List<HoaDonChiTiet> list;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("From HoaDon Order by ngayTao DESC");
+            Query q = session.createQuery("From HoaDonChiTie");
+//            q.setParameter("maHD", maHD);
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -29,21 +28,14 @@ public class HoaDonRepository {
         }
         return list;
     }
-
-    public static HoaDon getOne(String maHD) {
-        String hql = "FROM HoaDon WHERE MaHD =:ma";
-        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
-            Query q = session.createQuery(hql);
-            q.setParameter("ma", maHD);
-            HoaDon hd = (HoaDon) q.getSingleResult();
-            return hd;
-        } catch (Exception e) {
-            e.printStackTrace();
+    public static void main(String[] args) {
+        for (HoaDonChiTiet x : getAll("HD1")) {
+            System.out.println(x);
         }
-        return null;
     }
 
-    public void SaveOrUpdate(HoaDon hd) {
+
+    public void SaveOrUpdate(HoaDonChiTiet hd) {
         Transaction transaction = null;
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
             transaction = session.beginTransaction();
@@ -55,7 +47,7 @@ public class HoaDonRepository {
         }
     }
 
-    public void delete(HoaDon hd) {
+    public void delete(HoaDonChiTiet hd) {
         Transaction transaction = null;
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
             transaction = session.beginTransaction();
@@ -66,9 +58,4 @@ public class HoaDonRepository {
             transaction.rollback();
         }
     }
-
-//    public static void main(String[] args) {
-//        HoaDon hd = getOne("HD1");
-//        System.out.println(hd);
-//    }
 }

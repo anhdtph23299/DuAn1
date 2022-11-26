@@ -93,7 +93,7 @@ public class MaQR extends javax.swing.JFrame implements Runnable, ThreadFactory 
             if (result != null) {
 //                result_field.setText(result.getText());
                 DienThoai dienThoai = this.dienThoai.getOne(result.getText());
-                ShowProduct.getValues(dienThoai);
+//                ShowProduct.getValues(dienThoai);
                 webcam.close();
                 dispose();
             }

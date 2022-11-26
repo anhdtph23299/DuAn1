@@ -53,7 +53,7 @@ public class HoaDon {
     @Column(name = "TrangThai")
     private Integer trangThai;
     
-    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.EAGER)
     private List<HoaDonChiTiet> list;
     
 

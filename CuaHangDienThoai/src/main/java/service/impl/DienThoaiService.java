@@ -61,6 +61,9 @@ public class DienThoaiService implements IDienThoaiService {
             return "Xoa That Bai";
         }
     }
+    public DienThoai getOne(String ma){
+        return dienThoaiRepository.getOne(ma);
+    }
 
     @Override
     public List<DienThoai> timKiem(String tenDienThoai) {

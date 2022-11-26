@@ -32,6 +32,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         return listDienThoai;
     }
 
+    @Override
     public DienThoai getOne(String ma) {
         String hql = "FROM DienThoai WHERE maDienThoai =:ma";
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
@@ -99,10 +100,6 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         }
     }
 
-    @Override
-    public DienThoai getOne(UUID IdDienThoai) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public List<DienThoai> timKiem(String tenDienThoai) {

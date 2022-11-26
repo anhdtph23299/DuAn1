@@ -5,11 +5,16 @@
 package swing;
 
 import domainmodel.DienThoai;
+import domainmodel.HoaDon;
+import domainmodel.HoaDonChiTiet;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import net.bytebuddy.asm.Advice;
+import repository.IDienThoaiRepository;
+import repository.impl.DienThoaiRepository;
+import repository.impl.HoaDonChiTietRepository;
 import static swing.Home.modelHDCT;
 import util.ImageHelper;
 
@@ -22,14 +27,18 @@ public class ShowProduct extends javax.swing.JFrame {
     /**
      * Creates new form ShowProduct
      */
+    HoaDonChiTietRepository hoaDonChiTietRepo = new HoaDonChiTietRepository();
+    IDienThoaiRepository dienThoaiRepo = new DienThoaiRepository();
     static DienThoai dienThoai;
+    static HoaDon hoaDon;
     public ShowProduct() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-    public static String getValues(DienThoai dt) {
+    public static String getValues(DienThoai dt,HoaDon hd) {
         dienThoai = dt;
+        hoaDon = hd;
         ShowProduct show = new ShowProduct();
         show.setVisible(true);
         try {
@@ -315,8 +324,14 @@ public class ShowProduct extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Số lượng phải ít hơn hàng hiện có");
             return;
         }
-        modelHDCT.addRow(new Object[]{dienThoai.getTenDienThoai(), slStr, dienThoai.getGiaBan(), dienThoai.getGia(Double.valueOf(slStr))});
-
+        HoaDonChiTiet hdct = new HoaDonChiTiet();
+        hdct.setDienThoai(dienThoai);
+        hdct.setDonGia(dienThoai.getGiaBan());
+        hdct.setSoLuong(soLuong);
+        hdct.setHoaDon(hoaDon);
+        hoaDonChiTietRepo.SaveOrUpdate(hdct);
+        Home.fillToHDCT(hoaDon.getMaHD());
+//        modelHDCT.addRow(new Object[]{dienThoai.getTenDienThoai(), slStr, dienThoai.getGiaBan(), dienThoai.getGia(Integer.valueOf(slStr))});
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
 
