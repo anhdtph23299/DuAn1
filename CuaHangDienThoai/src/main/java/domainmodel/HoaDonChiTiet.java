@@ -4,7 +4,9 @@
  */
 package domainmodel;
 
+
 import java.util.List;
+import java.math.BigDecimal;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,6 +56,13 @@ public class HoaDonChiTiet {
     private int soLuong;
 
     @Column(name = "DonGia")
-    private int donGia;
+    private BigDecimal donGia;
 
+//    @OneToMany(mappedBy = "")
+//    private List<CTKM> dienThoai;
+
+    @Override
+    public String toString() {
+        return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai();
+    }
 }

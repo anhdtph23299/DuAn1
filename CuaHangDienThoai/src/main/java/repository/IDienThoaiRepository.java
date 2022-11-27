@@ -16,7 +16,7 @@ public interface IDienThoaiRepository {
 
     List<DienThoai> getAll();
 
-    DienThoai getOne(UUID IdDienThoai);
+    DienThoai getOne(String ma);
 
     boolean save(DienThoai dienThoai);
 //Dung Sua Code
