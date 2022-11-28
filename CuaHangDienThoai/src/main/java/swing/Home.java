@@ -671,7 +671,6 @@ public class Home extends javax.swing.JFrame {
         tblPhuKien = new javax.swing.JTable();
         jLabel15 = new javax.swing.JLabel();
         txtTimKiemPK = new javax.swing.JTextField();
-        btnSearchPK = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         lblAnhPK = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -2724,8 +2723,11 @@ public class Home extends javax.swing.JFrame {
         jLabel15.setText("Tìm kiếm");
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        btnSearchPK.setText("Search");
-        btnSearchPK.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTimKiemPK.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemPKCaretUpdate(evt);
+            }
+        });
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -2841,9 +2843,7 @@ public class Home extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtTimKiemPK, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(btnSearchPK))
+                                .addComponent(txtTimKiemPK, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel40)
@@ -2954,8 +2954,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(txtTimKiemPK, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearchPK))
+                            .addComponent(txtTimKiemPK, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3262,6 +3261,12 @@ public class Home extends javax.swing.JFrame {
         btnTaoMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTaoMaActionPerformed(evt);
+            }
+        });
+
+        txtTimKiemNV.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemNVCaretUpdate(evt);
             }
         });
 
@@ -4095,9 +4100,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setText("Tên/ CCCD/ Địa chỉ");
         jLabel13.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Tên/ CCCD/ Địa chỉ");
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -5197,7 +5202,7 @@ public class Home extends javax.swing.JFrame {
         cbbTrangThaiNV.setSelectedIndex(0);
         lblAnhNV.setIcon(null);
     }//GEN-LAST:event_btnClearNVActionPerformed
-
+// Hết code của Vanh
     private void tblListDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListDataMouseClicked
         // TODO add your handling code here:
         int row = tblListData.getSelectedRow();
@@ -5395,6 +5400,21 @@ public class Home extends javax.swing.JFrame {
         QLNhanVien nv = listQLNhanVien.get(row);
         new Main(nv);
     }//GEN-LAST:event_btnTaoMaActionPerformed
+
+    //code của Vanh
+    private void txtTimKiemPKCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemPKCaretUpdate
+        // TODO add your handling code here:
+        String ten = txtTimKiemPK.getText();
+        listQLPhuKien = iPhuKienService.search(ten);
+        showDataTablePK(listQLPhuKien);
+    }//GEN-LAST:event_txtTimKiemPKCaretUpdate
+
+    private void txtTimKiemNVCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemNVCaretUpdate
+        // TODO add your handling code here:
+        String cccd = txtTimKiemNV.getText();
+        listQLNhanVien = iNhanVienService.search(cccd);
+        showDataTableNV(listQLNhanVien);
+    }//GEN-LAST:event_txtTimKiemNVCaretUpdate
     //Hết Code của Vanh
 
     /**
@@ -5457,7 +5477,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnLamMoiDT;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
-    private javax.swing.JButton btnSearchPK;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnSuaDT;
     private javax.swing.JButton btnSuaKM;

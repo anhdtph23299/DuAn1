@@ -3295,8 +3295,6 @@
                                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="txtTimKiemPK" min="-2" pref="248" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                              <Component id="btnSearchPK" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -3439,7 +3437,6 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtTimKiemPK" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="btnSearchPK" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" pref="457" max="-2" attributes="0"/>
@@ -3551,14 +3548,9 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtTimKiemPK">
-                    </Component>
-                    <Component class="javax.swing.JButton" name="btnSearchPK">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Search"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="0"/>
-                        </Property>
-                      </Properties>
+                      <Events>
+                        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTimKiemPKCaretUpdate"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel9">
                       <Properties>
@@ -4712,6 +4704,9 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="txtTimKiemNV">
+                      <Events>
+                        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTimKiemNVCaretUpdate"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel3">
                       <Properties>
@@ -5911,13 +5906,13 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel13">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="T&#xea;n/ CCCD/ &#x110;&#x1ecb;a ch&#x1ec9;"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="12" style="2"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="T&#xea;n/ CCCD/ &#x110;&#x1ecb;a ch&#x1ec9;"/>
                           </Properties>
                         </Component>
                       </SubComponents>

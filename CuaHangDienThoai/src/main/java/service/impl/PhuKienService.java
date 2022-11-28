@@ -64,4 +64,15 @@ public class PhuKienService implements IPhuKienService {
         }
     }
 
+    @Override
+    public List<QLPhuKien> search(String ten) {
+        List<QLPhuKien> list = new ArrayList<>();
+        for (PhuKien x : phuKienRe.search(ten)) {
+            QLPhuKien phuKien = new QLPhuKien(x.getId(), x.getMa(), x.getTen(), x.getSoLuong(),
+                    x.getGiaBan(), x.getAnh(), x.getThoiGianBaoHanh(), x.getMoTa(), x.getTrangThai());
+            list.add(phuKien);
+        }
+        return list;
+    }
+
 }
