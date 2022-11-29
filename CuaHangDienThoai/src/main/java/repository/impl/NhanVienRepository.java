@@ -81,14 +81,26 @@ public class NhanVienRepository implements INhanVienRepository {
             e.printStackTrace(System.out);
         }
         return check;
-        
+
     }
-    
+
     @Override
     public List<NhanVien> search(String CCCD) {
-        try (Session sess = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = sess.createQuery("SELECT n FROM NhanVien n WHERE n.HoTen LIKE CONCAT ('%',:cccd,'%')");
+        try ( Session sess = HibernatUtil.getFACTORY().openSession()) {
+            Query qr = sess.createQuery("SELECT n FROM NhanVien n WHERE n.cccd LIKE CONCAT('%',:CCCD,'%') "
+                    + "OR n.hoTen LIKE CONCAT('%',:ten,'%') "
+                    + "OR n.diaChi LIKE CONCAT('%',:diaChi,'%') "
+                    + "OR n.email LIKE CONCAT('%',:email,'%') "
+                    + "OR n.ma LIKE CONCAT('%',:ma,'%') "
+                    + "OR n.namSinh LIKE CONCAT('%',:namSinh,'%') "
+                    + "OR n.sdt LIKE CONCAT('%',:sdt,'%')");
+            qr.setParameter("CCCD", CCCD);
             qr.setParameter("ten", CCCD);
+            qr.setParameter("diaChi", CCCD);
+            qr.setParameter("email", CCCD);
+            qr.setParameter("ma", CCCD);
+            qr.setParameter("namSinh", CCCD);
+            qr.setParameter("sdt", CCCD);
             List<NhanVien> list = qr.getResultList();
             return list;
         } catch (Exception e) {

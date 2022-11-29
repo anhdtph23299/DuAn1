@@ -78,5 +78,26 @@ public class PhuKienRepository implements IPhuKienRepository {
         }
         return check;
     }
+    
+    @Override
+    public List<PhuKien> search(String ten) {
+        try ( Session sess = HibernatUtil.getFACTORY().openSession()) {
+            Query qr = sess.createQuery("SELECT p FROM PhuKien p WHERE p.giaBan LIKE CONCAT('%',:giaBan,'%') "
+                    + "OR p.hang LIKE CONCAT('%',:hang,'%') "
+                    + "OR p.ma LIKE CONCAT('%',:ma,'%') "
+                    + "OR p.ten LIKE CONCAT('%',:ten,'%') "
+                    + "OR p.thoiGianBaoHanh LIKE CONCAT('%',:thoiGianBaoHanh,'%')");
+            qr.setParameter("giaBan", ten);
+            qr.setParameter("hang", ten);
+            qr.setParameter("ma", ten);
+            qr.setParameter("ten", ten);
+            qr.setParameter("thoiGianBaoHanh", ten);
+            List<PhuKien> list = qr.getResultList();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return null;
+    }
 
 }

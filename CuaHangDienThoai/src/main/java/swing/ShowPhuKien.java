@@ -30,6 +30,7 @@ public class ShowPhuKien extends javax.swing.JFrame {
 
     public ShowPhuKien() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     public static String getValues(PhuKien dt, HoaDon hd) {

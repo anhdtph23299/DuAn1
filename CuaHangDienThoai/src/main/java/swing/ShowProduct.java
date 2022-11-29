@@ -45,7 +45,7 @@ public class ShowProduct extends javax.swing.JFrame {
         }
         txtMa.setText(dt.getMaDienThoai());
         txtTen.setText(dt.getTenDienThoai());
-        txtSLT.setText(String.valueOf(dt.getSoLuong()));
+        txtSLT.setText(String.valueOf(dt.getSoLuongTon()));
         txtHeDH.setText(dt.getHeDieuHanh());
         txtCam.setText(dt.getCamera());
         txtBaoHanh.setText(String.valueOf(dt.getThoiGianBaoHanh()));

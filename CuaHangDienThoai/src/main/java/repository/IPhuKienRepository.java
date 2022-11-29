@@ -18,4 +18,5 @@ public interface IPhuKienRepository {
     boolean add(PhuKien phuKien);
     boolean update(PhuKien phuKien, UUID id);
     boolean delete(UUID id);
+    List<PhuKien> search(String ten);
 }

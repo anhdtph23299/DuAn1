@@ -7,11 +7,14 @@ package domainmodel;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,6 +51,8 @@ public class KhuyenMai implements Serializable {
     private Date ngayKT;
     @Column(name = "TrangThai", nullable = false)
     private Integer trangThai;
+//    @OneToMany(mappedBy = "khuyenMai", fetch = FetchType.LAZY)
+//    private List<ChiTietKhuyenMai> list;
 
     public KhuyenMai(String maKM, String tenKM, BigDecimal soTienGiam, BigDecimal chietKhau, Date ngayBatDau, Date ngayKT, Integer trangThai) {
         this.maKM = maKM;

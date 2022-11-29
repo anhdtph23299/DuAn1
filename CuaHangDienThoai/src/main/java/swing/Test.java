@@ -5,6 +5,8 @@
 package swing;
 
 import domainmodel.DienThoai;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
@@ -18,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import repository.impl.DienThoaiRepository;
 import util.ImageHelper;
 
@@ -42,22 +45,29 @@ public class Test extends javax.swing.JFrame {
     void addPanel() {
         FlowLayout flowLayout = new FlowLayout();
         flowLayout.setAlignment(FlowLayout.LEFT);
-        flowLayout.setHgap(2);
-        flowLayout.setVgap(2);
+        flowLayout.setHgap(10);
+        flowLayout.setVgap(10);
         pnlTong.setLayout(flowLayout);
         DienThoai dienThoai = dienThoaiRepository.getAll().get(0);
         try {
             Image img = ImageHelper.createFromByteArray(dienThoai.getAnh(), "png");
 //            Image setImg = img.getScaledInstance(lblAnh.getWidth(), lblAnh.getHeight(), Image.SCALE_SMOOTH);
             for (int i = 0; i < 20; i++) {
+                BorderLayout borderLayout = new BorderLayout();
+                borderLayout.setVgap(4);
                 JPanel panel = new JPanel();
                 panel.setBackground(new java.awt.Color(255, 255, 255));
-                panel.setSize(100, 60);
+                panel.setSize(100, 100);
+                panel.setLayout(borderLayout);
 //                panel.setBackground(Color.red);
-                JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 80, 50)));
-                panel.add(label);
+                JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 70)));
+                panel.add(label, BorderLayout.NORTH);
                 JLabel ten = new JLabel("Iphone X");
                 panel.add(ten);
+                panel.add(ten, BorderLayout.CENTER);
+                JLabel label1 = new JLabel("7000");
+                label1.setForeground(Color.red);
+                panel.add(label1, BorderLayout.SOUTH);
                 panel.addMouseListener(new MouseListener() {
                     @Override
                     public void mouseClicked(MouseEvent e) {

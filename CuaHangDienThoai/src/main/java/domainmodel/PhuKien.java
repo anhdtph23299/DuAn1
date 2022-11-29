@@ -35,43 +35,46 @@ import lombok.Setter;
 @Setter
 @Table(name = "PhuKien")
 public class PhuKien {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "IDPhuKien", length = 36)
     private UUID id;
-    
+
     @Column(name = "MaPhuKien")
     private String ma;
-    
+
     @Column(name = "TenPhuKien")
     private String ten;
-    
-    @Column(name = "SoLuongTon")
+
+    @Column(name = "SoLuong")
     private int soLuong;
-    
+
     @Column(name = "GiaBan")
     private BigDecimal giaBan;
-    
+
     @Column(name = "Anh", nullable = true)
     private byte[] anh;
-    
+
     @Column(name = "ThoiGianBaoHanh")
     private int thoiGianBaoHanh;
-    
+
     @Column(name = "MoTa")
     private String moTa;
-    
+
     @Column(name = "TrangThai")
     private int trangThai;
-    
+
     @ManyToOne
     @JoinColumn(name = "IDHang")
     private Hang hang;
-    
+
     @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
-    private List<HoaDonChiTiet> list;
-    
+    private List<HoaDonChiTiet> listHDCT;
+
+//    @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
+//    private List<ChiTietKhuyenMai> listCTKM;
+
 //    public PhuKien(String ma, String ten, int soLuong, BigDecimal giaBan, int thoiGianBaoHanh, String moTa, int trangThai) {
 //        this.ma = ma;
 //        this.ten = ten;
@@ -81,5 +84,4 @@ public class PhuKien {
 //        this.moTa = moTa;
 //        this.trangThai = trangThai;
 //    }
-    
 }

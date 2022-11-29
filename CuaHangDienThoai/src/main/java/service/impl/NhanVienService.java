@@ -62,6 +62,7 @@ public class NhanVienService implements INhanVienService {
         }
     }
     
+    @Override
     public List<QLNhanVien> search(String CCCD) {
         List<QLNhanVien> list = new ArrayList<>();
         for (NhanVien x : nhanVienRepository.search(CCCD)) {

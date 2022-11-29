@@ -4,8 +4,6 @@
  */
 package domainmodel;
 
-
-import java.util.List;
 import java.math.BigDecimal;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -15,8 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,45 +20,31 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "HoaDonChiTiet")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class HoaDonChiTiet {
+@Table(name = "ChiTietKhuyenMai")
+public class ChiTietKhuyenMai {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "IdHDCT")
+    @Column(name = "IdCTKM")
     private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "IdDienThoai")
-    private DienThoai dienThoai;
+//    @ManyToOne
+//    @JoinColumn(name = "IdKM")
+//    private KhuyenMai khuyenMai;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "IdKM")
+//    private PhuKien phuKien;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "IdKM")
+//    private DienThoai dienThoai;
+    
+    @Column(name = "SoTienGiam")
+    private BigDecimal soTienGiam;
 
-    @ManyToOne
-    @JoinColumn(name = "IdHD")
-    private HoaDon hoaDon;
-
-    @ManyToOne
-    @JoinColumn(name = "IdPK")
-    private PhuKien phuKien;
-
-    @OneToOne
-    @JoinColumn(name = "IdCTKM")
-    private ChiTietKhuyenMai ctkm;
-
-    @Column(name = "SoLuong")
-    private int soLuong;
-
-    @Column(name = "DonGia")
-    private BigDecimal donGia;
-
-//    @OneToMany(mappedBy = "")
-//    private List<CTKM> dienThoai;
-
-    @Override
-    public String toString() {
-        return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai();
-    }
 }
