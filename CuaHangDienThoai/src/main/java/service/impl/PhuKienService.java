@@ -32,6 +32,9 @@ public class PhuKienService implements IPhuKienService {
         }
         return list;
     }
+    public List<PhuKien> getAll1() {
+        return phuKienRe.getAll();
+    }
 
     public String add(QLPhuKien qLPhuKien) {
         PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null);

@@ -8,6 +8,7 @@ package swing;
 import domainmodel.DienThoai;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
+import domainmodel.PhuKien;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -116,18 +117,7 @@ public class Home extends javax.swing.JFrame {
         modelHoaDon = (DefaultTableModel) tblHoaDon.getModel();
         modelHDCT = (DefaultTableModel) tblHoaDonChiTiet.getModel();
 
-        //Dũng Code
-        String[] header = {"Tên Điện Thoại", "Số Lượng", "RAM", "ROM", "Màn Hình", "Màu Sắc", "Giá Bán", "Thời Gian Bảo Hành", "Trạng Thái"};
-        tblListDienThoai.setModel(dtm);
-        dtm.setColumnIdentifiers(header);
-        showData(listQLDienThoai = dienThoaiService.getAll());
-        cbbTrangThaiDT.setModel(dcbmTrangThai);
-        cbbDienThoai.add("Đang Bán");
-        cbbDienThoai.add("Ngừng Bán");
-        for (String a : cbbDienThoai) {
-            dcbmTrangThai.addElement(a);
-        }
-        // Hết code Dũng
+        
         // Code của Vanh
         String[] headersPK = {"Tên", "Số lượng", "Giá bán", "Thời gian bảo hành", "Mô tả", "Trạng thái"};
         dtmPhuKien.setColumnIdentifiers(headersPK);
@@ -151,8 +141,11 @@ public class Home extends javax.swing.JFrame {
         for (String item : listCBBNV) {
             dcbmTrangThaiNV.addElement(item);
         }
+
+        //code Tuấn Anh
         fillToHoaDon();
-        addPanel();
+        addPanelDienThoai();
+        addPanelPhuKien();
         //Code của Hoa
         tblListData.setModel(dtmKH);
         tblListDataKM.setModel(dtmKM);
@@ -170,8 +163,19 @@ public class Home extends javax.swing.JFrame {
 //Hết code Hoa
     }
 
-    void setTable() {
-
+    void codeDung(){
+        //Dũng Code
+        String[] header = {"Tên Điện Thoại", "Số Lượng", "RAM", "ROM", "Màn Hình", "Màu Sắc", "Giá Bán", "Thời Gian Bảo Hành", "Trạng Thái"};
+        tblListDienThoai.setModel(dtm);
+        dtm.setColumnIdentifiers(header);
+        showData(listQLDienThoai = dienThoaiService.getAll());
+        cbbTrangThaiDT.setModel(dcbmTrangThai);
+        cbbDienThoai.add("Đang Bán");
+        cbbDienThoai.add("Ngừng Bán");
+        for (String a : cbbDienThoai) {
+            dcbmTrangThai.addElement(a);
+        }
+        // Hết code Dũng
     }
 //code Hoa
 
@@ -269,7 +273,7 @@ public class Home extends javax.swing.JFrame {
     void fillToHoaDon() {
         modelHoaDon.setRowCount(0);
         for (HoaDon x : hoaDonRepo.getAll()) {
-            modelHoaDon.addRow(new Object[]{x.getMaHD(), "NV1", x.getNgayTao().format(formatter), x.getNgayThanhToan() == null ? "Chưa thanh toán" : x.getNgayThanhToan(), x.getTrangThai()});
+            modelHoaDon.addRow(new Object[]{x.getMaHD(), "NV1", x.getNgayTao().format(formatter), x.getNgayThanhToan() == null ? "Chưa thanh toán" : x.getNgayThanhToan(), x.getTrangThaiStr()});
         }
     }
 
@@ -289,7 +293,7 @@ public class Home extends javax.swing.JFrame {
 //        tblThongKe.setBorder(new EmptyBorder(0, 0, 0, 0));
 //    }
 
-    void addPanel() {
+    void addPanelDienThoai() {
         FlowLayout flowLayout = new FlowLayout(10, 0, 0);
         flowLayout.setAlignment(FlowLayout.LEFT);
         flowLayout.setHgap(2);
@@ -299,109 +303,86 @@ public class Home extends javax.swing.JFrame {
         pnlSanPham.setLayout(flowLayout);
         List<DienThoai> list = dienThoaiRepo.getAll();
         for (DienThoai x : list) {
-            Image img = null;
-            try {
-                img = ImageHelper.createFromByteArray(x.getAnh(), "png");
-            } catch (IOException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            JPanel panel = new JPanel();
-            panel.setBackground(new java.awt.Color(255, 255, 255));
-            panel.setSize(120, 70);
-//                panel.setBackground(Color.red);
-            JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
-            panel.add(label);
-            JLabel ten = new JLabel(x.getTenDienThoai());
-            panel.add(ten);
-            panel.addMouseListener(new MouseListener() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    int row = tblHoaDon.getSelectedRow();
-                    if (row == -1) {
-                        JOptionPane.showMessageDialog(null, "Bạn chưa chọn hoá đơn");
-                        return;
-                    }
-                    if (!tblHoaDon.getValueAt(row, 4).toString().equals("Chờ thanh toán")) {
-                        JOptionPane.showMessageDialog(null, "Chỉ có hoá đơn chờ thanh toán mới được sửa");
-                        return;
-                    }
-                    HoaDon hoaDon = hoaDonRepo.getOne(tblHoaDon.getValueAt(row, 0).toString());
-                    ShowProduct.getValues(x,hoaDon);
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    panel.setBackground(new java.awt.Color(100, 149, 237));
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    panel.setBackground(new java.awt.Color(255, 255, 255));
-
-                }
-            });
-            pnlSanPham.add(panel);
+            clickProduct(x, null);
         }
-//        DienThoai dienThoai = dienThoaiRepo.getAll().get(0);
-//        try {
-//            Image img = ImageHelper.createFromByteArray(dienThoai.getAnh(), "png");
-////            Image setImg = img.getScaledInstance(lblAnh.getWidth(), lblAnh.getHeight(), Image.SCALE_SMOOTH);
-//            for (int i = 0; i < 20; i++) {
-//                JPanel panel = new JPanel();
-//                
-//                panel.setBackground(new java.awt.Color(255, 255, 255));
-//                panel.setSize(120, 70);
-////                panel.setBackground(Color.red);
-//                JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
-//                panel.add(label);
-//                JLabel ten = new JLabel("Iphone X");
-//                panel.add(ten);
-//                panel.addMouseListener(new MouseListener() {
-//                    @Override
-//                    public void mouseClicked(MouseEvent e) {
-//                        valuesSL = ShowProduct.getValues();
-//                    }
-//
-//                    @Override
-//                    public void mousePressed(MouseEvent e) {
-//                    }
-//
-//                    @Override
-//                    public void mouseReleased(MouseEvent e) {
-//                    }
-//
-//                    @Override
-//                    public void mouseEntered(MouseEvent e) {
-//                        panel.setBackground(new java.awt.Color(100, 149, 237));
-//                    }
-//
-//                    @Override
-//                    public void mouseExited(MouseEvent e) {
-//                        panel.setBackground(new java.awt.Color(255, 255, 255));
-//
-//                    }
-//                });
-//                pnlSanPham.add(panel);
-//            }
-////            lblAnh.setIcon(new ImageIcon(ImageHelper.resige(img, lblAnh.getWidth(), lblAnh.getHeight())));
-//
-//        } catch (IOException ex) {
-//            JOptionPane.showMessageDialog(this, "Lỗi");
-//        }
     }
-    public static void fillToHDCT(String maHD){
+
+    void addPanelPhuKien() {
+        FlowLayout flowLayout = new FlowLayout(10, 0, 0);
+        flowLayout.setAlignment(FlowLayout.LEFT);
+        flowLayout.setHgap(2);
+        flowLayout.setVgap(2);
+        flowLayout.setAlignOnBaseline(true);
+        flowLayout.setAlignment(5);
+        pnlSanPham.setLayout(flowLayout);
+        for (PhuKien x : iPhuKienService.getAll1()) {
+//            clickProduct(x);
+            clickProduct(null, x);
+        }
+    }
+
+    void clickProduct(DienThoai x, PhuKien y) {
+        Image img = null;
+        try {
+            img = ImageHelper.createFromByteArray(x != null ? x.getAnh() : y.getAnh(), "png");
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JPanel panel = new JPanel();
+        panel.setBackground(new java.awt.Color(255, 255, 255));
+        panel.setSize(120, 70);
+//                panel.setBackground(Color.red);
+        JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
+        panel.add(label);
+        JLabel ten = new JLabel(x != null ? x.getTenDienThoai() : y.getTen());
+        panel.add(ten);
+        panel.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = tblHoaDon.getSelectedRow();
+                if (row == -1) {
+                    JOptionPane.showMessageDialog(null, "Bạn chưa chọn hoá đơn");
+                    return;
+                }
+                if (!tblHoaDon.getValueAt(row, 4).toString().equals("Chờ thanh toán")) {
+                    JOptionPane.showMessageDialog(null, "Chỉ có hoá đơn chờ thanh toán mới được sửa");
+                    return;
+                }
+                HoaDon hoaDon = hoaDonRepo.getOne(tblHoaDon.getValueAt(row, 0).toString());
+                if (x != null) {
+                    ShowProduct.getValues(x, hoaDon);
+                } else {
+                    ShowPhuKien.getValues(y, hoaDon);
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                panel.setBackground(new java.awt.Color(100, 149, 237));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                panel.setBackground(new java.awt.Color(255, 255, 255));
+
+            }
+        });
+        pnlSanPham.add(panel);
+    }
+
+    public static void fillToHDCT(String maHD) {
         HoaDon hoaDon = HoaDonRepository.getOne(maHD);
         List<HoaDonChiTiet> list = hoaDon.getList();
-        for (HoaDonChiTiet x :list) {
-            modelHDCT.addRow(new Object[]{x.getDienThoai(),x.getSoLuong(),x.getDonGia(),x.getDienThoai().getGia(x.getSoLuong())});
+        for (HoaDonChiTiet x : list) {
+            modelHDCT.addRow(new Object[]{x.getDienThoai(), x.getSoLuong(), x.getDonGia(), x.getDienThoai().getGia(x.getSoLuong())});
         }
     }
     //Hết code Tuấn ANh
@@ -5124,10 +5105,10 @@ public class Home extends javax.swing.JFrame {
 
     private void txtTienKhachDuaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTienKhachDuaKeyPressed
         // TODO add your handling code here:
-        String tienKhachDuaStr = null ;
-        if (evt.getKeyChar()==KeyEvent.VK_BACK_SPACE) {
+        String tienKhachDuaStr = null;
+        if (evt.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
             try {
-                tienKhachDuaStr = txtTienKhachDua.getText().trim().substring(0,txtTienKhachDua.getText().length()-1);
+                tienKhachDuaStr = txtTienKhachDua.getText().trim().substring(0, txtTienKhachDua.getText().length() - 1);
             } catch (Exception e) {
                 System.out.println("hi");
             }
@@ -5135,16 +5116,16 @@ public class Home extends javax.swing.JFrame {
                 txtTienTraKhach.setText("");
                 return;
             }
-        }else{
-            tienKhachDuaStr = txtTienKhachDua.getText()+evt.getKeyChar();
+        } else {
+            tienKhachDuaStr = txtTienKhachDua.getText() + evt.getKeyChar();
         }
         String tongTienStr = txtTongTien.getText();
         if (tongTienStr.isEmpty()) {
-            tongTienStr="0";
+            tongTienStr = "0";
         }
         Integer tongTien = Integer.parseInt(tongTienStr);
         Integer tienKhachDua = Integer.parseInt(tienKhachDuaStr);
-        Integer tienTra  = tienKhachDua - tongTien;
+        Integer tienTra = tienKhachDua - tongTien;
         txtTienTraKhach.setText(String.valueOf(tienTra));
     }//GEN-LAST:event_txtTienKhachDuaKeyPressed
 
@@ -5158,6 +5139,24 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
         // TODO add your handling code here:
+        int rowHDCT = tblHoaDonChiTiet.getSelectedRow();
+        if (rowHDCT == -1) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa chọn sản phẩm cần bỏ khỏi giỏ hàng");
+            return;
+        }
+        int rowHD = tblHoaDon.getSelectedRow();
+        String maHD = tblHoaDon.getValueAt(rowHD, 0).toString();
+        HoaDon hoaDon = hoaDonRepo.getOne(maHD);
+        if (hoaDon.getTrangThai() != 0) {
+            JOptionPane.showMessageDialog(this, "Chỉ có hoá đơn chưa thanh toán mới được xoá sản phẩm");
+            return;
+        }
+        Object o = tblHoaDonChiTiet.getValueAt(rowHDCT, 0);
+        if (o instanceof DienThoai) {
+            DienThoai dt = (DienThoai) o;
+        } else {
+            PhuKien phuKien = (PhuKien) o;
+        }
     }//GEN-LAST:event_jButton40ActionPerformed
     //Hết Code của Vanh
 

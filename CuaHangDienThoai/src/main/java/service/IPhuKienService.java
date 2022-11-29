@@ -4,6 +4,7 @@
  */
 package service;
 
+import domainmodel.PhuKien;
 import java.util.List;
 import java.util.UUID;
 import viewmodel.QLPhuKien;
@@ -15,6 +16,7 @@ import viewmodel.QLPhuKien;
 public interface IPhuKienService {
     
     List<QLPhuKien> getAll();
+    List<PhuKien> getAll1();
     String add(QLPhuKien qLPhuKien);
     String update(QLPhuKien qLPhuKien, UUID id);
     String delete(UUID id);

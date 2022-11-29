@@ -57,7 +57,7 @@ public class HoaDon {
     private List<HoaDonChiTiet> list;
     
 
-    public String getTrangThai() {
+    public String getTrangThaiStr() {
         return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
     }
 
