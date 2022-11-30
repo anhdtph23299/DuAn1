@@ -24,15 +24,6 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public List<QLPhuKien> getAll() {
-        List<QLPhuKien> list = new ArrayList<>();
-        for (PhuKien x : phuKienRe.getAll()) {
-            QLPhuKien phuKien = new QLPhuKien(x.getId(), x.getMa(), x.getTen(), x.getSoLuong(),
-                    x.getGiaBan(), x.getAnh(), x.getThoiGianBaoHanh(), x.getMoTa(), x.getTrangThai());
-            list.add(phuKien);
-        }
-        return list;
-    }
-    public List<PhuKien> getAll1() {
         return phuKienRe.getAll();
     }
 
@@ -69,13 +60,12 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public List<QLPhuKien> search(String ten) {
-        List<QLPhuKien> list = new ArrayList<>();
-        for (PhuKien x : phuKienRe.search(ten)) {
-            QLPhuKien phuKien = new QLPhuKien(x.getId(), x.getMa(), x.getTen(), x.getSoLuong(),
-                    x.getGiaBan(), x.getAnh(), x.getThoiGianBaoHanh(), x.getMoTa(), x.getTrangThai());
-            list.add(phuKien);
-        }
-        return list;
+        return phuKienRe.search(ten);
+    }
+
+    @Override
+    public List<PhuKien> getAll1() {
+        return phuKienRe.getAll1();
     }
 
 }
