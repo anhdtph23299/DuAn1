@@ -23,12 +23,7 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public List<QLNhanVien> getAll() {
-        List<QLNhanVien> list = new ArrayList<>();
-        for (NhanVien x : nhanVienRepository.getAll()) {
-            QLNhanVien nhanVien = new QLNhanVien(x.getId(), x.getMa(), x.getHoTen(), x.getGioiTinh(), x.getNamSinh(), x.getDiaChi(), x.getCccd(), x.getEmail(), x.getSdt(), x.getTrangThai(), x.getAnh(), null);
-            list.add(nhanVien);
-        }
-        return list;
+        return nhanVienRepository.getAll();
     }
 
     public String add(QLNhanVien qlnv) {
@@ -64,12 +59,7 @@ public class NhanVienService implements INhanVienService {
     
     @Override
     public List<QLNhanVien> search(String CCCD) {
-        List<QLNhanVien> list = new ArrayList<>();
-        for (NhanVien x : nhanVienRepository.search(CCCD)) {
-            QLNhanVien nhanVien = new QLNhanVien(x.getId(), x.getMa(), x.getHoTen(), x.getGioiTinh(), x.getNamSinh(), x.getDiaChi(), x.getCccd(), x.getEmail(), x.getSdt(), x.getTrangThai(), x.getAnh(), null);
-            list.add(nhanVien);
-        }
-        return list;
+        return nhanVienRepository.search(CCCD);
     }
     
 }

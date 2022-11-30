@@ -7,6 +7,7 @@ package repository;
 import domainmodel.PhuKien;
 import java.util.List;
 import java.util.UUID;
+import viewmodel.QLPhuKien;
 
 /**
  *
@@ -14,9 +15,10 @@ import java.util.UUID;
  */
 public interface IPhuKienRepository {
     
-    List<PhuKien> getAll();
+    List<QLPhuKien> getAll();
     boolean add(PhuKien phuKien);
     boolean update(PhuKien phuKien, UUID id);
     boolean delete(UUID id);
-    List<PhuKien> search(String ten);
+    List<PhuKien> getAll1();
+    List<QLPhuKien> search(String ten);
 }
