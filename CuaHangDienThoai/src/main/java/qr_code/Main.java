@@ -40,6 +40,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        // Vanh đã viết code ở đây
     }
     public Main(QLNhanVien nv) {
         initComponents();
