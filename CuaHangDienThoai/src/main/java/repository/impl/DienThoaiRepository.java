@@ -32,6 +32,12 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         return listDienThoai;
     }
 
+    public static void main(String[] args) {
+        DienThoaiRepository dienThoaiRepository = new DienThoaiRepository();
+        for (DienThoai x : dienThoaiRepository.getAll()) {
+            System.out.println(x);
+        }
+    }
     @Override
     public DienThoai getOne(String ma) {
         String hql = "FROM DienThoai WHERE maDienThoai =:ma";
@@ -93,12 +99,12 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         }
     }
 
-    public static void main(String[] args) {
-        List<DienThoai> l = new DienThoaiRepository().getAll();
-        for (DienThoai dienThoai : l) {
-            System.out.println(dienThoai);
-        }
-    }
+//    public static void main(String[] args) {
+//        List<DienThoai> l = new DienThoaiRepository().getAll();
+//        for (DienThoai dienThoai : l) {
+//            System.out.println(dienThoai);
+//        }
+//    }
 
 
     @Override
