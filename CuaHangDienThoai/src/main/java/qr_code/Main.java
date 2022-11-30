@@ -44,6 +44,8 @@ public class Main extends javax.swing.JFrame {
         //Tuấn Anh Đã code
 =======
         // Vanh đã viết code ở đây
+        //Vanh đã viết thêm
+        ////kjhsdfhkd
 >>>>>>> origin/main
     }
     public Main(QLNhanVien nv) {
