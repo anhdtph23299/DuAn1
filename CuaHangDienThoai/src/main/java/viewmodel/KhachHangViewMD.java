@@ -45,4 +45,12 @@ public class KhachHangViewMD implements Serializable {
         return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi, ngayMua, diemTichLuy, ghiChu};
     }
 
+    public KhachHangViewMD(UUID id, String hoTen) {
+        this.id = id;
+        this.hoTen = hoTen;
+    }
+
+   
+
+
 }

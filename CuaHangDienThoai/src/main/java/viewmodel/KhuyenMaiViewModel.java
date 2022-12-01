@@ -47,4 +47,9 @@ public class KhuyenMaiViewModel {
     public Object[] toDataRow() {
         return new Object[]{maKM, tenKM, soTienGiam, chietKhau, ngayBatDau, ngayKT,trangThai==1?"Hết hiệu lực":"Đang hoạt động"};
     }
+
+    public KhuyenMaiViewModel(UUID id) {
+        this.id = id;
+    }
+    
 }

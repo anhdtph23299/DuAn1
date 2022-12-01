@@ -36,9 +36,6 @@ public class HoaDonChiTiet {
     @Column(name = "IdHDCT")
     private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "IdDienThoai")
-    private DienThoai dienThoai;
 
     @ManyToOne
     @JoinColumn(name = "IdHD")
@@ -51,6 +48,9 @@ public class HoaDonChiTiet {
     @OneToOne
     @JoinColumn(name = "IdCTKM")
     private ChiTietKhuyenMai ctkm;
+    @ManyToOne
+    @JoinColumn(name = "IdDienThoai")
+    private DienThoai dienThoai;
 
     @Column(name = "SoLuong")
     private int soLuong;
@@ -63,6 +63,8 @@ public class HoaDonChiTiet {
 
     @Override
     public String toString() {
-        return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai();
+        return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai() ;
     }
+    
+  
 }

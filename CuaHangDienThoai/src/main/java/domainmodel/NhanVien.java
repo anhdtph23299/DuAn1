@@ -4,12 +4,15 @@
  */
 package domainmodel;
 
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -66,7 +69,8 @@ public class NhanVien {
 //        this.sdt = sdt;
 //        this.trangThai = trangThai;
 //    }
-
+  @OneToMany(mappedBy = "nhanvien", fetch = FetchType.LAZY)
+    private List<HoaDon> lstNV;
     @Override
     public String toString() {
         return "NhanVien{" + "id=" + id + ", ma=" + ma + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", namSinh=" + namSinh + ", diaChi=" + diaChi + ", cccd=" + cccd + ", email=" + email + ", sdt=" + sdt + ", trangThai=" + trangThai + ", anh=" + anh + ", qr=" + qr + '}';

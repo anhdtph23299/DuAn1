@@ -5,7 +5,6 @@
 package domainmodel;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -14,7 +13,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,18 +50,22 @@ public class HoaDon {
     private LocalDateTime NgayThanhToan;
 
     @Column(name = "DiemTichLuy")
-    private Integer DiemTichLuy;
+    private int DiemTichLuy;
 
     @Column(name = "TrangThai")
-    private Integer trangThai;
+    private int trangThai;
     
     @OneToMany(mappedBy = "hoaDon", fetch = FetchType.EAGER)
     private List<HoaDonChiTiet> list;
-    
-
-    public String getTrangThai() {
-        return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
-    }
+     @ManyToOne
+    @JoinColumn(name = "IdKH", nullable = false)
+    private KhachHang khachhang ;
+ @ManyToOne
+    @JoinColumn(name = "IdNhanVien", nullable = false)
+    private NhanVien nhanvien ;
+//    public String getTrangThai() {
+//        return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
+//    }
 
     @Override
     public String toString() {
