@@ -4,7 +4,9 @@
  */
 package service.impl;
 
+import domainmodel.ChucVu;
 import domainmodel.NhanVien;
+import domainmodel.TaiKhoan;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +29,9 @@ public class NhanVienService implements INhanVienService {
     }
 
     public String add(QLNhanVien qlnv) {
-        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        TaiKhoan tk = new TaiKhoan(qlnv.getTaiKhoan().getId(), qlnv.getTaiKhoan().getTenTaiKhoan(), qlnv.getTaiKhoan().getMatKhau());
+        ChucVu cv = new ChucVu(qlnv.getChucVu().getId(), qlnv.getChucVu().getMa(), qlnv.getChucVu().getTen(), qlnv.getChucVu().getLuong(), qlnv.getChucVu().getTrangThai(), null);
+        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null, tk, cv);
         boolean add = nhanVienRepository.add(nhanVien);
         if (add) {
             return "Add thành công";
@@ -38,7 +42,9 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public String update(QLNhanVien qlnv, UUID id) {
-        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        TaiKhoan tk = new TaiKhoan(qlnv.getTaiKhoan().getId(), qlnv.getTaiKhoan().getTenTaiKhoan(), qlnv.getTaiKhoan().getMatKhau());
+        ChucVu cv = new ChucVu(qlnv.getChucVu().getId(), qlnv.getChucVu().getMa(), qlnv.getChucVu().getTen(), qlnv.getChucVu().getLuong(), qlnv.getChucVu().getTrangThai(), null);
+        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null, tk, cv);
         boolean update = nhanVienRepository.update(nhanVien, id);
         if (update) {
             return "Update thành công";
@@ -56,7 +62,7 @@ public class NhanVienService implements INhanVienService {
             return "Delete không thành công";
         }
     }
-    
+
     @Override
     public List<QLNhanVien> search(String CCCD) {
         return nhanVienRepository.search(CCCD);

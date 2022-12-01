@@ -12,17 +12,19 @@ import java.util.List;
  * @author Admin
  */
 public interface IHangRepository {
-    
+
     List<Hang> getHHD();
-    
+
     List<Hang> getHNHD();
-    
+
     List<Hang> timKiem(String chuoi, int number);
-    
+
     boolean save(Hang hang);
-    
-    boolean update (Hang hang);
-    
-    boolean delete (Hang hang);
-    
+
+    boolean update(Hang hang);
+
+    boolean delete(Hang hang);
+
+    Hang getOne(String id);
+
 }

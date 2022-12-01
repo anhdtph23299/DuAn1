@@ -1,6 +1,7 @@
 package util;
 
 import domainmodel.ChiTietKhuyenMai;
+import domainmodel.ChucVu;
 import domainmodel.NhanVien;
 import domainmodel.PhuKien;
 import domainmodel.DienThoai;
@@ -45,6 +46,7 @@ public class HibernatUtil {
         conf.addAnnotatedClass(Hang.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(ChiTietKhuyenMai.class);
+        conf.addAnnotatedClass(ChucVu.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

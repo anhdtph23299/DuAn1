@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -54,18 +57,12 @@ public class NhanVien {
     private byte[] anh;
     @Column(name = "QR")
     private String qr;
-
-//    public NhanVien(String ma, String hoTen, Integer gioiTinh, Integer namSinh, String diaChi, String cccd, String email, String sdt, Integer trangThai) {
-//        this.ma = ma;
-//        this.hoTen = hoTen;
-//        this.gioiTinh = gioiTinh;
-//        this.namSinh = namSinh;
-//        this.diaChi = diaChi;
-//        this.cccd = cccd;
-//        this.email = email;
-//        this.sdt = sdt;
-//        this.trangThai = trangThai;
-//    }
+    @OneToOne
+    @JoinColumn(name = "IDTaiKhoan")
+    private TaiKhoan taiKhoan;
+    @ManyToOne
+    @JoinColumn(name = "IDChucVu")
+    private ChucVu chucVu;
 
     @Override
     public String toString() {
