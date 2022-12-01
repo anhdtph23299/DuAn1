@@ -9,11 +9,13 @@ import domainmodel.DienThoai;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import domainmodel.PhuKien;
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -37,6 +39,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
@@ -118,17 +121,17 @@ public class Home extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         modelHoaDon = (DefaultTableModel) tblHoaDon.getModel();
         modelHDCT = (DefaultTableModel) tblHoaDonChiTiet.getModel();
-
-        FlowLayout flowLayout = new FlowLayout();
-        flowLayout.setAlignment(FlowLayout.LEFT);
-        flowLayout.setHgap(2);
-        flowLayout.setVgap(2);
-        flowLayout.setAlignOnBaseline(true);
-        pnlSanPham.setLayout(flowLayout);
+        GridLayout gridLayout = new GridLayout(0, 6, 7, 5);
+//        FlowLayout flowLayout = new FlowLayout();
+//        flowLayout.setAlignment(FlowLayout.LEFT);
+//        flowLayout.setHgap(5);
+//        flowLayout.setVgap(5);
+//        flowLayout.setAlignOnBaseline(true);
+        pnlSanPham.setLayout(gridLayout);
         pnlSanPham.setAutoscrolls(true);
-        Dimension maxSize = pnlSanPham.getMaximumSize();
-        maxSize.setSize(maxSize.getWidth(), maxSize.getHeight() * 2);
-        pnlSanPham.setPreferredSize(maxSize);
+//        Dimension maxSize = pnlSanPham.getMaximumSize();
+//        maxSize.setSize(maxSize.getWidth(), maxSize.getHeight() * 2);
+        //pnlSanPham.setPreferredSize(maxSize);
 
         codeTuanAnh();
         codeDung();
@@ -138,6 +141,7 @@ public class Home extends javax.swing.JFrame {
 
     void codeTuanAnh() {
         //code Tuấn Anh
+        hoaDonChiTietRepo = new HoaDonChiTietRepository();
         fillToHoaDon();
         addPanelDienThoai();
         addPanelPhuKien();
@@ -321,7 +325,7 @@ public class Home extends javax.swing.JFrame {
     void addPanelDienThoai() {
         List<DienThoai> list = dienThoaiRepo.getAll();
         for (DienThoai x : list) {
-            clickProduct(x, null);
+            clickProduct(x);
         }
     }
 
@@ -329,26 +333,34 @@ public class Home extends javax.swing.JFrame {
         List<PhuKien> dsPhuKien = iPhuKienService.getAll1();
         for (PhuKien x : dsPhuKien) {
 //            clickProduct(x);
-            clickProduct(null, x);
+            clickProductPK(x);
         }
         System.out.println(dsPhuKien.size());
     }
 
-    void clickProduct(DienThoai x, PhuKien y) {
+    void clickProduct(DienThoai x) {
+        BorderLayout layout = new BorderLayout();
+        layout.setHgap(5);
+        layout.setVgap(5);
         Image img = null;
         try {
-            img = ImageHelper.createFromByteArray(x != null ? x.getAnh() : y.getAnh(), "png");
+            img = ImageHelper.createFromByteArray(x.getAnh(), "png");
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
         JPanel panel = new JPanel();
         panel.setBackground(new java.awt.Color(255, 255, 255));
         panel.setSize(120, 70);
+        panel.setLayout(layout);
 //                panel.setBackground(Color.red);
         JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
-        panel.add(label);
-        JLabel ten = new JLabel(x != null ? x.getTenDienThoai() : y.getTen());
-        panel.add(ten);
+        panel.add(label, BorderLayout.NORTH);
+        JLabel ten = new JLabel(x.getTenDienThoai());
+        ten.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(ten, BorderLayout.CENTER);
+        JLabel giaTien = new JLabel(String.valueOf(x.getGiaBan()));
+        panel.add(giaTien, BorderLayout.SOUTH);
+        giaTien.setHorizontalAlignment(SwingConstants.CENTER);
         panel.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -362,11 +374,67 @@ public class Home extends javax.swing.JFrame {
                     return;
                 }
                 HoaDon hoaDon = hoaDonRepo.getOne(tblHoaDon.getValueAt(row, 0).toString());
-                if (x != null) {
-                    ShowProduct.getValues(x, hoaDon);
-                } else {
-                    ShowPhuKien.getValues(y, hoaDon);
+                ShowProduct.getValues(x, hoaDon);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                panel.setBackground(new java.awt.Color(100, 149, 237));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                panel.setBackground(new java.awt.Color(255, 255, 255));
+
+            }
+        });
+        pnlSanPham.add(panel);
+    }
+
+    void clickProductPK(PhuKien y) {
+        BorderLayout layout = new BorderLayout();
+        layout.setHgap(5);
+        layout.setVgap(5);
+        Image img = null;
+        try {
+            img = ImageHelper.createFromByteArray(y.getAnh(), "png");
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JPanel panel = new JPanel();
+        panel.setBackground(new java.awt.Color(255, 255, 255));
+        panel.setSize(120, 70);
+//                panel.setBackground(Color.red);
+        JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
+        panel.add(label, BorderLayout.NORTH);
+        JLabel ten = new JLabel(y.getTen());
+        ten.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(ten, BorderLayout.CENTER);
+        JLabel giaTien = new JLabel(String.valueOf(y.getGiaBan()));
+        panel.add(giaTien, BorderLayout.CENTER);
+        panel.add(giaTien, BorderLayout.SOUTH);
+        panel.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = tblHoaDon.getSelectedRow();
+                if (row == -1) {
+                    JOptionPane.showMessageDialog(null, "Bạn chưa chọn hoá đơn");
+                    return;
                 }
+                if (!tblHoaDon.getValueAt(row, 4).toString().equals("Chờ thanh toán")) {
+                    JOptionPane.showMessageDialog(null, "Chỉ có hoá đơn chờ thanh toán mới được sửa");
+                    return;
+                }
+                HoaDon hoaDon = hoaDonRepo.getOne(tblHoaDon.getValueAt(row, 0).toString());
+                ShowPhuKien.getValues(y, hoaDon);
             }
 
             @Override
@@ -392,10 +460,11 @@ public class Home extends javax.swing.JFrame {
     }
 
     public static void fillToHDCT(String maHD) {
-        HoaDon hoaDon = HoaDonRepository.getOne(maHD);
-        List<HoaDonChiTiet> list = hoaDon.getList();
-        for (HoaDonChiTiet x : list) {
-            modelHDCT.addRow(new Object[]{x.getDienThoai(), x.getSoLuong(), x.getDonGia(), x.getDienThoai().getGia(x.getSoLuong())});
+//        HoaDon hoaDon = HoaDonRepository.getOne(maHD);
+//        List<HoaDonChiTiet> list = hoaDon.getList();
+        modelHDCT.setRowCount(0);
+        for (HoaDonChiTiet x : HoaDonChiTietRepository.getAll(maHD)) {
+            modelHDCT.addRow(new Object[]{x, x.getSoLuong(), x.getDonGia(), x.getGia()});
         }
     }
     //Hết code Tuấn ANh
@@ -1888,6 +1957,7 @@ public class Home extends javax.swing.JFrame {
         pnlSanPham.setPreferredSize(new java.awt.Dimension(700, 200));
         scpSanPhamBH.setViewportView(pnlSanPham);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Lọc Theo");
 
         cboLocSanPham.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất Cả", "Điện thoại", "Phụ Kiện" }));
@@ -5404,11 +5474,18 @@ public class Home extends javax.swing.JFrame {
             return;
         }
         Object o = tblHoaDonChiTiet.getValueAt(rowHDCT, 0);
-        if (o instanceof DienThoai) {
-            DienThoai dt = (DienThoai) o;
-        } else {
-            PhuKien phuKien = (PhuKien) o;
-        }
+//        if (o instanceof DienThoai) {
+//            DienThoai dt = (DienThoai) o;
+//            HoaDonChiTiet hdct = hoaDonChiTietRepo.getAllDT(hoaDon.getMaHD(), dt.getMaDienThoai());
+//            hoaDonChiTietRepo.delete(hdct);
+//        } else {
+//            PhuKien phuKien = (PhuKien) o;
+//            HoaDonChiTiet hdct = hoaDonChiTietRepo.getAllPK(hoaDon.getMaHD(), phuKien.getMa());
+//            hoaDonChiTietRepo.delete(hdct);
+//        }
+        hoaDonChiTietRepo.delete((HoaDonChiTiet) o);
+        fillToHDCT(maHD);
+
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void btn_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_11MouseClicked

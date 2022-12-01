@@ -45,7 +45,7 @@ public class DienThoai {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
     
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuongTon;
 
     @Column(name = "CPU")

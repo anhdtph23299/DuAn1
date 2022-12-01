@@ -47,7 +47,7 @@ public class PhuKien {
     @Column(name = "TenPhuKien")
     private String ten;
 
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuong;
 
     @Column(name = "GiaBan")

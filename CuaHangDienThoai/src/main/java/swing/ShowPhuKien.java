@@ -24,7 +24,7 @@ public class ShowPhuKien extends javax.swing.JFrame {
     /**
      * Creates new form ShowPhuKien
      */
-    static PhuKien dienThoai;
+    static PhuKien phuKien;
     static HoaDon hoaDon;
     HoaDonChiTietRepository hoaDonChiTietRepo = new HoaDonChiTietRepository();
 
@@ -34,7 +34,7 @@ public class ShowPhuKien extends javax.swing.JFrame {
     }
 
     public static String getValues(PhuKien dt, HoaDon hd) {
-        dienThoai = dt;
+        phuKien = dt;
         hoaDon = hd;
         ShowPhuKien show = new ShowPhuKien();
         show.setVisible(true);
@@ -229,7 +229,7 @@ public class ShowPhuKien extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -240,7 +240,9 @@ public class ShowPhuKien extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -268,14 +270,31 @@ public class ShowPhuKien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Số lượng phải ít hơn hàng hiện có");
             return;
         }
-        HoaDonChiTiet hdct = new HoaDonChiTiet();
-        hdct.setPhuKien(dienThoai);
-        hdct.setDonGia(dienThoai.getGiaBan());
-        hdct.setSoLuong(soLuong);
-        hdct.setHoaDon(hoaDon);
-        hoaDonChiTietRepo.SaveOrUpdate(hdct);
-        Home.fillToHDCT(hoaDon.getMaHD());
-        //        modelHDCT.addRow(new Object[]{dienThoai.getTenDienThoai(), slStr, dienThoai.getGiaBan(), dienThoai.getGia(Integer.valueOf(slStr))});
+
+        HoaDonChiTiet hdct = hoaDonChiTietRepo.getAllPK(hoaDon.getMaHD(), phuKien.getMa());
+//        hdct.setPhuKien(phuKien);
+//        hdct.setDonGia(phuKien.getGiaBan());
+//        hdct.setSoLuong(soLuong);
+//        hdct.setHoaDon(hoaDon);
+//        hoaDonChiTietRepo.SaveOrUpdate(hdct);
+//        Home.fillToHDCT(hoaDon.getMaHD());
+        //
+        if (hdct == null) {
+            hdct = new HoaDonChiTiet();
+            hdct.setPhuKien(phuKien);
+            hdct.setDonGia(phuKien.getGiaBan());
+            hdct.setSoLuong(soLuong);
+            hdct.setHoaDon(hoaDon);
+            hoaDonChiTietRepo.SaveOrUpdate(hdct);
+            Home.fillToHDCT(hoaDon.getMaHD());
+            JOptionPane.showMessageDialog(this, "Thêm thành công");
+        } else {
+            hdct.setSoLuong(hdct.getSoLuong() + soLuong);
+            hoaDonChiTietRepo.SaveOrUpdate(hdct);
+            Home.fillToHDCT(hoaDon.getMaHD());
+            JOptionPane.showMessageDialog(this, "Vì sản phẩm này đã có nên sửa lại số lượng");
+        }
+        //        modelHDCT.addRow(new Object[]{phuKien.getTenDienThoai(), slStr, phuKien.getGiaBan(), phuKien.getGia(Integer.valueOf(slStr))});
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
 

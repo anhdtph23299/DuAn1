@@ -65,4 +65,7 @@ public class HoaDonChiTiet {
     public String toString() {
         return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai();
     }
+    public BigDecimal getGia() {
+        return donGia.multiply(BigDecimal.valueOf(soLuong));
+    }
 }

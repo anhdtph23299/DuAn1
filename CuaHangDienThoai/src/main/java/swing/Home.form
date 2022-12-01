@@ -1807,6 +1807,7 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="L&#x1ecd;c Theo"/>
                   </Properties>
                 </Component>

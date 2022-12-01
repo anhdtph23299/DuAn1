@@ -43,7 +43,8 @@ public class Main extends javax.swing.JFrame {
         //Tuấn Anh test
 
 
-////kjhsdfhkd    }
+////kjhsdfhkd   
+    }
     public Main(QLNhanVien nv) {
         initComponents();
         int check = JOptionPane.showConfirmDialog(this, "Bạn có chắc tạo mã cho nhân viên này ? ","Tạo mã nhân viên",JOptionPane.YES_NO_OPTION);
