@@ -2780,11 +2780,6 @@ public class Home extends javax.swing.JFrame {
         pnlTong.add(pnlDienThoai, "cardDienThoai");
 
         pnlPhuKien.setBackground(new java.awt.Color(255, 255, 255));
-        pnlPhuKien.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlPhuKienMouseClicked(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(71, 120, 197));
         jPanel2.setPreferredSize(new java.awt.Dimension(1455, 93));
@@ -3120,11 +3115,6 @@ public class Home extends javax.swing.JFrame {
         pnlTong.add(pnlPhuKien, "cardPhuKien");
 
         pnlHoaDon.setBackground(new java.awt.Color(255, 255, 255));
-        pnlHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlHoaDonMouseClicked(evt);
-            }
-        });
 
         jLabel12.setText("Diện Thoại");
 
@@ -3148,11 +3138,6 @@ public class Home extends javax.swing.JFrame {
         pnlTong.add(pnlHoaDon, "cardHoaDon");
 
         pnlNhanVien.setBackground(new java.awt.Color(255, 255, 255));
-        pnlNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlNhanVienMouseClicked(evt);
-            }
-        });
 
         jPanel8.setBackground(new java.awt.Color(71, 120, 197));
         jPanel8.setPreferredSize(new java.awt.Dimension(1455, 93));
@@ -3585,11 +3570,6 @@ public class Home extends javax.swing.JFrame {
         pnlTong.add(pnlNhanVien, "cardNhanVien");
 
         pnlThongKe.setBackground(new java.awt.Color(255, 255, 255));
-        pnlThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlThongKeMouseClicked(evt);
-            }
-        });
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4694,24 +4674,6 @@ public class Home extends javax.swing.JFrame {
         layout.show(pnlTong, "cardBanHang");;
     }//GEN-LAST:event_btn_2MouseClicked
 
-    private void pnlPhuKienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPhuKienMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_pnlPhuKienMouseClicked
-
-    private void pnlHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHoaDonMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_pnlHoaDonMouseClicked
-
-    private void pnlNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNhanVienMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pnlNhanVienMouseClicked
-
-    private void pnlThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlThongKeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pnlThongKeMouseClicked
-
     private void btn_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_9MouseClicked
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) pnlTong.getLayout();
@@ -5490,14 +5452,21 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_11MouseClicked
         // TODO add your handling code here:
+        int cancel = JOptionPane.showConfirmDialog(this, "Bạn có muốn đăng xuất phần mềm không?", null, JOptionPane.YES_NO_OPTION);
+        if (cancel == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_btn_11MouseClicked
 
     private void btn_11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_11MouseEntered
         // TODO add your handling code here:
+        btn_11.setBackground(new Color(40, 57, 80));
+        btn_11.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_btn_11MouseEntered
 
     private void btn_11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_11MouseExited
         // TODO add your handling code here:
+        btn_11.setBackground(new Color(23, 35, 51));
     }//GEN-LAST:event_btn_11MouseExited
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
