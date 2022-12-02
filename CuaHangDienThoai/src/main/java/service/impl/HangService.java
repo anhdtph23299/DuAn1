@@ -79,5 +79,10 @@ public class HangService implements IHangService{
         }
         return listSearch;
     }
+
+    @Override
+    public Hang getOne(String id) {
+        return hangRe.getOne(id);
+    }
     
 }

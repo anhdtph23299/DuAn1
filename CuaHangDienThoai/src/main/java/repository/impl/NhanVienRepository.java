@@ -25,7 +25,7 @@ public class NhanVienRepository implements INhanVienRepository {
     public List<QLNhanVien> getAll() {
         List<QLNhanVien> list = new ArrayList<>();
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr) FROM domainmodel.NhanVien x ");
+            Query q = session.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr, x.taiKhoan, x.chucVu) FROM domainmodel.NhanVien x ");
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -84,7 +84,7 @@ public class NhanVienRepository implements INhanVienRepository {
     @Override
     public List<QLNhanVien> search(String CCCD) {
         try ( Session sess = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = sess.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr) FROM domainmodel.NhanVien x WHERE x.cccd LIKE CONCAT('%',:CCCD,'%') "
+            Query qr = sess.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr, x.taiKhoan, x.chucVu) FROM domainmodel.NhanVien x WHERE x.cccd LIKE CONCAT('%',:CCCD,'%') "
                     + "OR x.hoTen LIKE CONCAT('%',:ten,'%') "
                     + "OR x.diaChi LIKE CONCAT('%',:diaChi,'%') "
                     + "OR x.email LIKE CONCAT('%',:email,'%') "

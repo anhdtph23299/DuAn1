@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package service;
+
+<<<<<<< HEAD
+
+import domainmodel.ChucVu;
+
+=======
+import domainmodel.ChucVu;
+>>>>>>> bb71ecedf4383022fd34e4a7e54433a0b1f919b9
+import viewmodel.QlChucVu;
+import java.util.List;
+
+/**
+ *
+ * @author ongbi
+ */
+public interface IChucVuService {
+    List<QlChucVu> getAll();
+
+    String save(QlChucVu qLCv);
+    
+    String update(QlChucVu qLCv);
+
+    String delete(QlChucVu qLCv);
+<<<<<<< HEAD
+
+=======
+>>>>>>> bb71ecedf4383022fd34e4a7e54433a0b1f919b9
+    
+    ChucVu getOne(String ten);
+}

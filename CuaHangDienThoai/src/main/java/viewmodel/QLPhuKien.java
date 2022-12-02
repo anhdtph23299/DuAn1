@@ -4,6 +4,7 @@
  */
 package viewmodel;
 
+import domainmodel.Hang;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class QLPhuKien {
     private int thoiGianBaoHanh;
     private String moTa;
     private int trangThai;
-    
+    private Hang hang;
     public Object[] toDataRow(){
         return new Object[]{ten, soLuong, giaBan, thoiGianBaoHanh, moTa, trangThai == 1 ? "Đang bán" : "Ngừng bán"};
     }
