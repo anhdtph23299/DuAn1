@@ -5,6 +5,7 @@
 package repository.impl;
 
 import domainmodel.HoaDonChiTiet;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -30,6 +31,14 @@ public class HoaDonChiTietRepository {
             return null;
         }
         return list;
+    }
+    public BigDecimal sumMoney(String maHD){
+        Session session = HibernatUtil.getFACTORY().openSession();
+        Query q = session.createQuery("select SUM(h.soLuong * h.donGia) from HoaDonChiTiet h where h.hoaDon.MaHD =:mahd"
+                , BigDecimal.class);
+        q.setParameter("mahd", maHD);
+        BigDecimal getSum = (BigDecimal) q.getSingleResult();
+        return getSum;
     }
 
     public HoaDonChiTiet getAllDT(String maHD, String maDT) {
@@ -61,13 +70,6 @@ public class HoaDonChiTietRepository {
             e.printStackTrace(System.out);
             return null;
         }
-    }
-    public static void main(String[] args) {
-//        for (HoaDonChiTiet x : getAllDT("HD05","DT05")) {
-//            System.out.println(x);
-//        }
-//        System.out.println(getAllDT("HD05","DT05").isEmpty());
-        System.out.println(getAll("HD05"));
     }
 
     public void SaveOrUpdate(HoaDonChiTiet hd) {

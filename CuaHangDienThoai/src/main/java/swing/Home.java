@@ -121,7 +121,7 @@ public class Home extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         modelHoaDon = (DefaultTableModel) tblHoaDon.getModel();
         modelHDCT = (DefaultTableModel) tblHoaDonChiTiet.getModel();
-        GridLayout gridLayout = new GridLayout(0, 6, 7, 5);
+        GridLayout gridLayout = new GridLayout(0, 6, 4, 5);
 //        FlowLayout flowLayout = new FlowLayout();
 //        flowLayout.setAlignment(FlowLayout.LEFT);
 //        flowLayout.setHgap(5);
@@ -356,6 +356,7 @@ public class Home extends javax.swing.JFrame {
         JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
         panel.add(label, BorderLayout.NORTH);
         JLabel ten = new JLabel(x.getTenDienThoai());
+        ten.setSize(120, HEIGHT);
         ten.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(ten, BorderLayout.CENTER);
         JLabel giaTien = new JLabel(String.valueOf(x.getGiaBan()));
@@ -410,16 +411,19 @@ public class Home extends javax.swing.JFrame {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
         JPanel panel = new JPanel();
+        panel.setLayout(layout);
         panel.setBackground(new java.awt.Color(255, 255, 255));
         panel.setSize(120, 70);
 //                panel.setBackground(Color.red);
         JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 60)));
         panel.add(label, BorderLayout.NORTH);
         JLabel ten = new JLabel(y.getTen());
+        ten.setSize(120, HEIGHT);
         ten.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(ten, BorderLayout.CENTER);
         JLabel giaTien = new JLabel(String.valueOf(y.getGiaBan()));
-        panel.add(giaTien, BorderLayout.CENTER);
+        //    panel.add(giaTien, BorderLayout.CENTER);
+        giaTien.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(giaTien, BorderLayout.SOUTH);
         panel.addMouseListener(new MouseListener() {
             @Override
@@ -618,12 +622,9 @@ public class Home extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
         pnlTong = new javax.swing.JPanel();
-        pnlMain = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         pnlBanHang = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
-        labelCamera = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHoaDonChiTiet = new javax.swing.JTable();
@@ -662,7 +663,7 @@ public class Home extends javax.swing.JFrame {
         jLabel143 = new javax.swing.JLabel();
         jScrollPane20 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
-        jButton36 = new javax.swing.JButton();
+        btnThanhToan = new javax.swing.JButton();
         jLabel144 = new javax.swing.JLabel();
         txtTongTien = new javax.swing.JTextField();
         jTextField97 = new javax.swing.JTextField();
@@ -915,6 +916,8 @@ public class Home extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
         jLabel112 = new javax.swing.JLabel();
+        pnlMain = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -1762,29 +1765,6 @@ public class Home extends javax.swing.JFrame {
         pnlTong.setBackground(new java.awt.Color(255, 255, 255));
         pnlTong.setLayout(new java.awt.CardLayout());
 
-        pnlMain.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setText("Main");
-
-        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
-        pnlMain.setLayout(pnlMainLayout);
-        pnlMainLayout.setHorizontalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainLayout.createSequentialGroup()
-                .addContainerGap(926, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(417, 417, 417))
-        );
-        pnlMainLayout.setVerticalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMainLayout.createSequentialGroup()
-                .addGap(306, 306, 306)
-                .addComponent(jLabel1)
-                .addContainerGap(428, Short.MAX_VALUE))
-        );
-
-        pnlTong.add(pnlMain, "cardMain");
-
         pnlBanHang.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel22.setMinimumSize(new java.awt.Dimension(200, 200));
@@ -1811,19 +1791,6 @@ public class Home extends javax.swing.JFrame {
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        labelCamera.setPreferredSize(new java.awt.Dimension(200, 200));
-
-        javax.swing.GroupLayout labelCameraLayout = new javax.swing.GroupLayout(labelCamera);
-        labelCamera.setLayout(labelCameraLayout);
-        labelCameraLayout.setHorizontalGroup(
-            labelCameraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        labelCameraLayout.setVerticalGroup(
-            labelCameraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Giỏ hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 13))); // NOI18N
@@ -2092,8 +2059,13 @@ public class Home extends javax.swing.JFrame {
         jTextArea5.setBorder(null);
         jScrollPane20.setViewportView(jTextArea5);
 
-        jButton36.setText("Thanh Toán");
-        jButton36.setBackground(new java.awt.Color(71, 120, 197));
+        btnThanhToan.setText("Thanh Toán");
+        btnThanhToan.setBackground(new java.awt.Color(71, 120, 197));
+        btnThanhToan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThanhToanActionPerformed(evt);
+            }
+        });
 
         jLabel144.setText("Khuyến mãi");
         jLabel144.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -2150,7 +2122,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(30, 30, 30))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
@@ -2191,7 +2163,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2234,17 +2206,12 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(pnlBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelCamera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(231, 231, 231)
+                .addGap(438, 438, 438)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         pnlBanHangLayout.setVerticalGroup(
             pnlBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBanHangLayout.createSequentialGroup()
-                .addComponent(labelCamera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlBanHangLayout.createSequentialGroup()
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -4524,6 +4491,29 @@ public class Home extends javax.swing.JFrame {
 
         pnlTong.add(pnlKhuyenMai, "cardKhuyenMai");
 
+        pnlMain.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setText("Main");
+
+        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
+        pnlMain.setLayout(pnlMainLayout);
+        pnlMainLayout.setHorizontalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainLayout.createSequentialGroup()
+                .addContainerGap(926, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(417, 417, 417))
+        );
+        pnlMainLayout.setVerticalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMainLayout.createSequentialGroup()
+                .addGap(306, 306, 306)
+                .addComponent(jLabel1)
+                .addContainerGap(428, Short.MAX_VALUE))
+        );
+
+        pnlTong.add(pnlMain, "cardMain");
+
         getContentPane().add(pnlTong, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 1380, 750));
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
@@ -4810,7 +4800,8 @@ public class Home extends javax.swing.JFrame {
         String date = hd.getNgayTao().toString();
         lblMaHD.setText(maHD);
         lblManV.setText(maNV);
-        System.out.println(date);
+        String text = String.format("%.0f", hoaDonChiTietRepo.sumMoney(maHD));
+        Home.txtTongTien.setText(text);
 //        lblNgayTao.setText(date.substring(0, date.indexOf(" ")));
         fillToHDCT(hd.getMaHD());
     }//GEN-LAST:event_tblHoaDonMouseClicked
@@ -5532,18 +5523,38 @@ public class Home extends javax.swing.JFrame {
 
     private void cboLocSanPhamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboLocSanPhamItemStateChanged
         // TODO add your handling code here:
-        scpSanPhamBH = new JScrollPane();
-        int index = cboLocSanPham.getSelectedIndex();
-        if (index == 0) {
-            addPanelDienThoai();
-            addPanelPhuKien();
-        } else if (index == 1) {
-            addPanelDienThoai();
-        } else {
-            addPanelPhuKien();
-        }
-
+//        scpSanPhamBH = new JScrollPane();
+//        int index = cboLocSanPham.getSelectedIndex();
+//        if (index == 0) {
+//            addPanelDienThoai();
+//            addPanelPhuKien();
+//        } else if (index == 1) {
+//            addPanelDienThoai();
+//        } else {
+//            addPanelPhuKien();
+//        }
     }//GEN-LAST:event_cboLocSanPhamItemStateChanged
+
+    private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
+        // TODO add your handling code here:
+        int row = tblHoaDon.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa chọn hoá đơn cần thanh toán");
+            return;
+        }
+        String maHd = tblHoaDon.getValueAt(row, 0).toString();
+        HoaDon hd = hoaDonRepo.getOne(maHd);
+        List<HoaDonChiTiet> hdct = HoaDonChiTietRepository.getAll(maHd);
+        if (hdct.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa thêm sản phẩm cần thanh toán");
+        } else {
+            JOptionPane.showMessageDialog(this, "Thanh toán thành công");
+            hd.setList(hdct);
+            hd.setTrangThai(1);
+            hoaDonRepo.SaveOrUpdate(hd);
+            fillToHoaDon();
+        }
+    }//GEN-LAST:event_btnThanhToanActionPerformed
     //Hết Code của Vanh
 
     /**
@@ -5614,6 +5625,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnTaoHoaDon;
     private javax.swing.JButton btnTaoMa;
     private javax.swing.JButton btnTaoMa2;
+    private javax.swing.JButton btnThanhToan;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnThemDT;
     private javax.swing.JButton btnThemKM;
@@ -5681,7 +5693,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
@@ -5869,7 +5880,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField97;
     private javax.swing.JTextField jTextField98;
-    private javax.swing.JPanel labelCamera;
     private javax.swing.JLabel lbAnhDT;
     private javax.swing.JLabel lblAnh;
     private javax.swing.JLabel lblAnhNV;
@@ -5953,6 +5963,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField txtTimKiemDienThoai;
     private javax.swing.JTextField txtTimKiemNV;
     private javax.swing.JTextField txtTimKiemPK;
-    private javax.swing.JTextField txtTongTien;
+    public static javax.swing.JTextField txtTongTien;
     // End of variables declaration//GEN-END:variables
 }
