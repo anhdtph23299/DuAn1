@@ -51,8 +51,8 @@ public class KhuyenMai implements Serializable {
     private Date ngayKT;
     @Column(name = "TrangThai", nullable = false)
     private Integer trangThai;
-//    @OneToMany(mappedBy = "khuyenMai", fetch = FetchType.LAZY)
-//    private List<ChiTietKhuyenMai> list;
+    @OneToMany(mappedBy = "khuyenMai", fetch = FetchType.LAZY)
+    private List<ChiTietKhuyenMai> list;
 
     public KhuyenMai(String maKM, String tenKM, BigDecimal soTienGiam, BigDecimal chietKhau, Date ngayBatDau, Date ngayKT, Integer trangThai) {
         this.maKM = maKM;

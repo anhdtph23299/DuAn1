@@ -4736,7 +4736,7 @@ public class Home extends javax.swing.JFrame {
         String maHD = "HD" + (tblHoaDon.getRowCount() + 1);
         String maNV = "F8196D15-FAC4-4945-BA20-EDC29534D46A";
         LocalDateTime dateTime = LocalDateTime.now();
-        HoaDon hoaDon = new HoaDon(null, maHD, dateTime, null, 0, 0, null);
+        HoaDon hoaDon = new HoaDon(null, maHD, dateTime, null, 0, 0, null,null,null);
         hoaDonRepo.SaveOrUpdate(hoaDon);
         fillToHoaDon();
     }//GEN-LAST:event_btnTaoHoaDonActionPerformed

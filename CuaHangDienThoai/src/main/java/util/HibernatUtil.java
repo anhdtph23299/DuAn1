@@ -1,14 +1,18 @@
 package util;
 
 import domainmodel.ChiTietKhuyenMai;
+import domainmodel.ChucVu;
 import domainmodel.NhanVien;
 import domainmodel.PhuKien;
 import domainmodel.DienThoai;
+import domainmodel.DienThoaiNCC;
 import domainmodel.Hang;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import domainmodel.KhachHang;
 import domainmodel.KhuyenMai;
+import domainmodel.NhaCungCap;
+import domainmodel.PhuKienNCC;
 import domainmodel.TaiKhoan;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
@@ -45,6 +49,11 @@ public class HibernatUtil {
         conf.addAnnotatedClass(Hang.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(ChiTietKhuyenMai.class);
+        conf.addAnnotatedClass(ChucVu.class);
+        conf.addAnnotatedClass(DienThoaiNCC.class);
+        conf.addAnnotatedClass(PhuKienNCC.class);
+        conf.addAnnotatedClass(NhaCungCap.class);
+        
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

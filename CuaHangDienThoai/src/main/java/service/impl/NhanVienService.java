@@ -27,7 +27,7 @@ public class NhanVienService implements INhanVienService {
     }
 
     public String add(QLNhanVien qlnv) {
-        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(),null,null,null,null);
         boolean add = nhanVienRepository.add(nhanVien);
         if (add) {
             return "Add thành công";
@@ -38,7 +38,7 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public String update(QLNhanVien qlnv, UUID id) {
-        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null,null,null,null);
         boolean update = nhanVienRepository.update(nhanVien, id);
         if (update) {
             return "Update thành công";
