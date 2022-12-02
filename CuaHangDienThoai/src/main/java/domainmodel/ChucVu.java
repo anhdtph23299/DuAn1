@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package domainmodel;
 
 import java.math.BigDecimal;
@@ -13,14 +10,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.implementation.bind.annotation.Empty;
 
 /**
  *
@@ -33,8 +28,7 @@ import net.bytebuddy.implementation.bind.annotation.Empty;
 @Setter
 @Entity
 public class ChucVu {
-
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
     private UUID id;
@@ -54,5 +48,4 @@ public class ChucVu {
 
     @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
     private List<NhanVien> nhanVien;
-
 }
