@@ -32,17 +32,17 @@ public class ChiTietKhuyenMai {
     @Column(name = "IdCTKM")
     private UUID id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "IdKM")
-//    private KhuyenMai khuyenMai;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "IdKM")
-//    private PhuKien phuKien;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "IdKM")
-//    private DienThoai dienThoai;
+    @ManyToOne
+    @JoinColumn(name = "IdKM")
+    private KhuyenMai khuyenMai;
+
+    @ManyToOne
+    @JoinColumn(name = "IdPK")
+    private PhuKien phuKien;
+
+    @ManyToOne
+    @JoinColumn(name = "IdDienThoai")
+    private DienThoai dienThoai;
     
     @Column(name = "SoTienGiam")
     private BigDecimal soTienGiam;

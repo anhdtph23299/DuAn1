@@ -47,7 +47,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String update(KhuyenMaiViewModel x, UUID id) {
-        KhuyenMai km = new KhuyenMai(x.getId(), x.getMaKM(), x.getTenKM(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai());
+        KhuyenMai km = new KhuyenMai(x.getId(), x.getMaKM(), x.getTenKM(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(),null);
 
         boolean sua = kmRep.update(km, id);
         if (sua) {

@@ -1,14 +1,18 @@
 package util;
 
 import domainmodel.ChiTietKhuyenMai;
+import domainmodel.ChucVu;
 import domainmodel.NhanVien;
 import domainmodel.PhuKien;
 import domainmodel.DienThoai;
+import domainmodel.DienThoaiNCC;
 import domainmodel.Hang;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import domainmodel.KhachHang;
 import domainmodel.KhuyenMai;
+import domainmodel.NhaCungCap;
+import domainmodel.PhuKienNCC;
 import domainmodel.TaiKhoan;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
@@ -27,7 +31,7 @@ public class HibernatUtil {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=LONG");
+        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=DuAn1");
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "123456");
         properties.put(Environment.SHOW_SQL, "true");
@@ -45,6 +49,11 @@ public class HibernatUtil {
         conf.addAnnotatedClass(Hang.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(ChiTietKhuyenMai.class);
+        conf.addAnnotatedClass(ChucVu.class);
+        conf.addAnnotatedClass(DienThoaiNCC.class);
+        conf.addAnnotatedClass(PhuKienNCC.class);
+        conf.addAnnotatedClass(NhaCungCap.class);
+        
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

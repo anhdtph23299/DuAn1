@@ -14,6 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -55,7 +57,13 @@ public class HoaDon {
     
     @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> list;
+    @ManyToOne
+    @JoinColumn(name = "IdKH")
+    private KhachHang khachHang;
     
+    @ManyToOne
+    @JoinColumn(name = "IdNhanVien")
+    private NhanVien nhanVien;
 
     public String getTrangThaiStr() {
         return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";

@@ -72,16 +72,7 @@ public class PhuKien {
     @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> listHDCT;
 
-//    @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
-//    private List<ChiTietKhuyenMai> listCTKM;
+    @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
+    private List<ChiTietKhuyenMai> listCTKM;
 
-//    public PhuKien(String ma, String ten, int soLuong, BigDecimal giaBan, int thoiGianBaoHanh, String moTa, int trangThai) {
-//        this.ma = ma;
-//        this.ten = ten;
-//        this.soLuong = soLuong;
-//        this.giaBan = giaBan;
-//        this.thoiGianBaoHanh = thoiGianBaoHanh;
-//        this.moTa = moTa;
-//        this.trangThai = trangThai;
-//    }
 }

@@ -58,8 +58,7 @@ public class HoaDonChiTiet {
     @Column(name = "DonGia")
     private BigDecimal donGia;
 
-//    @OneToMany(mappedBy = "")
-//    private List<CTKM> dienThoai;
+
 
     @Override
     public String toString() {
