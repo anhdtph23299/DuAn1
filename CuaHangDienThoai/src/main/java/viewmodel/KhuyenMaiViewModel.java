@@ -28,23 +28,27 @@ public class KhuyenMaiViewModel {
     private UUID id;
     private String maKM;
     private String tenKM;
-    private BigDecimal soTienGiam;
-    private BigDecimal chietKhau;
+    private BigDecimal mucKhuyenMai;
+    private String hinhThucKhuyenMai;
     private Date ngayBatDau;
     private Date ngayKT;
     private Integer trangThai;
+    private String moTa;
 
-    public KhuyenMaiViewModel(String maKM, String tenKM, BigDecimal soTienGiam, BigDecimal chietKhau, Date ngayBatDau, Date ngayKT, Integer trangThai) {
+    public Object[] toDataRow() {
+//        Date today = new Date(System.currentTimeMillis());
+        return new Object[]{maKM, tenKM, hinhThucKhuyenMai, mucKhuyenMai, ngayBatDau, ngayKT, trangThai==1? "Đang hoạt động" : "Hết hiệu lực", moTa};
+    }
+
+    public KhuyenMaiViewModel(String maKM, String tenKM, BigDecimal mucKhuyenMai, String hinhThucKhuyenMai, Date ngayBatDau, Date ngayKT, Integer trangThai, String moTa) {
         this.maKM = maKM;
         this.tenKM = tenKM;
-        this.soTienGiam = soTienGiam;
-        this.chietKhau = chietKhau;
+        this.mucKhuyenMai = mucKhuyenMai;
+        this.hinhThucKhuyenMai = hinhThucKhuyenMai;
         this.ngayBatDau = ngayBatDau;
         this.ngayKT = ngayKT;
         this.trangThai = trangThai;
+        this.moTa = moTa;
     }
 
-    public Object[] toDataRow() {
-        return new Object[]{maKM, tenKM, soTienGiam, chietKhau, ngayBatDau, ngayKT,trangThai==1?"Hết hiệu lực":"Đang hoạt động"};
-    }
 }

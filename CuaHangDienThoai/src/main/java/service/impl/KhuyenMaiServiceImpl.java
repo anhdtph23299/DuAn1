@@ -28,7 +28,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     public List<KhuyenMaiViewModel> getAll() {
         List<KhuyenMai> list = kmRep.getAll();
         for (KhuyenMai x : list) {
-            KhuyenMaiViewModel md = new KhuyenMaiViewModel(x.getId(), x.getMaKM(), x.getTenKM(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai());
+            KhuyenMaiViewModel md = new KhuyenMaiViewModel(x.getId(), x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
             listQL.add(md);
         }
         return listQL;
@@ -36,7 +36,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String add(KhuyenMaiViewModel x) {
-        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai());
+        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
+        if (km.getNgayKT().before(km.getNgayBatDau())) {
+            return "Sai lè";
+        }
         boolean add = kmRep.add(km);
         if (add) {
             return "Thêm thành công";
@@ -47,8 +50,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String update(KhuyenMaiViewModel x, UUID id) {
-        KhuyenMai km = new KhuyenMai(x.getId(), x.getMaKM(), x.getTenKM(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(),null);
-
+        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
         boolean sua = kmRep.update(km, id);
         if (sua) {
             return "Sửa thành công";
@@ -65,6 +67,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
         } else {
             return "Xóa thất bại";
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new KhuyenMaiServiceImpl().getAll());
     }
 
 }
