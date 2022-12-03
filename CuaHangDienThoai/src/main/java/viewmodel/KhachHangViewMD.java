@@ -42,7 +42,7 @@ public class KhachHangViewMD implements Serializable {
     private Integer namSinh;
 
     public Object[] toDataRow() {
-        return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi, ngayMua, diemTichLuy, ghiChu};
+        return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi,  diemTichLuy, ghiChu};
     }
 
 }

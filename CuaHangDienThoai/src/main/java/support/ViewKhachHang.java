@@ -24,6 +24,7 @@ public class ViewKhachHang extends javax.swing.JFrame {
 
     public ViewKhachHang() {
         initComponents();
+        setLocationRelativeTo(null);
         model = (DefaultTableModel) tblKhachHangCu.getModel();
         fillToTable();
     }
