@@ -34,6 +34,8 @@ public class KhuyenMaiViewModel {
     private Date ngayKT;
     private Integer trangThai;
     private String moTa;
+    
+
 
     public Object[] toDataRow() {
 //        Date today = new Date(System.currentTimeMillis());
