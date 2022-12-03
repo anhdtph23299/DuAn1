@@ -43,6 +43,17 @@ public class HoaDonRepository {
         }
         return null;
     }
+    public List<HoaDon> getHoaDons(int trangThai) {
+        String hql = "FROM HoaDon h WHERE h.trangThai =:trangthai";
+        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
+            Query q = session.createQuery(hql);
+            q.setParameter("trangthai", trangThai);
+            return q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
         HoaDonChiTiet hdct  = getOne("HD05").getList().get(0);

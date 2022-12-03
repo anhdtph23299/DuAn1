@@ -60,4 +60,8 @@ public class KhachHang implements Serializable {
     private String ghiChu;
     @OneToMany(mappedBy = "khachHang", fetch = FetchType.LAZY)
     private List<HoaDon> listHoaDon;
+    @Override
+    public String toString() {
+        return hoTenKH;
+    }
 }
