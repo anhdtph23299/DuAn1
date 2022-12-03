@@ -20,19 +20,6 @@ import util.HibernatUtil;
 public class HangRepository implements IHangRepository {
 
     @Override
-    public Hang getOne(String ten) {
-        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
-            Query query = session.createQuery("FROM Hang where ten like :ten");
-            query.setParameter("ten", ten);
-            Hang hang = (Hang) query.getSingleResult();
-            return hang;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
     public List<Hang> getHHD() {
         List<Hang> list = new ArrayList<>();
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {

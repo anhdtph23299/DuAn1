@@ -5,7 +5,6 @@
 package service;
 
 
-import domainmodel.Hang;
 import java.util.List;
 import viewmodel.QLHang;
 
@@ -26,7 +25,5 @@ public interface IHangService {
     String update(QLHang hang);
     
     String delete(QLHang hang);
-    
-    Hang getOne(String id);
     
 }

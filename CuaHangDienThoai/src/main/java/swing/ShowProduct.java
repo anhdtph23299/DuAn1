@@ -8,7 +8,6 @@ import domainmodel.DienThoai;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -165,8 +164,6 @@ public class ShowProduct extends javax.swing.JFrame {
         txtMoTa.setColumns(20);
         txtMoTa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtMoTa.setRows(5);
-        txtMoTa.setMaximumSize(new java.awt.Dimension(100, 104));
-        txtMoTa.setPreferredSize(new java.awt.Dimension(100, 104));
         jScrollPane1.setViewportView(txtMoTa);
 
         jButton2.setText("Thoát");
@@ -346,9 +343,6 @@ public class ShowProduct extends javax.swing.JFrame {
             Home.fillToHDCT(hoaDon.getMaHD());
             JOptionPane.showMessageDialog(this, "Vì sản phẩm này đã có nên sửa lại số lượng");
         }
-        String text = String.format("%.0f",hoaDonChiTietRepo.sumMoney(hoaDon.getMaHD()));
-       // DecimalFormat twoPlaces = new DecimalFormat("#.###.###.###");
-        Home.txtTongTien.setText(text);
 //        modelHDCT.addRow(new Object[]{dienThoai.getTenDienThoai(), slStr, dienThoai.getGiaBan(), dienThoai.getGia(Integer.valueOf(slStr))});
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed

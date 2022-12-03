@@ -4,8 +4,6 @@
  */
 package viewmodel;
 
-import domainmodel.ChucVu;
-import domainmodel.TaiKhoan;
 import java.util.UUID;
 import javax.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -35,8 +33,6 @@ public class QLNhanVien {
     private Integer trangThai;
     private byte[] anh;
     private String qr;
-    private TaiKhoan taiKhoan;
-    private ChucVu chucVu;
 
     public Object[] toDataRow(){
         return new Object[]{ma, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", namSinh, diaChi, cccd, email, sdt, trangThai == 1 ? "Đang làm việc" : "Đã nghỉ việc"};
