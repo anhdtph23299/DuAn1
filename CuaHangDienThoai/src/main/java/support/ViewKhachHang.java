@@ -60,8 +60,8 @@ public class ViewKhachHang extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        radioNam = new javax.swing.JRadioButton();
-        radioNu = new javax.swing.JRadioButton();
+        rdoNam = new javax.swing.JRadioButton();
+        rdoNu = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         txtHoTenKHMoi = new javax.swing.JTextField();
         txtCccdKHMoi = new javax.swing.JTextField();
@@ -70,6 +70,7 @@ public class ViewKhachHang extends javax.swing.JFrame {
         txtNamSinhKHMoi = new javax.swing.JTextField();
         txtEmailKHMoi = new javax.swing.JTextField();
         btnLayThongTinKhachHangMoi = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Thông tin khách hàng");
@@ -150,15 +151,23 @@ public class ViewKhachHang extends javax.swing.JFrame {
 
         jLabel6.setText("Năm sinh:");
 
-        buttonGroup1.add(radioNam);
-        radioNam.setText("Nam");
+        buttonGroup1.add(rdoNam);
+        rdoNam.setSelected(true);
+        rdoNam.setText("Nam");
 
-        buttonGroup1.add(radioNu);
-        radioNu.setText("Nữ");
+        buttonGroup1.add(rdoNu);
+        rdoNu.setText("Nữ");
 
         jLabel7.setText("Email:");
 
         btnLayThongTinKhachHangMoi.setText("Lấy thông tin");
+        btnLayThongTinKhachHangMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLayThongTinKhachHangMoiActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Quét QR");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -167,7 +176,10 @@ public class ViewKhachHang extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLayThongTinKhachHangMoi)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(38, 38, 38)
+                        .addComponent(btnLayThongTinKhachHangMoi))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,9 +197,9 @@ public class ViewKhachHang extends javax.swing.JFrame {
                             .addComponent(txtCccdKHMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSoDienThoaiKHMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(radioNam)
+                                .addComponent(rdoNam)
                                 .addGap(45, 45, 45)
-                                .addComponent(radioNu))
+                                .addComponent(rdoNu))
                             .addComponent(txtHoTenKHMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(188, Short.MAX_VALUE))
         );
@@ -209,8 +221,8 @@ public class ViewKhachHang extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(radioNam)
-                    .addComponent(radioNu))
+                    .addComponent(rdoNam)
+                    .addComponent(rdoNu))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
@@ -224,7 +236,9 @@ public class ViewKhachHang extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(txtEmailKHMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
-                .addComponent(btnLayThongTinKhachHangMoi)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLayThongTinKhachHangMoi)
+                    .addComponent(jButton1))
                 .addContainerGap(129, Short.MAX_VALUE))
         );
 
@@ -265,6 +279,18 @@ public class ViewKhachHang extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Lấy thông tin thành công");
         dispose();
     }//GEN-LAST:event_LayThongTinKHCuActionPerformed
+
+    private void btnLayThongTinKhachHangMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLayThongTinKhachHangMoiActionPerformed
+        // TODO add your handling code here:
+        String hoTen = txtHoTenKHMoi.getText().trim();
+        String soCCCD = txtCccdKHMoi.getText().trim();
+        String sdt = txtSoDienThoaiKHMoi.getText().trim();
+        int gt = rdoNam.isSelected()?1:0;
+        String diaChi = txtDiaChiKHMoi.getText().trim();
+        String namSinh = txtNamSinhKHMoi.getText().trim();
+        String email = txtEmailKHMoi.getText().trim();
+//        KhachHang kh = new KhachHang(null, hoTen, soCCCD, Integer.parseInt(namSinh), null, sdt, email, diaChi, WIDTH, WIDTH, diaChi, listHoaDon);
+    }//GEN-LAST:event_btnLayThongTinKhachHangMoiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,6 +333,7 @@ public class ViewKhachHang extends javax.swing.JFrame {
     private javax.swing.JButton btnHuyLTT;
     private javax.swing.JButton btnLayThongTinKhachHangMoi;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -318,8 +345,8 @@ public class ViewKhachHang extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JRadioButton radioNam;
-    private javax.swing.JRadioButton radioNu;
+    private javax.swing.JRadioButton rdoNam;
+    private javax.swing.JRadioButton rdoNu;
     private javax.swing.JTable tblKhachHangCu;
     private javax.swing.JTextField txtCccdKHMoi;
     private javax.swing.JTextField txtDiaChiKHMoi;

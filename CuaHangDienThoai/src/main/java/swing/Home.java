@@ -4924,12 +4924,27 @@ public class Home extends javax.swing.JFrame {
 
         cbSelectAll.setText("Select All");
         cbSelectAll.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbSelectAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSelectAllActionPerformed(evt);
+            }
+        });
 
         cbClearAll.setText("Clear All");
         cbClearAll.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbClearAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbClearAllActionPerformed(evt);
+            }
+        });
 
         show.setText("Show");
         show.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
@@ -6054,6 +6069,26 @@ public class Home extends javax.swing.JFrame {
     private void tblKMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKMMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tblKMMouseClicked
+
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
+        // TODO add your handling code here:
+        listQLDienThoai = dienThoaiService.getAll();
+        showTableDTKM(listQLDienThoai);
+    }//GEN-LAST:event_showActionPerformed
+
+    private void cbClearAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbClearAllActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < listQLDienThoai.size(); i++) {
+            tblDienThoaiKM.setValueAt(false, i, 3);
+        }
+    }//GEN-LAST:event_cbClearAllActionPerformed
+
+    private void cbSelectAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSelectAllActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < listQLDienThoai.size(); i++) {
+            tblDienThoaiKM.setValueAt(true, i, 3);
+        }
+    }//GEN-LAST:event_cbSelectAllActionPerformed
     //Hết Code của Vanh
 
     /**
