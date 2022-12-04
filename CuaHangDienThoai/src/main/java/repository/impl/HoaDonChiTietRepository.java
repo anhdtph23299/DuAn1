@@ -94,6 +94,20 @@ public class HoaDonChiTietRepository {
             transaction.rollback();
         }
     }
+    public void deleteAll(String maHD) {
+        Transaction transaction = null;
+        String hql = "delete HoaDonChiTiet hdct WHERE hdct.hoaDon.MaHD =:mahd";
+        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            Query q = session.createQuery(hql);
+            q.setParameter("mahd", maHD);
+            q.executeUpdate();
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            transaction.rollback();
+        }
+    }
 
     public BigDecimal sumMoney(String maHD) {
        Session session = HibernatUtil.getFACTORY().openSession();

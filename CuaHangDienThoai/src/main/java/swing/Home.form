@@ -1416,7 +1416,7 @@
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="jButton40" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton41" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLamMoi" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="jButton42" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1464,7 +1464,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton42" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton41" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLamMoi" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton40" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1603,10 +1603,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton40ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton41">
+            <Component class="javax.swing.JButton" name="btnLamMoi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="L&#xe0;m M&#x1edb;i gi&#x1ecf; h&#xe0;ng"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLamMoiActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton42">
               <Properties>

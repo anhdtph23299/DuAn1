@@ -636,7 +636,7 @@ public class Home extends javax.swing.JFrame {
         tblHoaDonChiTiet = new javax.swing.JTable();
         btnTaoHoaDon = new javax.swing.JButton();
         jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
+        btnLamMoi = new javax.swing.JButton();
         jButton42 = new javax.swing.JButton();
         jPanel24 = new javax.swing.JPanel();
         jScrollPane18 = new javax.swing.JScrollPane();
@@ -1894,7 +1894,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton41.setText("Làm Mới giỏ hàng");
+        btnLamMoi.setText("Làm Mới giỏ hàng");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
         jButton42.setText("Quét mã ");
         jButton42.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2236,7 +2241,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(jButton40)
                         .addGap(91, 91, 91)
-                        .addComponent(jButton41)
+                        .addComponent(btnLamMoi)
                         .addGap(59, 59, 59)
                         .addComponent(jButton42))
                     .addGroup(pnlBanHangLayout.createSequentialGroup()
@@ -2274,7 +2279,7 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton42)
-                    .addComponent(jButton41)
+                    .addComponent(btnLamMoi)
                     .addComponent(jButton40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5621,6 +5626,8 @@ public class Home extends javax.swing.JFrame {
         Integer tienKhachDua = Integer.parseInt(tienKhachDuaStr);
         Integer tienTra = tienKhachDua - tongTien;
         txtTienTraKhach.setText(String.valueOf(tienTra));
+        java.util.Date d = new java.util.Date();
+        d.t
     }//GEN-LAST:event_txtTienKhachDuaKeyPressed
 
     private void tblHoaDonChiTietMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonChiTietMouseClicked
@@ -5726,7 +5733,11 @@ public class Home extends javax.swing.JFrame {
 
     private void cboHoaDonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboHoaDonItemStateChanged
         // TODO add your handling code here:
-        int index = cboHoaDon.getSelectedIndex() + 1;
+        int index = cboHoaDon.getSelectedIndex() -1;
+        if (index==-1) {
+            fillToHoaDon(hoaDonRepo.getAll());
+            return;
+        }
         fillToHoaDon(hoaDonRepo.getHoaDons(index));
     }//GEN-LAST:event_cboHoaDonItemStateChanged
 
@@ -5801,6 +5812,22 @@ public class Home extends javax.swing.JFrame {
     private void pnlHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHoaDonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlHoaDonMouseClicked
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+        int row = tblHoaDon.getSelectedRow();
+        if (row==-1) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa chọn hoá đơn cần làm mới giỏ hàng");
+            return;
+        }
+        int check = JOptionPane.showConfirmDialog(this, "Bạn có chắc làm mới giỏ hàng", "Làm mới giỏ hàng", JOptionPane.YES_NO_OPTION);
+        if (check!=JOptionPane.YES_OPTION) {
+            return;
+        }
+        String maHD = tblHoaDon.getValueAt(row, 0).toString();
+        hoaDonChiTietRepo.deleteAll(maHD);
+        modelHDCT.setRowCount(0);
+    }//GEN-LAST:event_btnLamMoiActionPerformed
     //Hết Code của Vanh
 
     /**
@@ -5861,6 +5888,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnClearNV;
     private javax.swing.JButton btnClearPK;
     private javax.swing.JButton btnHuyHoaDon;
+    private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnLamMoiDT;
     private javax.swing.JButton btnLayThongTin;
     private javax.swing.JButton btnNext;
@@ -5944,7 +5972,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
