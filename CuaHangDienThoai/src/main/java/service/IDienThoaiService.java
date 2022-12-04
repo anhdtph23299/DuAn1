@@ -24,4 +24,6 @@ public interface IDienThoaiService {
     String xoa(UUID idDienThoai);
 
     List<DienThoai> timKiem(String tenDienThoai);
+
+    List<QLDienThoai> getSP(String ten);
 }

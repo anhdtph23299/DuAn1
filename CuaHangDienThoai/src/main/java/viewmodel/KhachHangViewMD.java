@@ -5,7 +5,7 @@
 package viewmodel;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,7 +42,7 @@ public class KhachHangViewMD implements Serializable {
     private Integer namSinh;
 
     public Object[] toDataRow() {
-        return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi,  diemTichLuy, ghiChu};
+        return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi, ngayMua, diemTichLuy, ghiChu};
     }
 
 }

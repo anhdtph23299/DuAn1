@@ -7,6 +7,7 @@ package repository;
 import domainmodel.KhuyenMai;
 import java.util.List;
 import java.util.UUID;
+import viewmodel.KhuyenMaiViewModel;
 
 /**
  *
@@ -14,7 +15,9 @@ import java.util.UUID;
  */
 public interface IKhuyenMaiRepository {
 
-    List<KhuyenMai> getAll();
+    List<KhuyenMaiViewModel> getAll() ;
+
+    List<KhuyenMai> themKM();
 
     Boolean add(KhuyenMai km);
 

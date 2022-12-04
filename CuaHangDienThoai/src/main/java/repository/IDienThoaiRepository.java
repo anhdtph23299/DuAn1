@@ -16,6 +16,8 @@ public interface IDienThoaiRepository {
 
     List<DienThoai> getAll();
 
+    List<DienThoai> getSP(String ten);
+
     DienThoai getOne(String ma);
 
     boolean save(DienThoai dienThoai);

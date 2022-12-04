@@ -33,10 +33,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
     }
 
     public static void main(String[] args) {
-        DienThoaiRepository dienThoaiRepository = new DienThoaiRepository();
-        for (DienThoai x : dienThoaiRepository.getAll()) {
-            System.out.println(x);
-        }
+        System.out.println(new DienThoaiRepository().getSP("dgfh"));
     }
     @Override
     public DienThoai getOne(String ma) {
@@ -121,4 +118,17 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         }
         return listTimKiem;
     }
+
+    @Override
+    public List<DienThoai> getSP(String ten) {
+       List<DienThoai> listDienThoai;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT dt From DienThoai dt where dt.maDienThoai=:ten");
+            q.setParameter("ten", ten);
+            listDienThoai = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return listDienThoai; }
 }

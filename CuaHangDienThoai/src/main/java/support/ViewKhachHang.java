@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import repository.impl.KhachHangRepository;
 import swing.Home;
+import viewmodel.KhachHangViewMD;
 
 /**
  *
@@ -31,7 +32,7 @@ public class ViewKhachHang extends javax.swing.JFrame {
 
     void fillToTable(){
         model.setRowCount(0);
-        for (KhachHang x : kh.getAll()) {
+        for (KhachHangViewMD x : kh.getAll()) {
             model.addRow(new Object[]{x.getCCCD(),x,x.getSDT(),x.getDiaChi(),x.getNamSinh(),x.getGioiTinh()==0?"Nữ":"Nam",x.getDiemTichLuy()});
         }
     }

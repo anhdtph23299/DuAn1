@@ -176,12 +176,14 @@ CREATE TABLE KhuyenMai(
 	Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
 	Ma VARCHAR(20) UNIQUE,
 	Ten NVARCHAR(100) NOT NULL,
-	SoTienGiam MONEY ,
-	ChietKhau INT,
+	MucKhuyenMai DECIMAL(20,0),
+	HinhThucKhuyenMai  NVARCHAR(MAX),
+	MoTa  NVARCHAR(MAX),
 	TrangThai INT,
 	NgayBatDau DATE  NOT NULL,
 	NgayKetThuc DATE  NOT NULL
 )
+--//String maKM, String tenKM, BigDecimal mucKhuyenMai, String hinhThucKhuyenMai, Date ngayBatDau, Date ngayKT, Integer trangThai, String moTa
 GO
 --Công
 CREATE TABLE Cong(

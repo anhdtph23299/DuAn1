@@ -14,6 +14,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import repository.IKhuyenMaiRepository;
 import util.HibernatUtil;
+import viewmodel.KhuyenMaiViewModel;
+
 /**
  *
  * @author hoant
@@ -21,9 +23,9 @@ import util.HibernatUtil;
 public class KhuyenMaiRepository implements IKhuyenMaiRepository {
 
     @Override
-    public List<KhuyenMai> getAll() {
+    public List<KhuyenMaiViewModel> getAll() {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = session.createQuery("FROM KhuyenMai kh");
+            Query qr = session.createQuery("SELECT new viewmodel.KhuyenMaiViewModel(km.id,km.maKM,km.tenKM,km.mucKhuyenMai,km.hinhThucKhuyenMai,km.ngayBatDau,km.ngayKT,km.trangThai,km.moTa) FROM domainmodel.KhuyenMai km");
             return qr.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -51,11 +53,11 @@ public class KhuyenMaiRepository implements IKhuyenMaiRepository {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {
             tran = session.beginTransaction();
             KhuyenMai kh1 = session.get(KhuyenMai.class, id);
-            kh1.setChietKhau(km.getChietKhau());
+//            kh1.setChietKhau(km.getChietKhau());
             kh1.setMaKM(km.getMaKM());
             kh1.setNgayBatDau(km.getNgayBatDau());
             kh1.setNgayKT(km.getNgayKT());
-            kh1.setSoTienGiam(km.getSoTienGiam());
+//            kh1.setSoTienGiam(km.getSoTienGiam());
             kh1.setTenKM(km.getTenKM());
             kh1.setTrangThai(km.getTrangThai());
             session.update(kh1);
@@ -83,7 +85,20 @@ public class KhuyenMaiRepository implements IKhuyenMaiRepository {
     }
 
     public static void main(String[] args) {
-        System.out.println(new KhuyenMaiRepository().getAll());
+        System.out.println(new KhuyenMaiRepository().themKM());
+    }
+
+    @Override
+    public List<KhuyenMai> themKM() {
+        try (Session session = HibernatUtil.getFACTORY().openSession()) {
+            //String maKM, String tenKM, BigDecimal mucKhuyenMai, String hinhThucKhuyenMai, Date ngayBatDau, Date ngayKT, Integer trangThai, String moTa
+//            Query qr = session.createQuery("SELECT new viewmodel.KhuyenMaiViewModel(km.id,km.maKM,km.tenKM,km.mucKhuyenMai,km.hinhThucKhuyenMai,km.ngayBatDau,km.ngayKT,km.trangThai,km.moTa) FROM domainmodel.KhuyenMai km");
+            Query qr = session.createQuery("SELECT km.id, km.maKM,km.tenKM,km.mucKhuyenMai,km.hinhThucKhuyenMai,km.hinhThucKhuyenMai,km.ngayBatDau,km.ngayKT,km.trangThai,km.moTa FROM KhuyenMai km LEFT JOIN km.id ctkm ");
+            return qr.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return null;
     }
 
 }

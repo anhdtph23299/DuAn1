@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import repository.IKhachHangRepository;
 import util.HibernatUtil;
+import viewmodel.KhachHangViewMD;
 
 /**
  *
@@ -20,9 +21,9 @@ import util.HibernatUtil;
 public class KhachHangRepository implements IKhachHangRepository {
 
     @Override
-    public List<KhachHang> getAll() {
-        try (Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = session.createQuery("FROM KhachHang kh");
+    public List<KhachHangViewMD> getAll() {
+        try (Session session = HibernatUtil.getFACTORY().openSession()) {//UUID id, String CCCD, String hoTen, String ghiChu, String SDT, String email, String diaChi, Integer diemTichLuy, Integer gioiTinh, Date ngayMua, Integer namSinh
+            Query qr = session.createQuery("SELECT new viewmodel.KhachHangViewMD(kh.id,kh.CCCD,kh.hoTenKH,kh.ghiChu,kh.SDT,kh.email,kh.diaChi,kh.diemTichLuy,kh.gioiTinh,kh.ngayMua,kh.namSinh)FROM KhachHang kh");
             return qr.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -85,7 +86,7 @@ public class KhachHangRepository implements IKhachHangRepository {
     }
 
     public static void main(String[] args) {
-        System.out.println(new KhachHangRepository().search("0987"));
+        System.out.println(new KhachHangRepository().getAll());
     }
 
     @Override
