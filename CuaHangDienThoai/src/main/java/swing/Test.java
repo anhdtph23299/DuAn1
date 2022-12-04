@@ -5,8 +5,6 @@
 package swing;
 
 import domainmodel.DienThoai;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
@@ -20,7 +18,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 import repository.impl.DienThoaiRepository;
 import util.ImageHelper;
 
@@ -37,37 +34,30 @@ public class Test extends javax.swing.JFrame {
 
     public Test() {
         initComponents();
-        addPanel();
-        Test that;
-        that = this;
+//        addPanel();
+//        Test that;
+//        that = this;
     }
 
     void addPanel() {
         FlowLayout flowLayout = new FlowLayout();
         flowLayout.setAlignment(FlowLayout.LEFT);
-        flowLayout.setHgap(10);
-        flowLayout.setVgap(10);
+        flowLayout.setHgap(2);
+        flowLayout.setVgap(2);
         pnlTong.setLayout(flowLayout);
         DienThoai dienThoai = dienThoaiRepository.getAll().get(0);
         try {
             Image img = ImageHelper.createFromByteArray(dienThoai.getAnh(), "png");
 //            Image setImg = img.getScaledInstance(lblAnh.getWidth(), lblAnh.getHeight(), Image.SCALE_SMOOTH);
             for (int i = 0; i < 20; i++) {
-                BorderLayout borderLayout = new BorderLayout();
-                borderLayout.setVgap(4);
                 JPanel panel = new JPanel();
                 panel.setBackground(new java.awt.Color(255, 255, 255));
-                panel.setSize(100, 100);
-                panel.setLayout(borderLayout);
+                panel.setSize(100, 60);
 //                panel.setBackground(Color.red);
-                JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 100, 70)));
-                panel.add(label, BorderLayout.NORTH);
+                JLabel label = new JLabel(new ImageIcon(ImageHelper.resige(img, 80, 50)));
+                panel.add(label);
                 JLabel ten = new JLabel("Iphone X");
                 panel.add(ten);
-                panel.add(ten, BorderLayout.CENTER);
-                JLabel label1 = new JLabel("7000");
-                label1.setForeground(Color.red);
-                panel.add(label1, BorderLayout.SOUTH);
                 panel.addMouseListener(new MouseListener() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -111,8 +101,12 @@ public class Test extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         scpTong = new javax.swing.JScrollPane();
         pnlTong = new javax.swing.JPanel();
+        txtNgayBatDau = new com.toedter.calendar.JDateChooser();
+        txtNgayKetThuc = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,26 +115,69 @@ public class Test extends javax.swing.JFrame {
         pnlTong.setBackground(new java.awt.Color(255, 255, 255));
         scpTong.setViewportView(pnlTong);
 
+        jButton1.setText("tìm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(scpTong, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(scpTong, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNgayKetThuc, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                            .addComponent(txtNgayBatDau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scpTong, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(scpTong, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(txtNgayBatDau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(3, 3, 3)
+                .addComponent(txtNgayKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jButton1)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        checkvalidate();
+    }//GEN-LAST:event_jButton1ActionPerformed
+ boolean checkvalidate(){
+             if (txtNgayBatDau.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Chưa nhập ngày bắt đầu", "Lỗi",JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        if (txtNgayKetThuc.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Chưa nhập ngày kết thúc", "Lỗi",JOptionPane.ERROR_MESSAGE);
+        return false;
+        }  
+        if (txtNgayBatDau.getDate() == txtNgayKetThuc.getDate()) {
+            JOptionPane.showMessageDialog(null, "không tìm trong cùng ngày", "Lỗi",JOptionPane.ERROR_MESSAGE);
+        return false;
+        }  
+        
+        return true ;
+    }
     /**
      * @param args the command line arguments
      */
@@ -177,7 +214,11 @@ public class Test extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel pnlTong;
     private javax.swing.JScrollPane scpTong;
+    private com.toedter.calendar.JDateChooser txtNgayBatDau;
+    private com.toedter.calendar.JDateChooser txtNgayKetThuc;
     // End of variables declaration//GEN-END:variables
 }
