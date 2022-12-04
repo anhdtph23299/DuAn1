@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author ME1
  */
-public class login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public login() {
+    public Login() {
         initComponents();
         txtusername.setBackground(new java.awt.Color(0, 0, 0, 1));
         txtpassword.setBackground(new java.awt.Color(0, 0, 0, 1));
@@ -70,11 +70,11 @@ public class login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(25, 118, 211));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("X");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -158,11 +158,11 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(cbRemember, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 261, -1, -1));
 
+        lbForgetPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        lbForgetPassword.setForeground(new java.awt.Color(199, 226, 255));
         lbForgetPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbForgetPassword.setText("Quên Mật Khẩu ?");
         lbForgetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbForgetPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        lbForgetPassword.setForeground(new java.awt.Color(199, 226, 255));
         lbForgetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbForgetPasswordMouseClicked(evt);
@@ -170,11 +170,11 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(lbForgetPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 261, 121, 27));
 
-        btnLogin.setText("Đăng Nhập");
         btnLogin.setBackground(new java.awt.Color(255, 255, 255));
-        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(25, 118, 211));
+        btnLogin.setText("Đăng Nhập");
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -223,15 +223,8 @@ public class login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-//        if (txtusername.getText().isBlank() || String.valueOf(txtpassword.getPassword()).isBlank()) {
-//            JOptionPane.showMessageDialog(this, "Tài Khoản hoặc Mật Khẩu Đang Trống, Vui Lòng Điền Đầy Đủ Thông Tin!!!");
-//        } else {
-//            String taiKhoan = txtusername.getText();
-//            String matKhau = String.valueOf(txtpassword.getPassword());
-//            
-//        }
-Home home = new Home();
-home.setVisible(true);
+        new Home().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void cbRememberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRememberActionPerformed
@@ -259,14 +252,22 @@ home.setVisible(true);
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -279,7 +280,7 @@ home.setVisible(true);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }

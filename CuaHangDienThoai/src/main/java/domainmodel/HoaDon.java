@@ -55,17 +55,17 @@ public class HoaDon {
     @Column(name = "TrangThai")
     private int trangThai;
     
-    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> list;
-     @ManyToOne
+   @ManyToOne
     @JoinColumn(name = "IdKH", nullable = false)
     private KhachHang khachhang ;
  @ManyToOne
     @JoinColumn(name = "IdNhanVien", nullable = false)
     private NhanVien nhanvien ;
-//    public String getTrangThai() {
-//        return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
-//    }
+    
+
+  
 
     @Override
     public String toString() {

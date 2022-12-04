@@ -23,16 +23,11 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public List<QLNhanVien> getAll() {
-        List<QLNhanVien> list = new ArrayList<>();
-        for (NhanVien x : nhanVienRepository.getAll()) {
-            QLNhanVien nhanVien = new QLNhanVien(x.getId(), x.getMa(), x.getHoTen(), x.getGioiTinh(), x.getNamSinh(), x.getDiaChi(), x.getCccd(), x.getEmail(), x.getSdt(), x.getTrangThai(), x.getAnh(), null);
-            list.add(nhanVien);
-        }
-        return list;
+        return nhanVienRepository.getAll();
     }
 
     public String add(QLNhanVien qlnv) {
-        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        NhanVien nhanVien = new NhanVien(null, qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(),null,null,null,null);
         boolean add = nhanVienRepository.add(nhanVien);
         if (add) {
             return "Add thành công";
@@ -43,7 +38,7 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public String update(QLNhanVien qlnv, UUID id) {
-        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null);
+        NhanVien nhanVien = new NhanVien(qlnv.getId(), qlnv.getMa(), qlnv.getHoTen(), qlnv.getGioiTinh(), qlnv.getNamSinh(), qlnv.getDiaChi(), qlnv.getCccd(), qlnv.getEmail(), qlnv.getSdt(), qlnv.getTrangThai(), qlnv.getAnh(), null,null,null,null);
         boolean update = nhanVienRepository.update(nhanVien, id);
         if (update) {
             return "Update thành công";
@@ -64,12 +59,7 @@ public class NhanVienService implements INhanVienService {
     
     @Override
     public List<QLNhanVien> search(String CCCD) {
-        List<QLNhanVien> list = new ArrayList<>();
-        for (NhanVien x : nhanVienRepository.search(CCCD)) {
-            QLNhanVien nhanVien = new QLNhanVien(x.getId(), x.getMa(), x.getHoTen(), x.getGioiTinh(), x.getNamSinh(), x.getDiaChi(), x.getCccd(), x.getEmail(), x.getSdt(), x.getTrangThai(), x.getAnh(), null);
-            list.add(nhanVien);
-        }
-        return list;
+        return nhanVienRepository.search(CCCD);
     }
     
 }

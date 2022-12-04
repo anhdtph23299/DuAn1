@@ -15,6 +15,7 @@ import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import domainmodel.DienThoai;
+import domainmodel.HoaDon;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Executor;
@@ -42,11 +43,17 @@ public class MaQR extends javax.swing.JFrame implements Runnable, ThreadFactory 
     private static final long serialVersionUID = 6441489157408381878L;
     private Executor executor = Executors.newSingleThreadExecutor(this);
     DienThoaiRepository dienThoai = new DienThoaiRepository();
-
+HoaDon hd1;
     public MaQR() {
         initComponents();
         setLocationRelativeTo(null);
         initWebcam();
+    }
+    public MaQR(HoaDon hd) {
+        initComponents();
+        setLocationRelativeTo(null);
+        initWebcam();
+        hd1 = hd;
     }
 
    private void initWebcam() {
@@ -93,7 +100,7 @@ public class MaQR extends javax.swing.JFrame implements Runnable, ThreadFactory 
             if (result != null) {
 //                result_field.setText(result.getText());
                 DienThoai dienThoai = this.dienThoai.getOne(result.getText());
-//                ShowProduct.getValues(dienThoai);
+                ShowProduct.getValues(dienThoai,hd1);
                 webcam.close();
                 dispose();
             }

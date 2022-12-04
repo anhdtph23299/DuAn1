@@ -5,6 +5,7 @@
 package repository.impl;
 
 import domainmodel.HoaDon;
+import domainmodel.HoaDonChiTiet;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Query;
@@ -43,7 +44,22 @@ public class HoaDonRepository   {
         }
         return null;
     }
+    public List<HoaDon> getHoaDons(int trangThai) {
+        String hql = "FROM HoaDon h WHERE h.trangThai =:trangthai";
+        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
+            Query q = session.createQuery(hql);
+            q.setParameter("trangthai", trangThai);
+            return q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    public static void main(String[] args) {
+        HoaDonChiTiet hdct  = getOne("HD05").getList().get(0);
+        System.out.println(hdct);
+    }
     public void SaveOrUpdate(HoaDon hd) {
         Transaction transaction = null;
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {

@@ -20,6 +20,7 @@ import viewmodel.QLDienThoai;
  */
 public class DienThoaiService implements IDienThoaiService {
 // Dũng Code
+
     IDienThoaiRepository dienThoaiRepository = new DienThoaiRepository();
 
     @Override
@@ -34,7 +35,7 @@ public class DienThoaiService implements IDienThoaiService {
 
     @Override
     public String them(QLDienThoai QLDienThoai) {
-        DienThoai dienThoai = new DienThoai(null, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null, null);
+        DienThoai dienThoai = new DienThoai(null, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null,null,null);
         if (dienThoaiRepository.save(dienThoai)) {
             return "Them Thanh Cong";
         } else {
@@ -44,7 +45,7 @@ public class DienThoaiService implements IDienThoaiService {
 
     @Override
     public String sua(QLDienThoai QLDienThoai, UUID idDienThoai) {
-        DienThoai dienThoai = new DienThoai(idDienThoai, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null, null);
+        DienThoai dienThoai = new DienThoai(idDienThoai, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null,null,null);
         if (dienThoaiRepository.update(dienThoai, idDienThoai)) {
             return "Sua Thanh Cong";
         } else {
@@ -61,12 +62,23 @@ public class DienThoaiService implements IDienThoaiService {
             return "Xoa That Bai";
         }
     }
-    public DienThoai getOne(String ma){
+
+    public DienThoai getOne(String ma) {
         return dienThoaiRepository.getOne(ma);
     }
 
     @Override
     public List<DienThoai> timKiem(String tenDienThoai) {
         return dienThoaiRepository.timKiem(tenDienThoai);
+    }
+
+    @Override
+    public List<QLDienThoai> getSP(String ten) {
+        List<QLDienThoai> listDT1 = new ArrayList<>();
+        for (DienThoai dienThoai : dienThoaiRepository.getSP(ten)) {
+            QLDienThoai qlDienThoai = new QLDienThoai(dienThoai.getIdDienThoai(), dienThoai.getMaDienThoai(), dienThoai.getTenDienThoai(), dienThoai.getSoLuongTon(), dienThoai.getCPU(), dienThoai.getRAM(), dienThoai.getROM(), dienThoai.getManHinh(), dienThoai.getMauSac(), dienThoai.getPin(), dienThoai.getCamera(), dienThoai.getHeDieuHanh(), dienThoai.getAnh(), dienThoai.getGiaBan(), dienThoai.getThoiGianBaoHanh(), dienThoai.getMoTa(), dienThoai.getTrangThai());
+            listDT1.add(qlDienThoai);
+        }
+        return listDT1;
     }
 }

@@ -8,12 +8,11 @@ import domainmodel.DienThoai;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import net.bytebuddy.asm.Advice;
-import repository.IDienThoaiRepository;
-import repository.impl.DienThoaiRepository;
 import repository.impl.HoaDonChiTietRepository;
 import static swing.Home.modelHDCT;
 import util.ImageHelper;
@@ -28,15 +27,15 @@ public class ShowProduct extends javax.swing.JFrame {
      * Creates new form ShowProduct
      */
     HoaDonChiTietRepository hoaDonChiTietRepo = new HoaDonChiTietRepository();
-    IDienThoaiRepository dienThoaiRepo = new DienThoaiRepository();
     static DienThoai dienThoai;
     static HoaDon hoaDon;
+
     public ShowProduct() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-    public static String getValues(DienThoai dt,HoaDon hd) {
+    public static String getValues(DienThoai dt, HoaDon hd) {
         dienThoai = dt;
         hoaDon = hd;
         ShowProduct show = new ShowProduct();
@@ -210,19 +209,20 @@ public class ShowProduct extends javax.swing.JFrame {
                                     .addComponent(txtGiaBan, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtCam, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(22, 22, 22)
+                                        .addComponent(txtCam))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel8)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(txtManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblAnh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(12, 12, 12)
+                                        .addComponent(txtManHinh))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(lblAnh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -236,7 +236,7 @@ public class ShowProduct extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,11 +254,12 @@ public class ShowProduct extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSLT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(lblAnh, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
+                            .addComponent(txtSLT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblAnh, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHeDH, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +286,7 @@ public class ShowProduct extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,7 +297,9 @@ public class ShowProduct extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -316,21 +319,33 @@ public class ShowProduct extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Số lượng phải là số");
             return;
         }
-        if (soLuong<1) {
+        if (soLuong < 1) {
             JOptionPane.showMessageDialog(this, "Số lượng phải lớn hơn 1");
             return;
         }
-        if (soLuong>Integer.parseInt(txtSLT.getText())) {
+        if (soLuong > Integer.parseInt(txtSLT.getText())) {
             JOptionPane.showMessageDialog(this, "Số lượng phải ít hơn hàng hiện có");
             return;
         }
-        HoaDonChiTiet hdct = new HoaDonChiTiet();
-        hdct.setDienThoai(dienThoai);
-        hdct.setDonGia(dienThoai.getGiaBan());
-        hdct.setSoLuong(soLuong);
-        hdct.setHoaDon(hoaDon);
-        hoaDonChiTietRepo.SaveOrUpdate(hdct);
-        Home.fillToHDCT(hoaDon.getMaHD());
+
+        HoaDonChiTiet hdct = hoaDonChiTietRepo.getAllDT(hoaDon.getMaHD(), dienThoai.getMaDienThoai());
+        if (hdct == null) {
+            hdct = new HoaDonChiTiet();
+            hdct.setDienThoai(dienThoai);
+            hdct.setDonGia(dienThoai.getGiaBan());
+            hdct.setSoLuong(soLuong);
+            hdct.setHoaDon(hoaDon);
+            hoaDonChiTietRepo.SaveOrUpdate(hdct);
+            Home.fillToHDCT(hoaDon.getMaHD());
+            JOptionPane.showMessageDialog(this, "Thêm thành công");
+        } else {
+            hdct.setSoLuong(hdct.getSoLuong() + soLuong);
+            hoaDonChiTietRepo.SaveOrUpdate(hdct);
+            Home.fillToHDCT(hoaDon.getMaHD());
+            JOptionPane.showMessageDialog(this, "Vì sản phẩm này đã có nên sửa lại số lượng");
+        }
+        BigDecimal tongTien = hoaDonChiTietRepo.sumMoney(hoaDon.getMaHD());
+        Home.txtTongTien.setText(String.format("%.0f", tongTien)+" Đ");
 //        modelHDCT.addRow(new Object[]{dienThoai.getTenDienThoai(), slStr, dienThoai.getGiaBan(), dienThoai.getGia(Integer.valueOf(slStr))});
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed

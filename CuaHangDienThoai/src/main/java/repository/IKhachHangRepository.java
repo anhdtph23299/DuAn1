@@ -16,7 +16,7 @@ import viewmodel.KhachHangViewMD;
  */
 public interface IKhachHangRepository {
 
-    List<KhachHang> getAll();
+    List<KhachHangViewMD> getAll();
 
     List<KhachHang> search(String CCCD);
 

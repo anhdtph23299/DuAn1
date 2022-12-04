@@ -45,7 +45,7 @@ public class DienThoai {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
     
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuongTon;
 
     @Column(name = "CPU")
@@ -97,8 +97,8 @@ public class DienThoai {
     @OneToMany(mappedBy = "dienThoai", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> listHDCT;
 
-//    @OneToMany(mappedBy = "dienThoai", fetch = FetchType.LAZY)
-//    private List<ChiTietKhuyenMai> listCTKM;
+    @OneToMany(mappedBy = "dienThoai", fetch = FetchType.LAZY)
+    private List<ChiTietKhuyenMai> listCTKM;
 
     public BigDecimal getGia(int soLuong) {
         return giaBan.multiply(BigDecimal.valueOf(soLuong));

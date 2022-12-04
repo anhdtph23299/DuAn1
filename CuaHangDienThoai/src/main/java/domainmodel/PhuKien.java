@@ -47,7 +47,7 @@ public class PhuKien {
     @Column(name = "TenPhuKien")
     private String ten;
 
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuong;
 
     @Column(name = "GiaBan")
@@ -72,8 +72,8 @@ public class PhuKien {
     @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> listHDCT;
 
-//    @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
-//    private List<ChiTietKhuyenMai> listCTKM;
+    @OneToMany(mappedBy = "phuKien", fetch = FetchType.LAZY)
+    private List<ChiTietKhuyenMai> listCTKM;
 
 //    public PhuKien(String ma, String ten, int soLuong, BigDecimal giaBan, int thoiGianBaoHanh, String moTa, int trangThai) {
 //        this.ma = ma;

@@ -24,17 +24,11 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public List<QLPhuKien> getAll() {
-        List<QLPhuKien> list = new ArrayList<>();
-        for (PhuKien x : phuKienRe.getAll()) {
-            QLPhuKien phuKien = new QLPhuKien(x.getId(), x.getMa(), x.getTen(), x.getSoLuong(),
-                    x.getGiaBan(), x.getAnh(), x.getThoiGianBaoHanh(), x.getMoTa(), x.getTrangThai());
-            list.add(phuKien);
-        }
-        return list;
+        return phuKienRe.getAll();
     }
 
     public String add(QLPhuKien qLPhuKien) {
-        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null);
+        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null,null);
         boolean add = phuKienRe.add(phuKien);
         if (add) {
             return "Add thành công";
@@ -45,7 +39,7 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public String update(QLPhuKien qLPhuKien, UUID id) {
-        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null);
+        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null,null);
         boolean update = phuKienRe.update(phuKien, id);
         if (update) {
             return "Update thành công";
@@ -66,13 +60,12 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public List<QLPhuKien> search(String ten) {
-        List<QLPhuKien> list = new ArrayList<>();
-        for (PhuKien x : phuKienRe.search(ten)) {
-            QLPhuKien phuKien = new QLPhuKien(x.getId(), x.getMa(), x.getTen(), x.getSoLuong(),
-                    x.getGiaBan(), x.getAnh(), x.getThoiGianBaoHanh(), x.getMoTa(), x.getTrangThai());
-            list.add(phuKien);
-        }
-        return list;
+        return phuKienRe.search(ten);
+    }
+
+    @Override
+    public List<PhuKien> getAll1() {
+        return phuKienRe.getAll1();
     }
 
 }

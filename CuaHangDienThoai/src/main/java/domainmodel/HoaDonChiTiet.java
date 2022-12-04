@@ -58,13 +58,12 @@ public class HoaDonChiTiet {
     @Column(name = "DonGia")
     private BigDecimal donGia;
 
-//    @OneToMany(mappedBy = "")
-//    private List<CTKM> dienThoai;
 
+ public BigDecimal getGia() {
+        return donGia.multiply(BigDecimal.valueOf(soLuong));
+    }
     @Override
     public String toString() {
         return dienThoai==null?phuKien.getTen():dienThoai.getTenDienThoai() ;
     }
-    
-  
 }

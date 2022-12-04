@@ -17,31 +17,14 @@ import repository.impl.KhachHangRepository;
  *
  * @author hoant
  */
-public class KhachHangServiceImpl implements KhachHangService{
+public class KhachHangServiceImpl implements KhachHangService {
 
     KhachHangRepository khRep = new KhachHangRepository();
     List<KhachHangViewMD> listQL = new ArrayList<>();
 
     @Override
     public List<KhachHangViewMD> getAll() {
-        List<KhachHang> list = khRep.getAll();
-        for (KhachHang x : list) {
-            KhachHangViewMD md = new KhachHangViewMD();
-            md.setCCCD(x.getCCCD());
-            md.setDiaChi(x.getDiaChi());
-            md.setDiemTichLuy(x.getDiemTichLuy());
-            md.setEmail(x.getEmail());
-            md.setGioiTinh(x.getGioiTinh());
-            md.setId(x.getId());
-            md.setGhiChu(x.getGhiChu());
-            md.setHoTen(x.getHoTenKH());
-            md.setSDT(x.getSDT());
-            md.setGhiChu(x.getGhiChu());
-            md.setNgayMua(x.getNgayMua());
-            md.setNamSinh(x.getNamSinh());
-            listQL.add(md);
-        }
-        return listQL;
+        return khRep.getAll();
     }
 
     @Override

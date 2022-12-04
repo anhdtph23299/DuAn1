@@ -5,6 +5,7 @@
 package repository.impl;
 
 import domainmodel.NhanVien;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Query;
@@ -12,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernatUtil;
 import repository.INhanVienRepository;
+import viewmodel.QLNhanVien;
 
 /**
  *
@@ -20,21 +22,16 @@ import repository.INhanVienRepository;
 public class NhanVienRepository implements INhanVienRepository {
 
     @Override
-    public List<NhanVien> getAll() {
-        List<NhanVien> list;
+    public List<QLNhanVien> getAll() {
+        List<QLNhanVien> list = new ArrayList<>();
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("FROM NhanVien");
+            Query q = session.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr) FROM domainmodel.NhanVien x ");
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return null;
         }
         return list;
-    }
-
-    public static void main(String[] args) {
-        List<NhanVien> l = new NhanVienRepository().search("Nguyen Thi D");
-        System.out.println(l);
     }
 
     @Override
@@ -85,15 +82,15 @@ public class NhanVienRepository implements INhanVienRepository {
     }
 
     @Override
-    public List<NhanVien> search(String CCCD) {
+    public List<QLNhanVien> search(String CCCD) {
         try ( Session sess = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = sess.createQuery("SELECT n FROM NhanVien n WHERE n.cccd LIKE CONCAT('%',:CCCD,'%') "
-                    + "OR n.hoTen LIKE CONCAT('%',:ten,'%') "
-                    + "OR n.diaChi LIKE CONCAT('%',:diaChi,'%') "
-                    + "OR n.email LIKE CONCAT('%',:email,'%') "
-                    + "OR n.ma LIKE CONCAT('%',:ma,'%') "
-                    + "OR n.namSinh LIKE CONCAT('%',:namSinh,'%') "
-                    + "OR n.sdt LIKE CONCAT('%',:sdt,'%')");
+            Query qr = sess.createQuery("SELECT new viewmodel.QLNhanVien(x.id, x.ma, x.hoTen, x.gioiTinh, x.namSinh, x.diaChi, x.cccd, x.email, x.sdt, x.trangThai, x.anh, x.qr) FROM domainmodel.NhanVien x WHERE x.cccd LIKE CONCAT('%',:CCCD,'%') "
+                    + "OR x.hoTen LIKE CONCAT('%',:ten,'%') "
+                    + "OR x.diaChi LIKE CONCAT('%',:diaChi,'%') "
+                    + "OR x.email LIKE CONCAT('%',:email,'%') "
+                    + "OR x.ma LIKE CONCAT('%',:ma,'%') "
+                    + "OR x.namSinh LIKE CONCAT('%',:namSinh,'%') "
+                    + "OR x.sdt LIKE CONCAT('%',:sdt,'%')");
             qr.setParameter("CCCD", CCCD);
             qr.setParameter("ten", CCCD);
             qr.setParameter("diaChi", CCCD);
@@ -101,7 +98,7 @@ public class NhanVienRepository implements INhanVienRepository {
             qr.setParameter("ma", CCCD);
             qr.setParameter("namSinh", CCCD);
             qr.setParameter("sdt", CCCD);
-            List<NhanVien> list = qr.getResultList();
+            List<QLNhanVien> list = qr.getResultList();
             return list;
         } catch (Exception e) {
             e.printStackTrace(System.out);
