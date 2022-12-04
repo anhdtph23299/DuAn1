@@ -4650,11 +4650,11 @@ public class Home extends javax.swing.JFrame {
         txtMoT.setRows(5);
         jScrollPane14.setViewportView(txtMoT);
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton4.setText("Thêm");
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton5.setText("Sửa");
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -4836,11 +4836,6 @@ public class Home extends javax.swing.JFrame {
         });
         tblDienThoaiKM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblDienThoaiKM.setRowHeight(25);
-        tblDienThoaiKM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblDienThoaiKMMouseClicked(evt);
-            }
-        });
         jScrollPane15.setViewportView(tblDienThoaiKM);
 
         jTabbedPane5.addTab("Điện thoại", jScrollPane15);
@@ -4929,27 +4924,12 @@ public class Home extends javax.swing.JFrame {
 
         cbSelectAll.setText("Select All");
         cbSelectAll.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cbSelectAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbSelectAllActionPerformed(evt);
-            }
-        });
 
         cbClearAll.setText("Clear All");
         cbClearAll.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cbClearAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbClearAllActionPerformed(evt);
-            }
-        });
 
         show.setText("Show");
         show.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        show.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
@@ -5882,7 +5862,6 @@ public class Home extends javax.swing.JFrame {
         Integer tienTra = tienKhachDua - tongTien;
         txtTienTraKhach.setText(String.valueOf(tienTra));
         java.util.Date d = new java.util.Date();
-        d.t
     }//GEN-LAST:event_txtTienKhachDuaKeyPressed
 
     private void tblHoaDonChiTietMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonChiTietMouseClicked
@@ -6067,6 +6046,14 @@ public class Home extends javax.swing.JFrame {
     private void pnlHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHoaDonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlHoaDonMouseClicked
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLamMoiActionPerformed
+
+    private void tblKMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKMMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblKMMouseClicked
     //Hết Code của Vanh
 
     /**
