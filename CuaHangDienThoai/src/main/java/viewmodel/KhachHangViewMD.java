@@ -30,7 +30,7 @@ import lombok.ToString;
 public class KhachHangViewMD implements Serializable {
 
     private UUID id;
-    private String CCCD;
+    private String maKH;
     private String hoTen;
     private String ghiChu;
     private String SDT;
@@ -38,19 +38,10 @@ public class KhachHangViewMD implements Serializable {
     private String diaChi;
     private Integer diemTichLuy;
     private Integer gioiTinh;
-    private Date ngayMua;
-    private Integer namSinh;
+    private Date ngaySinh;
 
     public Object[] toDataRow() {
-        return new Object[]{CCCD, hoTen, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi, ngayMua, diemTichLuy, ghiChu};
+        return new Object[]{maKH, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi,ngaySinh, diemTichLuy, ghiChu};
     }
-
-    public KhachHangViewMD(UUID id, String hoTen) {
-        this.id = id;
-        this.hoTen = hoTen;
-    }
-
-   
-
 
 }

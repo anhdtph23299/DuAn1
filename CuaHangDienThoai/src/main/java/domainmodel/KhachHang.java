@@ -5,7 +5,7 @@
 package domainmodel;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -41,11 +41,9 @@ public class KhachHang implements Serializable {
     @Column(name = "HoVaTen", length = 15)
     private String hoTenKH;
     @Column(name = "CCCD", length = 15, nullable = false)
-    private String CCCD;
-    @Column(name = "NamSinh", nullable = false)
-    private Integer namSinh;
-    @Column(name = "NgayMua", nullable = false)
-    private Date ngayMua;
+    private String maKH;
+    @Column(name = "NgaySinh", nullable = false)
+    private Date ngaySinh;
     @Column(name = "Sdt", length = 30)
     private String SDT;
     @Column(name = "Email", length = 30)
@@ -58,7 +56,11 @@ public class KhachHang implements Serializable {
     private Integer gioiTinh;
     @Column(name = "GhiChu")
     private String ghiChu;
-    @OneToMany(mappedBy = "khachhang", fetch = FetchType.LAZY)
-    private List<HoaDon> lstNV;
-      
+    @OneToMany(mappedBy = "khachHang", fetch = FetchType.LAZY)
+    private List<HoaDon> listHoaDon;
+
+    @Override
+    public String toString() {
+        return hoTenKH;
+    }
 }

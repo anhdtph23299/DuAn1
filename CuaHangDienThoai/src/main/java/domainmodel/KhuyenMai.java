@@ -43,7 +43,7 @@ public class KhuyenMai implements Serializable {
     private String maKM;
     @Column(name = "Ten", nullable = false)
     private String tenKM;
-    @Column(name = "SoTienGiam")
+    @Column(name = "MucKhuyenMai")
     private BigDecimal mucKhuyenMai;
     @Column(name = "HinhThucKhuyenMai")
     private String hinhThucKhuyenMai;

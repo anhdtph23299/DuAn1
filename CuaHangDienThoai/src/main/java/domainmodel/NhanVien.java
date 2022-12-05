@@ -12,7 +12,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -69,8 +72,15 @@ public class NhanVien {
 //        this.sdt = sdt;
 //        this.trangThai = trangThai;
 //    }
-  @OneToMany(mappedBy = "nhanvien", fetch = FetchType.LAZY)
-    private List<HoaDon> lstNV;
+   @ManyToOne
+    @JoinColumn(name = "IdChucVu")
+    private ChucVu chucVu;
+    @OneToOne
+    @JoinColumn(name = "IdTaiKhoan")
+    private TaiKhoan taiKhoan;
+    @OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
+    private List<HoaDon> listHoaDon;
+
     @Override
     public String toString() {
         return "NhanVien{" + "id=" + id + ", ma=" + ma + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", namSinh=" + namSinh + ", diaChi=" + diaChi + ", cccd=" + cccd + ", email=" + email + ", sdt=" + sdt + ", trangThai=" + trangThai + ", anh=" + anh + ", qr=" + qr + '}';

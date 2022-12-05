@@ -11,7 +11,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.NativeQuery;
 import util.HibernatUtil;
 
 /**
@@ -49,7 +48,6 @@ public class HoaDonChiTietRepository {
             return null;
         }
     }
-
     public HoaDonChiTiet getAllPK(String maHD, String maPK) {
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
             Query q = session.createQuery("From HoaDonChiTiet c where c.hoaDon.MaHD =:mahd and c.phuKien.ma =:mapk");
@@ -64,6 +62,13 @@ public class HoaDonChiTietRepository {
             e.printStackTrace(System.out);
             return null;
         }
+    }
+    public static void main(String[] args) {
+//        for (HoaDonChiTiet x : getAllDT("HD05","DT05")) {
+//            System.out.println(x);
+//        }
+//        System.out.println(getAllDT("HD05","DT05").isEmpty());
+        System.out.println(getAll("HD05"));
     }
 
     public void SaveOrUpdate(HoaDonChiTiet hd) {
@@ -90,29 +95,10 @@ public class HoaDonChiTietRepository {
         }
     }
 
-    public static void deleteAll(String maHD) {
-        Transaction transaction = null;
-        String hql = "EXEC XoaSP :mahd";
-        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
-            transaction = session.beginTransaction();
-            Query q = session.createNativeQuery(hql);
-            q.setParameter("mahd", maHD);
-            q.executeUpdate();
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-            transaction.rollback();
-        }
-    }
-
-    public static void main(String[] args) {
-        deleteAll("HD04");
-    }
-
     public BigDecimal sumMoney(String maHD) {
-        Session session = HibernatUtil.getFACTORY().openSession();
-        Query q = session.createQuery("select SUM(h.soLuong * h.donGia) from HoaDonChiTiet h where h.hoaDon.MaHD =:mahd",
-                 BigDecimal.class);
+       Session session = HibernatUtil.getFACTORY().openSession();
+        Query q = session.createQuery("select SUM(h.soLuong * h.donGia) from HoaDonChiTiet h where h.hoaDon.MaHD =:mahd"
+                , BigDecimal.class);
         q.setParameter("mahd", maHD);
         BigDecimal getSum = (BigDecimal) q.getSingleResult();
         return getSum;

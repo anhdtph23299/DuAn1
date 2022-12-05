@@ -4,9 +4,10 @@
  */
 package viewmodel;
 
+import domainmodel.KhachHang;
+import domainmodel.NhanVien;
 import java.time.LocalDateTime;
 import java.util.UUID;
-import javax.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.Setter;
 
 /**
  *
- * @author Admin
+ * @author ongbi
  */
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,29 +23,16 @@ import lombok.Setter;
 @Setter
 public class QLHoaDon {
 
-    
-    private UUID IdHD;
-    private KhachHangViewMD IdKH;
-    private QLNhanVien IdNhanVien;
-    
+    private UUID idHD;
     private String MaHD;
-    private LocalDateTime NgayTao;
+    private LocalDateTime ngayTao;
     private LocalDateTime NgayThanhToan;
-    private int DiemTichLuy;
-    private int trangThai;
+    private Integer DiemTichLuy;
+    private Integer trangThai;
+    private KhachHang makhachHang;
+    private NhanVien manhanVien;
 
-    public QLHoaDon(UUID IdHD, String MaHD, LocalDateTime NgayThanhToan) {
-        this.IdHD = IdHD;
-        this.MaHD = MaHD;
-        this.NgayThanhToan = NgayThanhToan;
+    public Object getTrangThaiStr() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    public QLHoaDon(LocalDateTime NgayThanhToan) {
-        this.NgayThanhToan = NgayThanhToan;
-    }
-
-
-     
- 
-    
 }

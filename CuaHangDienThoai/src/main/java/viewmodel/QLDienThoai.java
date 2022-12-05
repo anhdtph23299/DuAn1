@@ -21,7 +21,7 @@ import lombok.Setter;
 @Setter
 public class QLDienThoai {
 // Dũng Code
-    private UUID IdDienThoai;
+    private UUID idDienThoai;
     private String maDienThoai;
     private String tenDienThoai;
     private Integer soLuongTon;
@@ -51,16 +51,4 @@ public class QLDienThoai {
         this.trangThai = trangThai;
     }
 
-    public QLDienThoai(UUID IdDienThoai, String maDienThoai) {
-        this.IdDienThoai = IdDienThoai;
-        this.maDienThoai = maDienThoai;
-    }
-
-    public QLDienThoai(UUID IdDienThoai) {
-        this.IdDienThoai = IdDienThoai;
-    }
-
-
-
- 
 }

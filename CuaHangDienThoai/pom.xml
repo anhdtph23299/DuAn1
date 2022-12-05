@@ -26,74 +26,6 @@
             <version>9.4.1.jre16</version>
         </dependency>
         
-        <!--thống kê-->
-        <dependency>
-    <groupId>org.jfree</groupId>
-    <artifactId>jcommon</artifactId>
-    <version>1.0.23</version>
-</dependency>
-<dependency>
-    <groupId>jfree</groupId>
-    <artifactId>jfreechart</artifactId>
-    <version>1.0.13</version>
-</dependency>
-
-<!--jj-->
-<!--xuat file exel--> 
-<dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.15</version>
-</dependency>
- <dependency>
-     <groupId>org.apache.commons</groupId>
-     <artifactId>commons-collections4</artifactId>
-     <version>4.4</version>
- </dependency>
- <dependency>
-     <groupId>javax.mail</groupId> 
-     <artifactId>javax.mail-api</artifactId> 
-     <version>1.6.0-rc1</version> 
- </dependency>
- <dependency>
-     <groupId>com.toedter</groupId> 
-     <artifactId>jcalendar</artifactId> 
-     <version>1.4</version> 
- </dependency>
-      <dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml-full</artifactId>
-    <version>5.2.3</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml</artifactId>
-    <version>5.2.3</version>
-</dependency>
-      
-     <dependency> 
-         <groupId>org.apache.poi</groupId> 
-         <artifactId>poi</artifactId> 
-         <version>5.2.3</version> 
-     </dependency> 
-      <dependency>
-    <groupId>org.apache.xmlbeans</groupId>
-    <artifactId>xmlbeans</artifactId>
-    <version>5.1.1</version>
-</dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-compress</artifactId>
-            <version>1.20</version>
-        </dependency>
-        <dependency>
-    <groupId>javax.activation</groupId>
-    <artifactId>activation</artifactId>
-    <version>1.1.1</version>
-</dependency>
-
-<!--thu vien xuat file o tren--> 
-
         <!-- https://mvnrepository.com/artifact/org.netbeans.external/AbsoluteLayout -->
         <dependency>
             <groupId>org.netbeans.external</groupId>
@@ -115,7 +47,7 @@
             <groupId>com.toedter</groupId>
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -195,32 +127,33 @@
     <artifactId>qrgen</artifactId>
     <version>1.4</version>
 </dependency>
+  <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-full</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+      
+        <dependency> 
+            <groupId>org.apache.poi</groupId> 
+            <artifactId>poi</artifactId> 
+            <version>5.2.3</version> 
+        </dependency> 
 
 
 <!--webcam-->
         
         <!-- Cam  ,QR-->
-<!--        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>RSCalendar</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>RSTableMetro</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>-->
     </dependencies>
     <repositories>
         <repository>
             <id>netbeans</id>
             <name>Netbeans rep</name>
             <url>http://bits.netbeans.org/maven2/</url>
-        </repository>
-        <repository>
-            <id>unknown-jars-temp-repo</id>
-            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
-            <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
 </project>

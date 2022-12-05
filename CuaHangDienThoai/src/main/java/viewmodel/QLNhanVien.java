@@ -42,11 +42,5 @@ public class QLNhanVien {
     public String toString() {
         return "QLNhanVien{" + "id=" + id + ", ma=" + ma + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", namSinh=" + namSinh + ", diaChi=" + diaChi + ", cccd=" + cccd + ", email=" + email + ", sdt=" + sdt + ", trangThai=" + trangThai + ", anh=" + anh + ", qr=" + qr + '}';
     }
-
-    public QLNhanVien(UUID id, String ma) {
-        this.id = id;
-        this.ma = ma;
-    }
-
     
 }

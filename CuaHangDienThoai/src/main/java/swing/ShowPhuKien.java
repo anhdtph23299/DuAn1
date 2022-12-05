@@ -9,8 +9,10 @@ import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
 import domainmodel.PhuKien;
 import java.io.IOException;
+import java.math.BigDecimal;
 import javax.swing.JOptionPane;
 import repository.impl.HoaDonChiTietRepository;
+import repository.impl.HoaDonRepository;
 import static swing.ShowProduct.dienThoai;
 import static swing.ShowProduct.hoaDon;
 import util.ImageHelper;
@@ -295,6 +297,8 @@ public class ShowPhuKien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vì sản phẩm này đã có nên sửa lại số lượng");
         }
         //        modelHDCT.addRow(new Object[]{phuKien.getTenDienThoai(), slStr, phuKien.getGiaBan(), phuKien.getGia(Integer.valueOf(slStr))});
+        BigDecimal tongTien = hoaDonChiTietRepo.sumMoney(hoaDon.getMaHD());
+        Home.txtTongTien.setText(String.format("%.0f", tongTien)+" Đ");
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
 

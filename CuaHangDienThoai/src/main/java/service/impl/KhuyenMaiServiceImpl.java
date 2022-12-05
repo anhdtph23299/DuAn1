@@ -8,6 +8,7 @@ import domainmodel.KhuyenMai;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import repository.IKhuyenMaiRepository;
@@ -32,8 +33,17 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     @Override
     public String add(KhuyenMaiViewModel x) {
         KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
+        if (km.getTenKM().isBlank()) {
+            return "Thiếu tên khuyến mãi";
+        }
+        if (km.getMucKhuyenMai()==null) {
+            return "Thiếu mức khuyến mãi khuyến mãi";
+        }
         if (km.getNgayKT().before(km.getNgayBatDau())) {
-            return "Sai lè";
+            return "Ngày kết thúc phải chọn ở sau ngày bắt đầu";
+        }
+        if (km.getNgayKT().after(new Date())) {
+            return "Ngày kết thúc phải phải ở hiện tại hoặc tương lai";
         }
         boolean add = kmRep.add(km);
         if (add) {

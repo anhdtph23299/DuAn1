@@ -12,13 +12,12 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernatUtil;
-import repository.IFHoaDonRespository;
 
 /**
  *
  * @author sktfk
  */
-public class HoaDonRepository   {
+public class HoaDonRepository {
 
     public List<HoaDon> getAll() {
         List<HoaDon> list;

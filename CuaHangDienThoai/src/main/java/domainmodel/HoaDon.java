@@ -5,6 +5,7 @@
 package domainmodel;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -16,7 +17,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,22 +50,24 @@ public class HoaDon {
     private LocalDateTime NgayThanhToan;
 
     @Column(name = "DiemTichLuy")
-    private int DiemTichLuy;
+    private Integer DiemTichLuy;
 
     @Column(name = "TrangThai")
-    private int trangThai;
+    private Integer trangThai;
     
     @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> list;
-   @ManyToOne
-    @JoinColumn(name = "IdKH", nullable = false)
-    private KhachHang khachhang ;
- @ManyToOne
-    @JoinColumn(name = "IdNhanVien", nullable = false)
-    private NhanVien nhanvien ;
+    @ManyToOne
+    @JoinColumn(name = "IdKH")
+    private KhachHang khachHang;
     
+    @ManyToOne
+    @JoinColumn(name = "IdNhanVien")
+    private NhanVien nhanVien;
 
-  
+    public String getTrangThaiStr() {
+        return trangThai == 0 ? "Chờ thanh toán" : trangThai==1?"Đã thanh toán":"Huỷ";
+    }
 
     @Override
     public String toString() {

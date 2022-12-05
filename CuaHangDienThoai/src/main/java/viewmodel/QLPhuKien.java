@@ -32,13 +32,4 @@ public class QLPhuKien {
         return new Object[]{ten, soLuong, giaBan, thoiGianBaoHanh, moTa, trangThai == 1 ? "Đang bán" : "Ngừng bán"};
     }
 
-    public QLPhuKien(UUID id, String ma) {
-        this.id = id;
-        this.ma = ma;
-    }
-
-  
-
-
-
 }
