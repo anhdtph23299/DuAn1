@@ -46,7 +46,7 @@ public class DienThoai implements Serializable {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
     
-    @Column(name = "SoLuong")
+    @Column(name = "SoLuongTon")
     private int soLuongTon;
 
     @Column(name = "CPU")

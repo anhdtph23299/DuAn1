@@ -32,14 +32,13 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String add(KhuyenMaiViewModel x) {
-        KhuyenMai km = new KhuyenMai(null, x.getMaKM(),  x.getTenKM(),x.getNgayBatDau(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayKT(), x.getLoaiKhuyenMai(),null);
-        
+        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
         if (km.getTenKM().isBlank()) {
             return "Thiếu tên khuyến mãi";
         }
-//        if (km.getMucKhuyenMai()==null) {
-//            return "Thiếu mức khuyến mãi khuyến mãi";
-//        }
+        if (km.getMucKhuyenMai()==null) {
+            return "Thiếu mức khuyến mãi khuyến mãi";
+        }
         if (km.getNgayKT().before(km.getNgayBatDau())) {
             return "Ngày kết thúc phải chọn ở sau ngày bắt đầu";
         }
@@ -56,7 +55,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String update(KhuyenMaiViewModel x, UUID id) {
-        KhuyenMai km = new KhuyenMai(x.getId(), x.getMaKM(),  x.getTenKM(),x.getNgayBatDau(), x.getSoTienGiam(), x.getChietKhau(), x.getNgayKT(), x.getLoaiKhuyenMai(),null);
+        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
         boolean sua = kmRep.update(km, id);
         if (sua) {
             return "Sửa thành công";

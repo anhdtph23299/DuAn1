@@ -36,7 +36,7 @@ public class KhachHangServiceImpl implements KhachHangService {
         md.setEmail(x.getEmail());
         md.setGioiTinh(x.getGioiTinh());
         md.setId(x.getId());
-        md.setNamSinh(x.getNamSinh());
+        md.setNgaySinh(x.getNgaySinh());
         md.setHoTenKH(x.getHoTen());
         md.setSDT(x.getSDT());
         md.setGhiChu(x.getGhiChu());
@@ -73,7 +73,7 @@ public class KhachHangServiceImpl implements KhachHangService {
         md.setDiemTichLuy(x.getDiemTichLuy());
         md.setEmail(x.getEmail());
         md.setGioiTinh(x.getGioiTinh());
-        md.setNamSinh(x.getNamSinh());
+        md.setNgaySinh(x.getNgaySinh());
         md.setHoTenKH(x.getHoTen());
         md.setSDT(x.getSDT());
         md.setGhiChu(x.getGhiChu());
@@ -128,7 +128,7 @@ public class KhachHangServiceImpl implements KhachHangService {
             md.setHoTen(x.getHoTenKH());
             md.setSDT(x.getSDT());
             md.setGhiChu(x.getGhiChu());
-            md.setNamSinh(x.getNamSinh());
+            md.setNgaySinh(x.getNgaySinh());
             listQL.add(md);
         }
         return listQL;

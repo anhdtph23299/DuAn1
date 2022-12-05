@@ -27,17 +27,19 @@ public class ChiTietKMCustom {
     private UUID id;
     private String maKM;
     private String tenKM;
+    private BigDecimal mucKhuyenMai;
+    private String hinhThucKhuyenMai;
     private Date ngayBatDau;
     private Date ngayKT;
-    private Integer loaiKhuyenMai;
-  
+    private Integer trangThai;
+    private String moTa;
     private String sanPham;
 
     public Object[] toDataRow() {
 
 //        Date today = new Date(System.currentTimeMillis()); 
         int stt = 1;
-        return new Object[]{maKM, tenKM, ngayBatDau, ngayKT, loaiKhuyenMai == 1 ? "Đang hoạt động" : "Hết hiệu lực"};
+        return new Object[]{maKM, tenKM, hinhThucKhuyenMai, mucKhuyenMai, ngayBatDau, ngayKT, trangThai == 1 ? "Đang hoạt động" : "Hết hiệu lực", moTa};
     }
 
 }
