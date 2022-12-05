@@ -42,8 +42,8 @@ public class KhachHang implements Serializable {
     private String hoTenKH;
     @Column(name = "CCCD", length = 15, nullable = false)
     private String maKH;
-    @Column(name = "NgaySinh", nullable = false)
-    private Date ngaySinh;
+    @Column(name = "NamSinh", nullable = false)
+    private int namSinh;
     @Column(name = "Sdt", length = 30)
     private String SDT;
     @Column(name = "Email", length = 30)

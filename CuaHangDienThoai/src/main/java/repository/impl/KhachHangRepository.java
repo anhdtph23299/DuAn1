@@ -23,7 +23,7 @@ public class KhachHangRepository implements IKhachHangRepository {
     @Override
     public List<KhachHangViewMD> getAll() {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {//UUID id, String CCCD, String hoTen, String ghiChu, String SDT, String email, String diaChi, Integer diemTichLuy, Integer gioiTinh, Date ngayMua, Integer namSinh
-            Query qr = session.createQuery("SELECT new viewmodel.KhachHangViewMD(kh.id,kh.maKH,kh.hoTenKH,kh.ghiChu,kh.SDT,kh.email,kh.diaChi,kh.diemTichLuy,kh.gioiTinh,kh.ngaySinh)FROM KhachHang kh");
+            Query qr = session.createQuery("SELECT new viewmodel.KhachHangViewMD(kh.id,kh.maKH,kh.hoTenKH,kh.ghiChu,kh.SDT,kh.email,kh.diaChi,kh.diemTichLuy,kh.gioiTinh,kh.namSinh)FROM KhachHang kh");
             return qr.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -58,7 +58,7 @@ public class KhachHangRepository implements IKhachHangRepository {
             kh1.setGhiChu(kh.getGhiChu());
             kh1.setGioiTinh(kh.getGioiTinh());
             kh1.setHoTenKH(kh.getHoTenKH());
-            kh1.setNgaySinh(kh.getNgaySinh());
+            kh1.setNamSinh(kh.getNamSinh());
             kh1.setSDT(kh.getSDT());
             session.update(kh1);
             tran.commit();

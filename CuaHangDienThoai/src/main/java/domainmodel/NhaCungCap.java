@@ -63,7 +63,11 @@ public class NhaCungCap implements Serializable {
     
     @OneToMany(mappedBy = "nhaCungCap", fetch = FetchType.LAZY)
     private List<PhuKienNCC> listPhuKienNCC;
-    
+       public NhaCungCap(UUID id, String ma) {
+        this.id = id;
+        this.ma = ma;
+       
+    }
 
 
 }

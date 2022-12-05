@@ -43,8 +43,8 @@ public class ChucVu {
 
     private BigDecimal luong;
 
-    @Column(name = "TrangThai")
-    private int trangThai;
+    @Column(name = "QuyenSD")
+    private int quyen;
 
     @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
     private List<NhanVien> nhanVien;

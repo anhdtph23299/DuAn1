@@ -4,6 +4,7 @@
  */
 package domainmodel;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
@@ -32,7 +33,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DienThoai {
+public class DienThoai implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,7 +46,7 @@ public class DienThoai {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
     
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuongTon;
 
     @Column(name = "CPU")
@@ -109,4 +110,11 @@ public class DienThoai {
         return tenDienThoai;
     }
 
+    public DienThoai(UUID idDienThoai, String maDienThoai) {
+        this.idDienThoai = idDienThoai;
+        this.maDienThoai = maDienThoai;
+        
+    }
+    
+    
 }

@@ -58,44 +58,46 @@ public class DTNhaCungCapService implements IDTNhaCungCapService {
 
     @Override
     public String save(QLDTNhaCungCap qLDTNhaCungCap) {
-//        NhaCungCap idNCC = new NhaCungCap(qLDTNhaCungCap.getQLNhaCungCap().getId(), qLDTNhaCungCap.getQLNhaCungCap().getMa());
-//        DienThoai idDT = new DienThoai(qLDTNhaCungCap.getQLDienThoai().getIdDienThoai(), qLDTNhaCungCap.getQLDienThoai().getMaDienThoai());
-//        DienThoaiNCC dienThoaiNCC = new DienThoaiNCC(null, idNCC, idDT, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
-//         if(dTNhaCungCap.SaveOrUpdate(dienThoaiNCC)){
-//         return "Save Compelte";
-//         }
-//         else{
-//             return "Save Fail";
-//         }
+        NhaCungCap idNCC = new NhaCungCap(qLDTNhaCungCap.getInhaCungCap(), qLDTNhaCungCap.getManhaCungCap());
+        DienThoai idDT = new DienThoai(qLDTNhaCungCap.getIdienThoai(), qLDTNhaCungCap.getMadienThoai());
+        DienThoaiNCC dienThoaiNCC = new DienThoaiNCC(null, idNCC, idDT, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
+         if(dTNhaCungCap.SaveOrUpdate(dienThoaiNCC)){
+         return "Save Compelte";
+         }
+         else{
+             return "Save Fail";
+         }
 
-        DienThoai dienThoai = new DienThoai();
-        if (map.containsKey(qLDTNhaCungCap.getMaDT())) {
-            dienThoai = (DienThoai) map.get(qLDTNhaCungCap.getMaDT());
-        }
-        NhaCungCap nhaCungCap = new NhaCungCap();
-        if (map.containsKey(qLDTNhaCungCap.getMaNCC())) {
-            nhaCungCap = (NhaCungCap) map.get(qLDTNhaCungCap.getMaNCC());
-        }
-        DienThoaiNCC dtncc = new DienThoaiNCC(null, nhaCungCap, dienThoai, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
-        if (dTNhaCungCap.SaveOrUpdate(dtncc)) {
-            return "Save Compelte";
-        } else {
-            return "Save Fail";
-        }
+//        DienThoai dienThoai = new DienThoai();
+//        if (map.containsKey(qLDTNhaCungCap.getMaDT())) {
+//            dienThoai = (DienThoai) map.get(qLDTNhaCungCap.getMaDT());
+//        }
+//        NhaCungCap nhaCungCap = new NhaCungCap();
+//        if (map.containsKey(qLDTNhaCungCap.getMaNCC())) {
+//            nhaCungCap = (NhaCungCap) map.get(qLDTNhaCungCap.getMaNCC());
+//        }
+//        DienThoaiNCC dtncc = new DienThoaiNCC(null, nhaCungCap, dienThoai, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
+//        if (dTNhaCungCap.SaveOrUpdate(dtncc)) {
+//            return "Save Compelte";
+//        } else {
+//            return "Save Fail";
+//        }
     }
 
     @Override
     public String update(QLDTNhaCungCap qLDTNhaCungCap) {
-        DienThoai dienThoai = new DienThoai();
-        if (map.containsKey(qLDTNhaCungCap.getMaDT())) {
-            dienThoai = (DienThoai) map.get(qLDTNhaCungCap.getMaDT());
-
-        }
-        NhaCungCap nhaCungCap = new NhaCungCap();
-        if (map.containsKey(qLDTNhaCungCap.getMaNCC())) {
-            nhaCungCap = (NhaCungCap) map.get(qLDTNhaCungCap.getMaNCC());
-        }
-        DienThoaiNCC dtncc = new DienThoaiNCC(qLDTNhaCungCap.getId(), nhaCungCap, dienThoai, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
+//        DienThoai dienThoai = new DienThoai();
+//        if (map.containsKey(qLDTNhaCungCap.getDienThoai().getMaDienThoai())) {
+//            dienThoai = (DienThoai) map.get(qLDTNhaCungCap.getDienThoai().getMaDienThoai());
+//
+//        }
+//        NhaCungCap nhaCungCap = new NhaCungCap();
+//        if (map.containsKey(qLDTNhaCungCap.getNhaCungCap().getMa())) {
+//            nhaCungCap = (NhaCungCap) map.get(qLDTNhaCungCap.getNhaCungCap().getMa());
+//        }
+ NhaCungCap idNCC = new NhaCungCap(qLDTNhaCungCap.getInhaCungCap(), qLDTNhaCungCap.getManhaCungCap());
+        DienThoai idDT = new DienThoai(qLDTNhaCungCap.getIdienThoai(), qLDTNhaCungCap.getMadienThoai());
+        DienThoaiNCC dtncc = new DienThoaiNCC(qLDTNhaCungCap.getId(), idNCC, idDT, qLDTNhaCungCap.getGiaNhap(), qLDTNhaCungCap.getSoLuongNhap(), qLDTNhaCungCap.getNgayNhap());
         if (dTNhaCungCap.SaveOrUpdate(dtncc)) {
             return "Update Compelte";
         } else {

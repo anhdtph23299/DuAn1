@@ -25,7 +25,7 @@ public class KhuyenMaiRepository implements IKhuyenMaiRepository {
     @Override
     public List<KhuyenMaiViewModel> getAll() {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = session.createQuery("SELECT new viewmodel.KhuyenMaiViewModel(km.id,km.maKM,km.tenKM,km.mucKhuyenMai,km.hinhThucKhuyenMai,km.ngayBatDau,km.ngayKT,km.trangThai,km.moTa) FROM domainmodel.KhuyenMai km");
+            Query qr = session.createQuery("SELECT new viewmodel.KhuyenMaiViewModel(km.id, km.maKM, km.tenKM, km.soTienGiam, km.chietKhau, km.ngayBatDau, km.ngayKT,km.loaiKhuyenMai) FROM domainmodel.KhuyenMai km");
             return qr.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -59,7 +59,7 @@ public class KhuyenMaiRepository implements IKhuyenMaiRepository {
             kh1.setNgayKT(km.getNgayKT());
 //            kh1.setSoTienGiam(km.getSoTienGiam());
             kh1.setTenKM(km.getTenKM());
-            kh1.setTrangThai(km.getTrangThai());
+            kh1.setLoaiKhuyenMai(km.getLoaiKhuyenMai());
             session.update(kh1);
             tran.commit();
             return true;
@@ -85,7 +85,7 @@ public class KhuyenMaiRepository implements IKhuyenMaiRepository {
     }
 
     public static void main(String[] args) {
-        System.out.println(new KhuyenMaiRepository().themKM());
+        System.out.println(new KhuyenMaiRepository().getAll());
     }
 
     @Override

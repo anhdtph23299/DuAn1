@@ -28,27 +28,27 @@ public class KhuyenMaiViewModel {
     private UUID id;
     private String maKM;
     private String tenKM;
-    private BigDecimal mucKhuyenMai;
-    private String hinhThucKhuyenMai;
+    private BigDecimal soTienGiam;
+    private BigDecimal chietKhau;
     private Date ngayBatDau;
     private Date ngayKT;
-    private Integer trangThai;
-    private String moTa;
+    private Integer loaiKhuyenMai;
+
 
     public Object[] toDataRow() {
 //        Date today = new Date(System.currentTimeMillis());
-        return new Object[]{maKM, tenKM, hinhThucKhuyenMai, mucKhuyenMai, ngayBatDau, ngayKT, trangThai==1? "Đang hoạt động" : "Hết hiệu lực", moTa};
+        return new Object[]{maKM, tenKM, soTienGiam, chietKhau, ngayBatDau, ngayKT,loaiKhuyenMai};
     }
 
-    public KhuyenMaiViewModel(String maKM, String tenKM, BigDecimal mucKhuyenMai, String hinhThucKhuyenMai, Date ngayBatDau, Date ngayKT, Integer trangThai, String moTa) {
-        this.maKM = maKM;
-        this.tenKM = tenKM;
-        this.mucKhuyenMai = mucKhuyenMai;
-        this.hinhThucKhuyenMai = hinhThucKhuyenMai;
-        this.ngayBatDau = ngayBatDau;
-        this.ngayKT = ngayKT;
-        this.trangThai = trangThai;
-        this.moTa = moTa;
-    }
+//    public KhuyenMaiViewModel(String maKM, String tenKM, BigDecimal mucKhuyenMai, String hinhThucKhuyenMai, Date ngayBatDau, Date ngayKT, Integer trangThai, String moTa) {
+//        this.maKM = maKM;
+//        this.tenKM = tenKM;
+//        this.mucKhuyenMai = mucKhuyenMai;
+//        this.hinhThucKhuyenMai = hinhThucKhuyenMai;
+//        this.ngayBatDau = ngayBatDau;
+//        this.ngayKT = ngayKT;
+//        this.trangThai = trangThai;
+//        this.moTa = moTa;
+//    }
 
 }

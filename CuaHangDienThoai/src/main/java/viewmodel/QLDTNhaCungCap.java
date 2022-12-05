@@ -23,9 +23,11 @@ import lombok.Setter;
 @Setter
 public class QLDTNhaCungCap {
 
-    private UUID id;
-    private String maNCC;
-    private String maDT;
+   private UUID id;
+    private UUID inhaCungCap;
+    private UUID idienThoai;
+    private String manhaCungCap;
+    private String madienThoai;
     private BigDecimal giaNhap;
     private int soLuongNhap;
     private Date ngayNhap;

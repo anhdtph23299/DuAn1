@@ -24,7 +24,7 @@ public class QlChucVu {
  private String Ma;
  private String Ten;
  private BigDecimal Luong;
- private int trangThai;
+ private int QuyenSD;
  
  
 }

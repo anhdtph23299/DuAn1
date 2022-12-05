@@ -57,7 +57,7 @@ public class ChucVu extends javax.swing.JFrame {
             Object[] rowData = {
                 qLChucVu.getMa(),
                 qLChucVu.getTen(),
-                qLChucVu.getTrangThai() == 0 ? "Đang Hoạt Động" : "Không Hoạt Động",
+                qLChucVu.getQuyenSD()== 0 ? "Đang Hoạt Động" : "Không Hoạt Động",
                 qLChucVu.getLuong()
 
             };
@@ -2386,7 +2386,7 @@ public class ChucVu extends javax.swing.JFrame {
             return;
         }
         QlChucVu qcv = listQL.get(row);
-        qcv.setTrangThai(1);
+        qcv.setQuyenSD(1);
 
         int chon = JOptionPane.showConfirmDialog(this, "Xóa Không", "Xóa", JOptionPane.YES_NO_OPTION);
         if (chon != JOptionPane.YES_OPTION) {
@@ -2422,7 +2422,7 @@ public class ChucVu extends javax.swing.JFrame {
             return;
         }
         QlChucVu qcv = listQL.get(row);
-        qcv.setTrangThai(0);
+        qcv.setQuyenSD(0);
         int chon = JOptionPane.showConfirmDialog(this, "Khôi Phục Không", "Xóa", JOptionPane.YES_NO_OPTION);
         if (chon != JOptionPane.YES_OPTION) {
             return;

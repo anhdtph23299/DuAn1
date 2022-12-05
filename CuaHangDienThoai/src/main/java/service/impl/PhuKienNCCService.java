@@ -26,64 +26,65 @@ import viewmodel.QLPhuKienNCC;
 public class PhuKienNCCService implements IPhuKienNCCService {
 
     private IPhuKienNCCRepository phuKienNCCRep = new PhuKienNCCRepository();
-       private Map<String, Object> map = new HashMap<>();
+    private Map<String, Object> map = new HashMap<>();
+
     @Override
     public List<QLPhuKienNCC> getAll() {
-     
-        
         return phuKienNCCRep.getAll();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new PhuKienNCCService().getAll());
     }
 
     @Override
     public String save(QLPhuKienNCC pkNcc) {
-           PhuKien phuKien = new PhuKien();
-        if (map.containsKey(pkNcc.getMaphuKien())) {
-            phuKien = (PhuKien) map.get(pkNcc.getMaphuKien());
-        }
-        NhaCungCap nhaCungCap = new NhaCungCap();
-        if (map.containsKey(pkNcc.getMaNhaCungCap())) {
-            nhaCungCap = (NhaCungCap) map.get(pkNcc.getMaNhaCungCap());
-        }
+        PhuKien phuKien = new PhuKien(pkNcc.getIphuKien(), pkNcc.getMaphuKien());
+        NhaCungCap nhaCungCap = new NhaCungCap(pkNcc.getInhaCungCap(), pkNcc.getManhaCungCap());
         PhuKienNCC newPkNcc = new PhuKienNCC(null, nhaCungCap, phuKien, pkNcc.getGiaNhap(), pkNcc.getSoLuongNhap(), pkNcc.getNgayNhap());
-        if(phuKienNCCRep.save(newPkNcc)){
+        if (phuKienNCCRep.save(newPkNcc)) {
             return "Them thanh cong";
-        }else{
+        } else {
             return "Them that bai";
         }
     }
 
     @Override
     public String update(QLPhuKienNCC pkNcc) {
-           PhuKien phuKien = new PhuKien();
-        if (map.containsKey(pkNcc.getMaphuKien())) {
-            phuKien = (PhuKien) map.get(pkNcc.getMaphuKien());
-        }
-        NhaCungCap nhaCungCap = new NhaCungCap();
-        if (map.containsKey(pkNcc.getMaNhaCungCap())) {
-            nhaCungCap = (NhaCungCap) map.get(pkNcc.getMaNhaCungCap());
-        }
-        PhuKienNCC newPkNcc = new PhuKienNCC(pkNcc.getId(), nhaCungCap, phuKien, pkNcc.getGiaNhap(), pkNcc.getSoLuongNhap(), pkNcc.getNgayNhap());
-        if(phuKienNCCRep.update(newPkNcc)){
+//          PhuKien phuKien = new PhuKien();
+//        if (map.containsKey(pkNcc.getPhuKien().getMa())) {
+//            phuKien = (PhuKien) map.get(pkNcc.getPhuKien().getMa());
+//        }
+//        NhaCungCap nhaCungCap = new NhaCungCap();
+//        if (map.containsKey(pkNcc.getNhaCungCap().getMa())) {
+//            nhaCungCap = (NhaCungCap) map.get(pkNcc.getNhaCungCap().getMa());
+//        }
+        PhuKien phuKien = new PhuKien(pkNcc.getId(), pkNcc.getMaphuKien());
+        NhaCungCap ncc = new NhaCungCap(pkNcc.getId(), pkNcc.getManhaCungCap());
+        PhuKienNCC newPkNcc = new PhuKienNCC(pkNcc.getId(), ncc, phuKien, pkNcc.getGiaNhap(), pkNcc.getSoLuongNhap(), pkNcc.getNgayNhap());
+        if (phuKienNCCRep.update(newPkNcc)) {
             return "Sua thanh cong";
-        }else{
+        } else {
             return "Sua that bai";
         }
     }
 
     @Override
     public String delete(QLPhuKienNCC pkNcc) {
-
-   PhuKien phuKien = new PhuKien();
-        if (map.containsKey(pkNcc.getMaphuKien())) {
-            phuKien = (PhuKien) map.get(pkNcc.getMaphuKien());
-        }
-        NhaCungCap nhaCungCap = new NhaCungCap();
-        if (map.containsKey(pkNcc.getMaNhaCungCap())) {
-            nhaCungCap = (NhaCungCap) map.get(pkNcc.getMaNhaCungCap());
-        }        PhuKienNCC newPkNcc = new PhuKienNCC(pkNcc.getId(), nhaCungCap, phuKien, pkNcc.getGiaNhap(), pkNcc.getSoLuongNhap(), pkNcc.getNgayNhap());
-        if(phuKienNCCRep.delete(newPkNcc)){
+//    PhuKien phuKien = new PhuKien();
+//        if (map.containsKey(pkNcc.getPhuKien().getMa())) {
+//            phuKien = (PhuKien) map.get(pkNcc.getPhuKien().getMa());
+//        }
+//        NhaCungCap nhaCungCap = new NhaCungCap();
+//        if (map.containsKey(pkNcc.getNhaCungCap().getMa())) {
+//            nhaCungCap = (NhaCungCap) map.get(pkNcc.getNhaCungCap().getMa());
+//        }
+        PhuKien phuKien = new PhuKien(pkNcc.getId(), pkNcc.getMaphuKien());
+        NhaCungCap ncc = new NhaCungCap(pkNcc.getId(), pkNcc.getManhaCungCap());
+        PhuKienNCC newPkNcc = new PhuKienNCC(pkNcc.getId(), ncc, phuKien, pkNcc.getGiaNhap(), pkNcc.getSoLuongNhap(), pkNcc.getNgayNhap());
+        if (phuKienNCCRep.delete(newPkNcc)) {
             return "Xoa thanh cong";
-        }else{
+        } else {
             return "Xoa that bai";
         }
     }

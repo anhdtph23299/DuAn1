@@ -22,4 +22,5 @@ public interface INhaCungCapRepository {
     
     boolean delete(NhaCungCap nhaCungCap);
     
+        List<QLNhaCungCap> timKiem(String Ma);
 }

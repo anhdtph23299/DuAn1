@@ -21,7 +21,7 @@ public class DTNhaCungCapRepository implements IDTNhaCungCapRepository {
 
     @Override
     public List<QLDTNhaCungCap> getAll() {
-        String hql = "SELECT NEW viewmodel.QLDTNhaCungCap(x.id, x.nhaCungCap.ma, x.dienThoai.maDienThoai, x.giaNhap, x.soLuongNhap, x.ngayNhap) FROM domainmodel.DienThoaiNCC x  ";
+        String hql = "SELECT NEW viewmodel.QLDTNhaCungCap(x.id, x.nhaCungCap.id, x.dienThoai.idDienThoai, x.nhaCungCap.ma, x.dienThoai.maDienThoai, x.giaNhap, x.soLuongNhap, x.ngayNhap) FROM domainmodel.DienThoaiNCC x  ";
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
             Query q = session.createQuery(hql);
             return q.getResultList();

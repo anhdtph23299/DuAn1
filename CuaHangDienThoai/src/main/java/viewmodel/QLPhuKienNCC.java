@@ -23,8 +23,10 @@ import lombok.Setter;
 @Setter
 public class QLPhuKienNCC {
 
-    private UUID id;
-    private String maNhaCungCap;
+  private UUID id;
+    private UUID inhaCungCap;
+    private UUID iphuKien;
+    private String manhaCungCap;
     private String maphuKien;
     private BigDecimal giaNhap;
     private int soLuongNhap;
@@ -34,6 +36,8 @@ public class QLPhuKienNCC {
         BigDecimal convertSo = new BigDecimal(soLuong);
         BigDecimal tongTien = gia.multiply(convertSo);
         return tongTien;
+     
     }
+
 
 }
