@@ -42,17 +42,38 @@ public class QLDienThoai {
     private int trangThai;
     private Hang hang;
 
-    public QLDienThoai(String tenDienThoai, int soLuongTon, String RAM, String ROM, String manHinh, String mauSac, BigDecimal giaBan, int thoiGianBaoHanh, int trangThai) {
+//    public QLDienThoai(String tenDienThoai, int soLuongTon, String RAM, String ROM, String manHinh, String mauSac, BigDecimal giaBan, int thoiGianBaoHanh, int trangThai) {
+//        this.tenDienThoai = tenDienThoai;
+//        this.soLuongTon= soLuongTon;
+//        this.RAM = RAM;
+//        this.ROM = ROM;
+//        this.manHinh = manHinh;
+//        this.mauSac = mauSac;
+//        this.giaBan = giaBan;
+//        this.thoiGianBaoHanh = thoiGianBaoHanh;
+//        this.trangThai = trangThai;
+//    }
+
+    public QLDienThoai(UUID idDienThoai, String maDienThoai, String tenDienThoai, Integer soLuongTon, String CPU, String RAM, String ROM, String manHinh, String mauSac, String pin, String camera, String heDieuHanh, byte[] anh, BigDecimal giaBan, int thoiGianBaoHanh, String mota, int trangThai) {
+        this.idDienThoai = idDienThoai;
+        this.maDienThoai = maDienThoai;
         this.tenDienThoai = tenDienThoai;
-        this.soLuongTon= soLuongTon;
+        this.soLuongTon = soLuongTon;
+        this.CPU = CPU;
         this.RAM = RAM;
         this.ROM = ROM;
         this.manHinh = manHinh;
         this.mauSac = mauSac;
+        this.pin = pin;
+        this.camera = camera;
+        this.heDieuHanh = heDieuHanh;
+        this.anh = anh;
         this.giaBan = giaBan;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
+        this.mota = mota;
         this.trangThai = trangThai;
     }
+    
 
     @Override
     public String toString() {

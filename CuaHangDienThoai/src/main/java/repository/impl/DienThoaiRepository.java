@@ -34,7 +34,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
     }
 
     public static void main(String[] args) {
-        System.out.println(new DienThoaiRepository().getSP("dgfh"));
+        System.out.println(new DienThoaiRepository().getAll());
     }
     @Override
     public DienThoai getOne(String ma) {
@@ -129,7 +129,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         List<QLDienThoai> listDienThoai;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
             Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
-                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai)"
                     + " FROM domainmodel.DienThoai dt");
             listDienThoai = q.getResultList();
         } catch (Exception e) {

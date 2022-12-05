@@ -448,22 +448,22 @@ public class Home1 extends javax.swing.JFrame {
         return kh;
     }
 
-    private KhuyenMaiViewModel getDataKM() {
-        KhuyenMaiViewModel km = new KhuyenMaiViewModel();
-        km.setMaKM(txtMaKM.getText());
-        km.setTenKM(txtTenKM.getText());
-        km.setNgayBatDau(java.sql.Date.valueOf(dPNgayBD.getDate()));
-        km.setNgayKT(java.sql.Date.valueOf(dPNgayKT.getDate()));
-        km.setNgayBatDau(java.sql.Date.valueOf(dPNgayBD.getDate()));
-        km.setNgayKT(java.sql.Date.valueOf(dPNgayKT.getDate()));
-        java.util.Date today = new java.util.Date(System.currentTimeMillis());
-        if (km.getNgayKT().after(today)) {
-            km.setLoaiKhuyenMai(1);
-        } else {
-            km.setLoaiKhuyenMai(0);
-        }
-        return km;
-    }
+//    private KhuyenMaiViewModel getDataKM() {
+////        KhuyenMaiViewModel km = new KhuyenMaiViewModel();
+////        km.setMaKM(txtMaKM.getText());
+////        km.setTenKM(txtTenKM.getText());
+////        km.setNgayBatDau(java.sql.Date.valueOf(dPNgayBD.getDate()));
+////        km.setNgayKT(java.sql.Date.valueOf(dPNgayKT.getDate()));
+////        km.setNgayBatDau(java.sql.Date.valueOf(dPNgayBD.getDate()));
+////        km.setNgayKT(java.sql.Date.valueOf(dPNgayKT.getDate()));
+////        java.util.Date today = new java.util.Date(System.currentTimeMillis());
+////        if (km.getNgayKT().after(today)) {
+////            km.setLoaiKhuyenMai(1);
+////        } else {
+////            km.setLoaiKhuyenMai(0);
+////        }
+////        return km;
+//    }
 //Hết fill Hoa
     //code Tuấn Anh
 
