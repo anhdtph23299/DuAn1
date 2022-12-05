@@ -26,4 +26,5 @@ public interface ITaiKhoanRepository {
 
     List<TaiKhoan> timKiem(String tenTaiKhoan);
     
+    TaiKhoan getOne2(String taiKhoan);
 }

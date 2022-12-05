@@ -12,6 +12,7 @@ import repository.IDienThoaiRepository;
 import domainmodel.DienThoai;
 import org.hibernate.Transaction;
 import util.HibernatUtil;
+import viewmodel.QLDienThoai;
 
 /**
  *
@@ -20,7 +21,7 @@ import util.HibernatUtil;
 public class DienThoaiRepository implements IDienThoaiRepository {
 
     @Override
-    public List<DienThoai> getAll() {
+    public List<DienThoai> getAll1() {
         List<DienThoai> listDienThoai;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
             Query q = session.createQuery("From DienThoai");
@@ -104,19 +105,66 @@ public class DienThoaiRepository implements IDienThoaiRepository {
 //    }
 
 
-    @Override
-    public List<DienThoai> timKiem(String tenDienThoai) {
-        List<DienThoai> listTimKiem;
+  @Override
+    public List<QLDienThoai> timKiem(String maDienThoai,String tenDienThoai) {
+        List<QLDienThoai> listTimKiem;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("FROM DienThoai WHERE MaDienThoai LIKE :t");
-            String chuoi = "%" + tenDienThoai + "%";
-            q.setParameter("t", chuoi);
+            Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
+                    + " FROM domainmodel.DienThoai dt WHERE MaDienThoai LIKE :mDT OR TenDienThoai LIKE :tDT");
+            String chuoi1 = "%" + maDienThoai + "%";
+            q.setParameter("mDT", chuoi1);
+            String chuoi2 = "%" + tenDienThoai + "%";
+            q.setParameter("tDT", chuoi2);
             listTimKiem = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return null;
         }
         return listTimKiem;
+    }
+
+    @Override
+    public List<QLDienThoai> getAll() {
+        List<QLDienThoai> listDienThoai;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
+                    + " FROM domainmodel.DienThoai dt");
+            listDienThoai = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return listDienThoai;
+    }
+    @Override
+    public List<QLDienThoai> dtDangBan() {
+        List<QLDienThoai> listDienThoai;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
+                    + " FROM domainmodel.DienThoai dt WHERE dt.trangThai = 1");
+            listDienThoai = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return listDienThoai;
+    }
+    @Override
+    public List<QLDienThoai> dtNgungBan() {
+        List<QLDienThoai> listDienThoai;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
+                    + " FROM domainmodel.DienThoai dt WHERE dt.trangThai = 0");
+            listDienThoai = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return listDienThoai;
     }
 
     @Override

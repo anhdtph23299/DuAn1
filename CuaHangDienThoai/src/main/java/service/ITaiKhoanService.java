@@ -27,4 +27,6 @@ public interface ITaiKhoanService {
 
     String delete(UUID idTaiKhoan);
 
+    TaiKhoan getOne2(String taiKhoan);
+
 }

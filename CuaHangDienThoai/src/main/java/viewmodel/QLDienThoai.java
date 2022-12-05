@@ -4,6 +4,7 @@
  */
 package viewmodel;
 
+import domainmodel.Hang;
 import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @Setter
 public class QLDienThoai {
 // Dũng Code
+
     private UUID idDienThoai;
     private String maDienThoai;
     private String tenDienThoai;
@@ -38,6 +40,7 @@ public class QLDienThoai {
     private int thoiGianBaoHanh;
     private String mota;
     private int trangThai;
+    private Hang hang;
 
     public QLDienThoai(String tenDienThoai, int soLuongTon, String RAM, String ROM, String manHinh, String mauSac, BigDecimal giaBan, int thoiGianBaoHanh, int trangThai) {
         this.tenDienThoai = tenDienThoai;
@@ -49,6 +52,11 @@ public class QLDienThoai {
         this.giaBan = giaBan;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
         this.trangThai = trangThai;
+    }
+
+    @Override
+    public String toString() {
+        return "QLDienThoai{" + "idDienThoai=" + idDienThoai + ", maDienThoai=" + maDienThoai + ", tenDienThoai=" + tenDienThoai + ", soLuongTon=" + soLuongTon + ", CPU=" + CPU + ", RAM=" + RAM + ", ROM=" + ROM + ", manHinh=" + manHinh + ", mauSac=" + mauSac + ", pin=" + pin + ", camera=" + camera + ", heDieuHanh=" + heDieuHanh + ", anh=" + anh + ", giaBan=" + giaBan + ", thoiGianBaoHanh=" + thoiGianBaoHanh + ", mota=" + mota + ", trangThai=" + trangThai + ", hang=" + hang + '}';
     }
 
 }

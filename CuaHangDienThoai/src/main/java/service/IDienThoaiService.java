@@ -15,7 +15,7 @@ import viewmodel.QLDienThoai;
  */
 public interface IDienThoaiService {
 
-    List<QLDienThoai> getAll();
+     List<QLDienThoai> getAll();
 
     String them(QLDienThoai QLDienThoai);
 
@@ -23,7 +23,11 @@ public interface IDienThoaiService {
 
     String xoa(UUID idDienThoai);
 
-    List<DienThoai> timKiem(String tenDienThoai);
+    List<QLDienThoai> timKiem(String maDienThoai,String tenDienThoai);
+    
+    List<QLDienThoai> dtDangBan();
+    
+    List<QLDienThoai> dtNgungBan();
 
     List<QLDienThoai> getSP(String ten);
 }

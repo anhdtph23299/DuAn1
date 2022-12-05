@@ -51,9 +51,9 @@ public class TaiKhoanService implements ITaiKhoanService {
     public String add(QLTaiKhoan qlTaiKhoan) {
         TaiKhoan tk = new TaiKhoan(qlTaiKhoan.getIdTaiKhoan(), qlTaiKhoan.getTenTaiKhoan(), qlTaiKhoan.getMatKhau());
         if (taiKhoanRepository.add(tk)) {
-            return "Thêm Thành Công";
+            return "Đăng ký Thành Công";
         } else {
-            return "Thêm Thất Bại";
+            return "Đăng ký Thất Bại";
         }
     }
 
@@ -61,19 +61,23 @@ public class TaiKhoanService implements ITaiKhoanService {
     public String update(QLTaiKhoan qlTaiKhoan) {
         TaiKhoan tk = new TaiKhoan(qlTaiKhoan.getIdTaiKhoan(), qlTaiKhoan.getTenTaiKhoan(), qlTaiKhoan.getMatKhau());
         if (taiKhoanRepository.update(tk)) {
-            return "Thêm Thành Công";
+            return "Đổi mật khẩu Thành Công";
         } else {
-            return "Thêm Thất Bại";
+            return "Đổi mật khẩu Thất Bại";
         }
     }
 
     @Override
     public String delete(UUID idTaiKhoan) {
         if (taiKhoanRepository.delete(idTaiKhoan)) {
-            return "Thêm Thành Công";
+            return "Xóa Thành Công";
         } else {
-            return "Thêm Thất Bại";
+            return "Xóa Thất Bại";
         }
     }
 
+    @Override
+    public TaiKhoan getOne2(String taiKhoan) {
+        return taiKhoanRepository.getOne2(taiKhoan);
+    }
 }

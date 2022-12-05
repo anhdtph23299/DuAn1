@@ -7,6 +7,7 @@ package repository;
 import java.util.List;
 import java.util.UUID;
 import domainmodel.DienThoai;
+import viewmodel.QLDienThoai;
 
 /**
  *
@@ -14,7 +15,9 @@ import domainmodel.DienThoai;
  */
 public interface IDienThoaiRepository {
 
-    List<DienThoai> getAll();
+    List<DienThoai> getAll1();
+    
+    List<QLDienThoai> getAll();
 
     List<DienThoai> getSP(String ten);
 
@@ -28,6 +31,10 @@ public interface IDienThoaiRepository {
     boolean delete(UUID idDienThoai);
 
     //Dung Code
-    List<DienThoai> timKiem(String tenDienThoai);
+    List<QLDienThoai> timKiem(String maDienThoai, String tenDienThoai);
+    
+        List<QLDienThoai> dtDangBan();
+    
+    List<QLDienThoai> dtNgungBan();
 
 }

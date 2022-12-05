@@ -31,7 +31,7 @@ public class HangRepository implements IHangRepository {
         }
         return list;
     }
-    
+
     @Override
     public List<Hang> timKiem(String chuoi, int number) {
         List<Hang> list;
@@ -49,7 +49,7 @@ public class HangRepository implements IHangRepository {
     }
 
     public static void main(String[] args) {
-        List<Hang> list = new HangRepository().timKiem("H001",0);
+        List<Hang> list = new HangRepository().timKiem("H001", 0);
         for (Hang x : list) {
             System.out.println(x);
         }
@@ -68,7 +68,7 @@ public class HangRepository implements IHangRepository {
         } catch (Exception e) {
             e.printStackTrace(System.out);
             transaction.rollback();
-            return false;            
+            return false;
         }
     }
 
@@ -83,7 +83,7 @@ public class HangRepository implements IHangRepository {
         } catch (Exception e) {
             e.printStackTrace(System.out);
             transaction.rollback();
-            return false;            
+            return false;
         }
     }
 
@@ -98,7 +98,7 @@ public class HangRepository implements IHangRepository {
         } catch (Exception e) {
             e.printStackTrace(System.out);
             transaction.rollback();
-            return false;            
+            return false;
         }
     }
 
@@ -115,4 +115,16 @@ public class HangRepository implements IHangRepository {
         return list;
     }
 
+    @Override
+    public Hang getOne(String ten) {
+        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
+            Query query = session.createQuery("FROM Hang where ten like :ten");
+            query.setParameter("ten", ten);
+            Hang hang = (Hang) query.getSingleResult();
+            return hang;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -48,7 +48,7 @@ public class Test extends javax.swing.JFrame {
         flowLayout.setHgap(10);
         flowLayout.setVgap(10);
         pnlTong.setLayout(flowLayout);
-        DienThoai dienThoai = dienThoaiRepository.getAll().get(0);
+        DienThoai dienThoai = dienThoaiRepository.getAll1().get(0);
         try {
             Image img = ImageHelper.createFromByteArray(dienThoai.getAnh(), "png");
 //            Image setImg = img.getScaledInstance(lblAnh.getWidth(), lblAnh.getHeight(), Image.SCALE_SMOOTH);

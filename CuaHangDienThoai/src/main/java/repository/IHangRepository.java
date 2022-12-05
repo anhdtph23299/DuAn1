@@ -25,4 +25,6 @@ public interface IHangRepository {
     
     boolean delete (Hang hang);
     
+    Hang getOne(String ten);
+    
 }
