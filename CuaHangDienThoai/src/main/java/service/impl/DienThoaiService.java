@@ -30,7 +30,7 @@ public class DienThoaiService implements IDienThoaiService {
 
     @Override
     public String them(QLDienThoai QLDienThoai) {
-        DienThoai dienThoai = new DienThoai(null, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null,null,null);
+        DienThoai dienThoai = new DienThoai(null, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), QLDienThoai.getHang(),null,null);
         if (dienThoaiRepository.save(dienThoai)) {
             return "Thêm Thành Công Điện Thoại Có Mã Là: "+QLDienThoai.getMaDienThoai();
         } else {
@@ -40,7 +40,7 @@ public class DienThoaiService implements IDienThoaiService {
 
     @Override
     public String sua(QLDienThoai QLDienThoai, UUID idDienThoai) {
-        DienThoai dienThoai = new DienThoai(idDienThoai, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), null,null,null);
+        DienThoai dienThoai = new DienThoai(idDienThoai, QLDienThoai.getMaDienThoai(), QLDienThoai.getTenDienThoai(), QLDienThoai.getSoLuongTon(), QLDienThoai.getCPU(), QLDienThoai.getRAM(), QLDienThoai.getROM(), QLDienThoai.getManHinh(), QLDienThoai.getMauSac(), QLDienThoai.getPin(), QLDienThoai.getCamera(), QLDienThoai.getHeDieuHanh(), QLDienThoai.getAnh(), QLDienThoai.getGiaBan(), QLDienThoai.getThoiGianBaoHanh(), QLDienThoai.getMota(), QLDienThoai.getTrangThai(), QLDienThoai.getHang(),null,null);
         if (dienThoaiRepository.update(dienThoai, idDienThoai)) {
             return "Sửa Thành Công Điện Thoại Có Mã Là: "+QLDienThoai.getMaDienThoai();
         } else {

@@ -36,7 +36,7 @@ public class PhuKienNCC implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "IdPhuKienNCC")
+    @Column(name = "IdPKNCC")
     private UUID id;
 
     @ManyToOne

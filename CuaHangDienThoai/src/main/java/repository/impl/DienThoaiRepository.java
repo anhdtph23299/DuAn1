@@ -129,7 +129,7 @@ public class DienThoaiRepository implements IDienThoaiRepository {
         List<QLDienThoai> listDienThoai;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
             Query q = session.createQuery("SELECT new viewmodel.QLDienThoai "
-                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai)"
+                    + "(dt.idDienThoai, dt.maDienThoai, dt.tenDienThoai, dt.soLuongTon, dt.CPU, dt.RAM, dt.ROM, dt.manHinh, dt.mauSac, dt.pin, dt.camera, dt.heDieuHanh, dt.anh, dt.giaBan, dt.thoiGianBaoHanh, dt.moTa, dt.trangThai, dt.hang)"
                     + " FROM domainmodel.DienThoai dt");
             listDienThoai = q.getResultList();
         } catch (Exception e) {

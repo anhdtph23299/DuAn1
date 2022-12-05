@@ -22,7 +22,7 @@ public class ChucVuRepository implements IChucVuRepository {
 
     @Override
     public List<QlChucVu> getAll() {
-        String hql = "SELECT NEW viewmodel.QlChucVu(x.id, x.ma, x.ten, x.luong, x.trangThai) FROM domainmodel.ChucVu x";
+        String hql = "SELECT NEW viewmodel.QlChucVu(x.id, x.ma, x.ten, x.luong, x.quyen) FROM domainmodel.ChucVu x";
         try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
             Query q = session.createQuery(hql);
             return q.getResultList();

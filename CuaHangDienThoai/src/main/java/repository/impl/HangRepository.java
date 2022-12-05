@@ -49,10 +49,10 @@ public class HangRepository implements IHangRepository {
     }
 
     public static void main(String[] args) {
-        List<Hang> list = new HangRepository().timKiem("H001", 0);
-        for (Hang x : list) {
-            System.out.println(x);
-        }
+//        List<Hang> list = new HangRepository();
+//        for (Hang x : list) {
+//            System.out.println(x);
+//        }
 //        Hang hang = new HangRepository().getOne("H005");
 //        System.out.println(hang);
     }

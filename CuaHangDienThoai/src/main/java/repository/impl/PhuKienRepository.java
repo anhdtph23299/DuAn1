@@ -25,7 +25,7 @@ public class PhuKienRepository implements IPhuKienRepository {
     public List<QLPhuKien> getAll() {
         List<QLPhuKien> list;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai) FROM domainmodel.PhuKien p");
+            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai, p.hang) FROM domainmodel.PhuKien p");
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -83,7 +83,7 @@ public class PhuKienRepository implements IPhuKienRepository {
     @Override
     public List<QLPhuKien> search(String ten) {
         try ( Session sess = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = sess.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai) FROM domainmodel.PhuKien p WHERE p.giaBan LIKE CONCAT('%',:giaBan,'%') "
+            Query qr = sess.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai, p.hang) FROM domainmodel.PhuKien p WHERE p.giaBan LIKE CONCAT('%',:giaBan,'%') "
                     + "OR p.hang LIKE CONCAT('%',:hang,'%') "
                     + "OR p.ma LIKE CONCAT('%',:ma,'%') "
                     + "OR p.ten LIKE CONCAT('%',:ten,'%') "
@@ -106,6 +106,31 @@ public class PhuKienRepository implements IPhuKienRepository {
         List<PhuKien> list;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
             Query q = session.createQuery("FROM PhuKien");
+            list = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return list;
+    }
+    
+    @Override
+    public List<QLPhuKien> getPKDB() {
+        List<QLPhuKien> list;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai, p.hang) FROM domainmodel.PhuKien p WHERE p.trangThai = 1");
+            list = q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+        return list;
+    }
+    @Override
+    public List<QLPhuKien> getPKNB() {
+        List<QLPhuKien> list;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai, p.hang) FROM domainmodel.PhuKien p WHERE p.trangThai = 0");
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
