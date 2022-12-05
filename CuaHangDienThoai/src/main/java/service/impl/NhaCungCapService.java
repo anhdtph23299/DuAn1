@@ -56,4 +56,9 @@ public class NhaCungCapService implements INhaCungCapService {
         }
     }
 
+    @Override
+    public List<QLNhaCungCap> timKiem(String ma) {
+     return nhaCungCapRep.timKiem(ma);
+    }
+
 }

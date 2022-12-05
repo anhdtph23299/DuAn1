@@ -38,10 +38,10 @@ public class KhachHangViewMD implements Serializable {
     private String diaChi;
     private Integer diemTichLuy;
     private Integer gioiTinh;
-    private Date ngaySinh;
+    private int namSinh;
 
     public Object[] toDataRow() {
-        return new Object[]{maKH, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi,ngaySinh, diemTichLuy, ghiChu};
+        return new Object[]{maKH, gioiTinh == 1 ? "Nam" : "Nữ", SDT, email, diaChi,namSinh, diemTichLuy, ghiChu};
     }
 
 }

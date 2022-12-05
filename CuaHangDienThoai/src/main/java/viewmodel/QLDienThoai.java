@@ -26,7 +26,7 @@ public class QLDienThoai {
     private UUID idDienThoai;
     private String maDienThoai;
     private String tenDienThoai;
-    private Integer soLuongTon;
+    private Integer soLuong;
     private String CPU;
     private String RAM;
     private String ROM;
@@ -42,9 +42,9 @@ public class QLDienThoai {
     private int trangThai;
     private Hang hang;
 
-    public QLDienThoai(String tenDienThoai, int soLuongTon, String RAM, String ROM, String manHinh, String mauSac, BigDecimal giaBan, int thoiGianBaoHanh, int trangThai) {
+    public QLDienThoai(String tenDienThoai, int soLuong, String RAM, String ROM, String manHinh, String mauSac, BigDecimal giaBan, int thoiGianBaoHanh, int trangThai) {
         this.tenDienThoai = tenDienThoai;
-        this.soLuongTon = soLuongTon;
+        this.soLuong= soLuong;
         this.RAM = RAM;
         this.ROM = ROM;
         this.manHinh = manHinh;

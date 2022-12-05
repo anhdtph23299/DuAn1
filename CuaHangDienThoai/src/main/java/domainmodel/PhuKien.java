@@ -47,7 +47,7 @@ public class PhuKien {
     @Column(name = "TenPhuKien")
     private String ten;
 
-    @Column(name = "SoLuongTon")
+    @Column(name = "SoLuong")
     private int soLuong;
 
     @Column(name = "GiaBan")
@@ -84,4 +84,10 @@ public class PhuKien {
 //        this.moTa = moTa;
 //        this.trangThai = trangThai;
 //    }
+
+    public PhuKien(UUID id, String ma) {
+        this.id = id;
+        this.ma = ma;
+    }
+    
 }

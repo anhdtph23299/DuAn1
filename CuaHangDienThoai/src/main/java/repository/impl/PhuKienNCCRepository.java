@@ -21,11 +21,11 @@ public class PhuKienNCCRepository implements IPhuKienNCCRepository {
 
     @Override
     public List<QLPhuKienNCC> getAll() {
-        List<QLPhuKienNCC> list;
+  
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("SELECT NEW viewmodel.QLPhuKienNCC(x.id, x.nhaCungCap.ma, x.phuKien.ma, x.giaNhap, x.soLuongNhap, x.ngayNhap) FROM domainmodel.PhuKienNCC x");
-            list = q.getResultList();
-            return list;
+            Query q = session.createQuery("SELECT NEW viewmodel.QLPhuKienNCC(x.id, x.nhaCungCap.id, x.phuKien.id, x.nhaCungCap.ma, x.phuKien.ma, x.giaNhap, x.soLuongNhap, x.ngayNhap) FROM domainmodel.PhuKienNCC x");
+           return q.getResultList();
+           
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return null;

@@ -78,5 +78,19 @@ public class NhaCungCapRepository implements INhaCungCapRepository {
             return false;
         }
     }
+      @Override
+    public List<QLNhaCungCap> timKiem(String Ma) {
+      List<QLNhaCungCap> list;
+        try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            Query q = session.createQuery("SELECT NEW viewmodel.QLNhaCungCap(x.id, x.ma, x.diaChi, x.ten, x.sdt, x.email, x.trangThai)  FROM domainmodel.NhaCungCap x Where x.ma Like CONCAT('%',:ma,'%')");
+            q.setParameter("ma", Ma);
+              
+            list = q.getResultList();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return null;
+        }
+    }
 
 }

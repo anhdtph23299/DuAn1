@@ -33,7 +33,7 @@ public class ViewKhachHang extends javax.swing.JFrame {
     void fillToTable(){
         model.setRowCount(0);
         for (KhachHangViewMD x : kh.getAll()) {
-            model.addRow(new Object[]{x.getMaKH(),x,x.getSDT(),x.getDiaChi(),x.getNgaySinh(),x.getGioiTinh()==0?"Nữ":"Nam",x.getDiemTichLuy()});
+            model.addRow(new Object[]{x.getMaKH(),x,x.getSDT(),x.getDiaChi(),x.getNamSinh(),x.getGioiTinh()==0?"Nữ":"Nam",x.getDiemTichLuy()});
         }
     }
     /**

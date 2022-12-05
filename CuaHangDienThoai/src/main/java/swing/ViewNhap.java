@@ -731,21 +731,21 @@ public class ViewNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKhoiPhucNccActionPerformed
 
     private void btnNhapPKNCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapPKNCCActionPerformed
-        int rowTbNcc = tbChonNCCPK.getSelectedRow();
-        int rowTbPk = tbChonPK.getSelectedRow();
-        QLNhaCungCap newNcc = listNcc.get(rowTbNcc);
-        QLPhuKien newPk = listPhuKien.get(rowTbPk);
-        NhapPKNCC newView = new NhapPKNCC(this, true, newPk, newNcc, dtmPhuKienNcc, null);
-        newView.setVisible(true);
+//        int rowTbNcc = tbChonNCCPK.getSelectedRow();
+//        int rowTbPk = tbChonPK.getSelectedRow();
+//        QLNhaCungCap newNcc = listNcc.get(rowTbNcc);
+//        QLPhuKien newPk = listPhuKien.get(rowTbPk);
+//        NhapPKNCC newView = new NhapPKNCC(this, true, newPk, newNcc, dtmPhuKienNcc, null);
+//        newView.setVisible(true);
     }//GEN-LAST:event_btnNhapPKNCCActionPerformed
 
     private void btnNhapDtNccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapDtNccActionPerformed
-        int rowTbNcc = tbChonNccDt.getSelectedRow();
-        int rowTbDt= tbChonDt.getSelectedRow();
-        QLNhaCungCap newNcc = listNcc.get(rowTbNcc);
-        QLDienThoai newDt = listDt.get(rowTbDt);
-        NhapDTNCC newView = new NhapDTNCC(this, true, newDt, newNcc, dtmDtNcc, null);
-        newView.setVisible(true);
+//        int rowTbNcc = tbChonNccDt.getSelectedRow();
+//        int rowTbDt= tbChonDt.getSelectedRow();
+//        QLNhaCungCap newNcc = listNcc.get(rowTbNcc);
+//        QLDienThoai newDt = listDt.get(rowTbDt);
+//        NhapDTNCC newView = new NhapDTNCC(this, true, newDt, newNcc, dtmDtNcc, null);
+//        newView.setVisible(true);
     }//GEN-LAST:event_btnNhapDtNccActionPerformed
 
     private void btnSuaPKNCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaPKNCCActionPerformed
@@ -756,34 +756,34 @@ public class ViewNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSuaPKNCCActionPerformed
 
     private void showDataTable() {
-        dtmNcc.setRowCount(0);
-        dtmNccVc.setRowCount(0);
-        dtmPhuKien.setRowCount(0);
-        dtmPhuKienNcc.setRowCount(0);
-        dtmChonDt.setRowCount(0);
-        dtmChonNccDt.setRowCount(0);
-        dtmDtNcc.setRowCount(0);
-        for (QLNhaCungCap x : listNcc) {
-            dtmNcc.addRow(new Object[]{x.getMa(), x.getTen(), x.getDiaChi(), x.getEmail(), x.getSdt(), x.convertTrangThai(x.getTrangThai())});
-        }
-        for (QLNhaCungCap x : listNcc) {
-            dtmNccVc.addRow(new Object[]{x.getMa(), x.getTen(), x.convertTrangThai(x.getTrangThai())});
-        }
-        for (QLNhaCungCap x : listNcc) {
-            dtmChonNccDt.addRow(new Object[]{x.getMa(), x.getTen(), x.convertTrangThai(x.getTrangThai())});
-        }
-        for (QLPhuKien x : listPhuKien) {
-            dtmPhuKien.addRow(new Object[]{x.getMa(), x.getTen()});
-        }
-        for (QLPhuKienNCC x : listPKNCC) {
-            dtmPhuKienNcc.addRow(new Object[]{x.getMaNhaCungCap(), x.getMaphuKien(), x.getSoLuongNhap(), x.getGiaNhap(), x.tongTien(x.getGiaNhap(), x.getSoLuongNhap())});
-        }
-        for (QLDienThoai x : listDt) {
-            dtmChonDt.addRow(new Object[]{x.getMaDienThoai(), x.getTenDienThoai()});
-        }
-        for (QLDTNhaCungCap x : listDTNCC) {
-            dtmDtNcc.addRow(new Object[]{x.getMaDT(), x.getMaNCC(), x.getSoLuongNhap(), x.getGiaNhap()});
-        }
+//        dtmNcc.setRowCount(0);
+//        dtmNccVc.setRowCount(0);
+//        dtmPhuKien.setRowCount(0);
+//        dtmPhuKienNcc.setRowCount(0);
+//        dtmChonDt.setRowCount(0);
+//        dtmChonNccDt.setRowCount(0);
+//        dtmDtNcc.setRowCount(0);
+//        for (QLNhaCungCap x : listNcc) {
+//            dtmNcc.addRow(new Object[]{x.getMa(), x.getTen(), x.getDiaChi(), x.getEmail(), x.getSdt(), x.convertTrangThai(x.getTrangThai())});
+//        }
+//        for (QLNhaCungCap x : listNcc) {
+//            dtmNccVc.addRow(new Object[]{x.getMa(), x.getTen(), x.convertTrangThai(x.getTrangThai())});
+//        }
+//        for (QLNhaCungCap x : listNcc) {
+//            dtmChonNccDt.addRow(new Object[]{x.getMa(), x.getTen(), x.convertTrangThai(x.getTrangThai())});
+//        }
+//        for (QLPhuKien x : listPhuKien) {
+//            dtmPhuKien.addRow(new Object[]{x.getMa(), x.getTen()});
+//        }
+//        for (QLPhuKienNCC x : listPKNCC) {
+//            dtmPhuKienNcc.addRow(new Object[]{x.getMaNhaCungCap(), x.getMaphuKien(), x.getSoLuongNhap(), x.getGiaNhap(), x.tongTien(x.getGiaNhap(), x.getSoLuongNhap())});
+//        }
+//        for (QLDienThoai x : listDt) {
+//            dtmChonDt.addRow(new Object[]{x.getMaDienThoai(), x.getTenDienThoai()});
+//        }
+//        for (QLDTNhaCungCap x : listDTNCC) {
+//            dtmDtNcc.addRow(new Object[]{x.getMaDT(), x.getMaNCC(), x.getSoLuongNhap(), x.getGiaNhap()});
+//        }
     }
 
     private void fillData(int row) {

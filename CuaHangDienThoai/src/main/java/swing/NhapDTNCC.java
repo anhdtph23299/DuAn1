@@ -29,9 +29,9 @@ public class NhapDTNCC extends javax.swing.JFrame {
     private IDTNhaCungCapService dtNccService = new DTNhaCungCapService();
     private List<QLDTNhaCungCap> list = new ArrayList<>();
 
-    public NhapDTNCC(java.awt.Frame parent, boolean modal, QLDienThoai dt, QLNhaCungCap ncc, DefaultTableModel dtm, QLDTNhaCungCap dtNcc) {
+    public NhapDTNCC(java.awt.Frame parent, boolean modal, QLDienThoai dt, QLNhaCungCap ncc, DefaultTableModel dtm, QLDTNhaCungCap dtNcc, List<QLDTNhaCungCap> list) {
         initComponents();
-        list = dtNccService.getAll();
+        this.list = list;
         this.dienThoai = dt;
         this.nhaCungCap = ncc;
         this.dtmDtNcc = dtm;
@@ -166,32 +166,70 @@ public class NhapDTNCC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        QLDTNhaCungCap neDtNcc = new QLDTNhaCungCap();
-        neDtNcc.setMaNCC(nhaCungCap.getMa());
-        neDtNcc.setMaDT(dienThoai.getMaDienThoai());
-        neDtNcc.setNgayNhap(new Date());
-        neDtNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
-        neDtNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
-        JOptionPane.showMessageDialog(this, dtNccService.save(neDtNcc));
-        list = dtNccService.getAll();
-        showDataTable();
-        this.dispose();
+             if (!"".equals(validateForm())) {
+            JOptionPane.showMessageDialog(this, validateForm(), "Loi", JOptionPane.ERROR_MESSAGE);
+        } else {
+            QLDTNhaCungCap newDtNcc = new QLDTNhaCungCap();
+            newDtNcc.setIdienThoai(dienThoai.getIdDienThoai());
+            newDtNcc.setInhaCungCap(nhaCungCap.getId());
+            newDtNcc.setManhaCungCap(nhaCungCap.getMa());
+            newDtNcc.setMadienThoai(dienThoai.getMaDienThoai());
+            newDtNcc.setNgayNhap(new Date());
+            newDtNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
+            newDtNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
+            list.add(newDtNcc);
+            showDataTable();
+            this.dispose();
+             }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-
+//    QLDTNhaCungCap newDtNcc = new QLDTNhaCungCap();
+//        newDtNcc.setId(dienThoaiNcc.getId());
+//        newDtNcc.setIdienThoai(dienThoaiNcc.getIdienThoai());
+//        newDtNcc.setInhaCungCap(dienThoaiNcc.getInhaCungCap());
+//        newDtNcc.setMadienThoai(dienThoaiNcc.getMadienThoai());
+//        newDtNcc.setManhaCungCap(dienThoaiNcc.getManhaCungCap());
+//        newDtNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
+//        newDtNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
+//        JOptionPane.showMessageDialog(this, dtNccService.update(newDtNcc));
+//        list = dtNccService.getAll();
+//        showDataTable();
+//        this.dispose();
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void showDataTable() {
+   private void showDataTable() {
         dtmDtNcc.setRowCount(0);
         for (QLDTNhaCungCap x : list) {
-            dtmDtNcc.addRow(new Object[]{x.getMaDT(), x.getMaNCC(), x.getSoLuongNhap(), x.getGiaNhap()});
+            dtmDtNcc.addRow(new Object[]{x.getManhaCungCap(), x.getMadienThoai(), x.getSoLuongNhap(), x.getGiaNhap()});
+        }
+
+    }
+    private String validateForm() {
+        String tb = "";
+        if (txtGiaTien.getText().isEmpty()) {
+            tb += "Khong duoc de trong gia tien";
+        }
+        if (txtSoLuong.getText().isEmpty()) {
+            tb += " Khong duoc de trong so luong";
+        }
+        if (!tb.equals("")) {
+            return tb;
+        } else {
+            if (!txtGiaTien.getText().matches("^\\d+$")) {
+                tb += "Gia tien phai la so";
+            }
+            if (!txtSoLuong.getText().matches("^\\d+$")) {
+                tb += "So luong phai la so";
+            }
+            return tb;
         }
     }
+
 
     /**
      * @param args the command line arguments

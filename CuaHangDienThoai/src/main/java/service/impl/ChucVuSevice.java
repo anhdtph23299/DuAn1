@@ -49,7 +49,7 @@ public class ChucVuSevice implements IChucVuService {
     @Override
     public String save(QlChucVu qLCv) {
 
-        ChucVu chucVu = new ChucVu(null, qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getTrangThai(),null);
+        ChucVu chucVu = new ChucVu(null, qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getQuyenSD(),null);
 
 
         if (iChucVuRepository.SaveOrUpdate(chucVu)) {
@@ -61,7 +61,7 @@ public class ChucVuSevice implements IChucVuService {
 
     @Override
     public String update(QlChucVu qLCv) {
-       ChucVu chucVu = new ChucVu(qLCv.getId(), qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getTrangThai(), null);
+       ChucVu chucVu = new ChucVu(qLCv.getId(), qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getQuyenSD(), null);
         if (iChucVuRepository.SaveOrUpdate(chucVu)) {
             return "Update Complete";
         } else {
@@ -71,7 +71,7 @@ public class ChucVuSevice implements IChucVuService {
 
     @Override
     public String delete(QlChucVu qLCv) {
-    ChucVu chucVu = new ChucVu(null, qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getTrangThai(), null);
+    ChucVu chucVu = new ChucVu(null, qLCv.getMa(), qLCv.getTen(), qLCv.getLuong(),qLCv.getQuyenSD(), null);
         if (iChucVuRepository.delete(chucVu)) {
             return "Delete Complete";
 
