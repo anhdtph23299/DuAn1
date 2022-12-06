@@ -28,7 +28,7 @@ public class ChiTietKMCustom {
     private String maKM;
     private String tenKM;
     private BigDecimal mucKhuyenMai;
-    private String hinhThucKhuyenMai;
+    private int hinhThucKhuyenMai;
     private Date ngayBatDau;
     private Date ngayKT;
     private Integer trangThai;
@@ -41,5 +41,8 @@ public class ChiTietKMCustom {
         int stt = 1;
         return new Object[]{maKM, tenKM, hinhThucKhuyenMai, mucKhuyenMai, ngayBatDau, ngayKT, trangThai == 1 ? "Đang hoạt động" : "Hết hiệu lực", moTa};
     }
+//ctkm.id,ctkm.khuyenMai.maKM, ctkm.khuyenMai.tenKM,ctkm.khuyenMai.ngayBatDau,ctkm.khuyenMai.ngayKT,ctkm.khuyenMai.hinhThucKhuyenMai,dt.maDienThoai)
+  
 
+    
 }

@@ -31,6 +31,16 @@ public class KhachHangRepository implements IKhachHangRepository {
         return null;
     }
 
+    public List<KhachHang> getAll1() {
+        try (Session session = HibernatUtil.getFACTORY().openSession()) {//UUID id, String CCCD, String hoTen, String ghiChu, String SDT, String email, String diaChi, Integer diemTichLuy, Integer gioiTinh, Date ngayMua, Integer namSinh
+            Query qr = session.createQuery("From KhachHang");
+            return qr.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return null;
+    }
+
     @Override
     public Boolean add(KhachHang kh) {
         Transaction tran = null;

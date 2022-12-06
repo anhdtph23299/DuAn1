@@ -6,6 +6,7 @@ import domainmodel.NhanVien;
 import domainmodel.PhuKien;
 import domainmodel.DienThoai;
 import domainmodel.DienThoaiNCC;
+import domainmodel.GenDB;
 import domainmodel.Hang;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
@@ -31,7 +32,7 @@ public class HibernatUtil {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=DuAn111");
+        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=DuAn11");
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "123456");
         properties.put(Environment.SHOW_SQL, "true");
@@ -53,6 +54,7 @@ public class HibernatUtil {
         conf.addAnnotatedClass(DienThoaiNCC.class);
         conf.addAnnotatedClass(PhuKienNCC.class);
         conf.addAnnotatedClass(NhaCungCap.class);
+        conf.addAnnotatedClass(GenDB.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

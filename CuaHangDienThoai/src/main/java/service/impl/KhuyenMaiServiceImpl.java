@@ -32,36 +32,38 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String add(KhuyenMaiViewModel x) {
-        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
-        if (km.getTenKM().isBlank()) {
-            return "Thiếu tên khuyến mãi";
-        }
-        if (km.getMucKhuyenMai()==null) {
-            return "Thiếu mức khuyến mãi khuyến mãi";
-        }
-        if (km.getNgayKT().before(km.getNgayBatDau())) {
-            return "Ngày kết thúc phải chọn ở sau ngày bắt đầu";
-        }
-        if (km.getNgayKT().after(new Date())) {
-            return "Ngày kết thúc phải phải ở hiện tại hoặc tương lai";
-        }
-        boolean add = kmRep.add(km);
-        if (add) {
-            return "Thêm thành công";
-        } else {
-            return "Thêm thất bại";
-        }
+//        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
+//        if (km.getTenKM().isBlank()) {
+//            return "Thiếu tên khuyến mãi";
+//        }
+//        if (km.getMucKhuyenMai()==null) {
+//            return "Thiếu mức khuyến mãi khuyến mãi";
+//        }
+//        if (km.getNgayKT().before(km.getNgayBatDau())) {
+//            return "Ngày kết thúc phải chọn ở sau ngày bắt đầu";
+//        }
+//        if (km.getNgayKT().after(new Date())) {
+//            return "Ngày kết thúc phải phải ở hiện tại hoặc tương lai";
+//        }
+//        boolean add = kmRep.add(km);
+//        if (add) {
+//            return "Thêm thành công";
+//        } else {
+//            return "Thêm thất bại";
+//        }
+        return "";
     }
 
     @Override
     public String update(KhuyenMaiViewModel x, UUID id) {
-        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
-        boolean sua = kmRep.update(km, id);
-        if (sua) {
-            return "Sửa thành công";
-        } else {
-            return "Sửa thất bại";
-        }
+//        KhuyenMai km = new KhuyenMai(x.getMaKM(), x.getTenKM(), x.getMucKhuyenMai(), x.getHinhThucKhuyenMai(), x.getNgayBatDau(), x.getNgayKT(), x.getTrangThai(), x.getMoTa());
+//        boolean sua = kmRep.update(km, id);
+//        if (sua) {
+//            return "Sửa thành công";
+//        } else {
+//            return "Sửa thất bại";
+//        }
+        return "";
     }
 
     @Override
