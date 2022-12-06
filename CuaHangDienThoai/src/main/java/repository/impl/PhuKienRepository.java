@@ -25,7 +25,7 @@ public class PhuKienRepository implements IPhuKienRepository {
     public List<QLPhuKien> getAll() {
         List<QLPhuKien> list;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
-            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai, p.hang) FROM domainmodel.PhuKien p");
+            Query q = session.createQuery("SELECT new viewmodel.QLPhuKien(p.id, p.ma, p.ten, p.soLuong, p.giaBan, p.anh, p.thoiGianBaoHanh, p.moTa, p.trangThai,p.hang) FROM domainmodel.PhuKien p");
             list = q.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -137,6 +137,10 @@ public class PhuKienRepository implements IPhuKienRepository {
             return null;
         }
         return list;
+        
+        
     }
-
+    public static void main(String[] args) {
+        System.out.println(new PhuKienRepository().getAll());
+    }
 }
