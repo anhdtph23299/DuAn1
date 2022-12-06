@@ -4,6 +4,7 @@
  */
 package domainmodel;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
@@ -32,7 +33,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DienThoai {
+public class DienThoai implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,7 +46,7 @@ public class DienThoai {
     @Column(name = "TenDienThoai")
     private String tenDienThoai;
     
-    @Column(name = "SoLuong")
+    @Column(name = "SoLuongTon")
     private int soLuongTon;
 
     @Column(name = "CPU")
@@ -109,4 +110,32 @@ public class DienThoai {
         return tenDienThoai;
     }
 
+    public DienThoai(UUID idDienThoai, String maDienThoai) {
+        this.idDienThoai = idDienThoai;
+        this.maDienThoai = maDienThoai;
+        
+    }
+
+    public DienThoai(UUID idDienThoai, String maDienThoai, String tenDienThoai, int soLuongTon, String CPU, String RAM, String ROM, String manHinh, String mauSac, String pin, String camera, String heDieuHanh, byte[] anh, BigDecimal giaBan, int thoiGianBaoHanh, String moTa, int trangThai) {
+        this.idDienThoai = idDienThoai;
+        this.maDienThoai = maDienThoai;
+        this.tenDienThoai = tenDienThoai;
+        this.soLuongTon = soLuongTon;
+        this.CPU = CPU;
+        this.RAM = RAM;
+        this.ROM = ROM;
+        this.manHinh = manHinh;
+        this.mauSac = mauSac;
+        this.pin = pin;
+        this.camera = camera;
+        this.heDieuHanh = heDieuHanh;
+        this.anh = anh;
+        this.giaBan = giaBan;
+        this.thoiGianBaoHanh = thoiGianBaoHanh;
+        this.moTa = moTa;
+        this.trangThai = trangThai;
+    }
+    
+    
+    
 }

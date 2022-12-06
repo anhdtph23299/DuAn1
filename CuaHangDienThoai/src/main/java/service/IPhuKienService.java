@@ -20,5 +20,7 @@ public interface IPhuKienService {
     String add(QLPhuKien qLPhuKien);
     String update(QLPhuKien qLPhuKien, UUID id);
     String delete(UUID id);
-    List<QLPhuKien> search(String ten);  
+    List<QLPhuKien> search(String ten);
+    List<QLPhuKien> getPKDB();
+    List<QLPhuKien> getPKNB();  
 }

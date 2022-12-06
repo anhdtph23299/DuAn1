@@ -16,10 +16,10 @@ import viewmodel.QLHang;
  *
  * @author Admin
  */
-public class HangService implements IHangService{
-    
+public class HangService implements IHangService {
+
     private IHangRepository hangRe = new HangRepository();
-    
+
     @Override
     public List<QLHang> getHHD() {
         List<QLHang> listHang = new ArrayList<>();
@@ -33,9 +33,9 @@ public class HangService implements IHangService{
     @Override
     public String save(QLHang hang) {
         Hang newHang = new Hang(null, hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
-        if(hangRe.save(newHang)){
+        if (hangRe.save(newHang)) {
             return "Them thanh cong";
-        }else{
+        } else {
             return "Them that bai";
         }
     }
@@ -43,9 +43,9 @@ public class HangService implements IHangService{
     @Override
     public String update(QLHang hang) {
         Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
-        if(hangRe.update(newHang)){
+        if (hangRe.update(newHang)) {
             return "Sua thanh cong";
-        }else{
+        } else {
             return "Sua that bai";
         }
     }
@@ -53,9 +53,9 @@ public class HangService implements IHangService{
     @Override
     public String delete(QLHang hang) {
         Hang newHang = new Hang(hang.getId(), hang.getMa(), hang.getTen(), hang.getTrangThai(), null, null);
-        if(hangRe.delete(newHang)){
+        if (hangRe.delete(newHang)) {
             return "Them thanh cong";
-        }else{
+        } else {
             return "Them that bai";
         }
     }
@@ -79,5 +79,9 @@ public class HangService implements IHangService{
         }
         return listSearch;
     }
-    
+
+    @Override
+    public Hang getOne(String ten) {
+        return hangRe.getOne(ten);
+    }
 }

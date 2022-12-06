@@ -6,6 +6,7 @@ import domainmodel.NhanVien;
 import domainmodel.PhuKien;
 import domainmodel.DienThoai;
 import domainmodel.DienThoaiNCC;
+import domainmodel.GenDB;
 import domainmodel.Hang;
 import domainmodel.HoaDon;
 import domainmodel.HoaDonChiTiet;
@@ -53,7 +54,7 @@ public class HibernatUtil {
         conf.addAnnotatedClass(DienThoaiNCC.class);
         conf.addAnnotatedClass(PhuKienNCC.class);
         conf.addAnnotatedClass(NhaCungCap.class);
-        
+//        conf.addAnnotatedClass(GenDB.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

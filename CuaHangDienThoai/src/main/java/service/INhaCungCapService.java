@@ -21,4 +21,5 @@ public interface INhaCungCapService {
     
     String delete(QLNhaCungCap ncc);
     
+    List<QLNhaCungCap> timKiem(String ma);
 }

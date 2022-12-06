@@ -72,12 +72,12 @@ public class NhanVien {
 //        this.sdt = sdt;
 //        this.trangThai = trangThai;
 //    }
-   @ManyToOne
-    @JoinColumn(name = "IdChucVu")
-    private ChucVu chucVu;
-    @OneToOne
-    @JoinColumn(name = "IdTaiKhoan")
+   @OneToOne
+    @JoinColumn(name = "IDTaiKhoan")
     private TaiKhoan taiKhoan;
+    @ManyToOne
+    @JoinColumn(name = "IDChucVu")
+    private ChucVu chucVu;
     @OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
     private List<HoaDon> listHoaDon;
 

@@ -21,8 +21,8 @@ import javax.swing.JProgressBar;
 
 public class EmailSender {
 
-    private final static String emailGui = "adnopr02003@gmail.com";
-    private final static String matKhau = "iimsdfhqckbieivv";
+    private final static String emailGui = "quanlydienthoainhom2@gmail.com";
+    private final static String matKhau = "xjvvrwmrajfhktbl";
 
     public static void guiMail(String emailNhan,
             String tieuDe, String noiDung)
@@ -42,13 +42,13 @@ public class EmailSender {
             }
         });
 
-        Message message = new MimeMessage(session);
+        MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(emailGui));
         message.setRecipients(
                 Message.RecipientType.TO, InternetAddress.parse(emailNhan));
 
         // Tiêu đề
-        message.setSubject(tieuDe);
+        message.setSubject(tieuDe, "UTF-8");
 
         // Nội dung
         MimeBodyPart mimeBodyPart = new MimeBodyPart();
@@ -63,21 +63,21 @@ public class EmailSender {
     }
 
     // Hàm để test
-    public static void main(String[] args) throws MessagingException {
-//        EmailSender.guiMail("sktfk97@gmail.com", "ABC", "Hello World!");
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                JProgressBar progressBar = new JProgressBar();
-                progressBar.setMinimum(0);
-                progressBar.setMaximum(100);
-                while (progressBar.getValue() == progressBar.getMaximum()) {
-                    progressBar.setValue(progressBar.getValue() + 10);
-                }
-            }
-        };
-//        Integer code = RandomCode.getCode();
-//        EmailSender.guiMail("anhdtph23299@fpt.edu.vn", "Mã Code để lấy mật khẩu mới", "Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu của bạn từ ứng dụng quán trà sữa.<br>"
-//                + "Nhập mã đặt lại mật khẩu sau đây: " + code);
-    }
+//    public static void main(String[] args) throws MessagingException {
+////        EmailSender.guiMail("sktfk97@gmail.com", "ABC", "Hello World!");
+//        Thread thread = new Thread() {
+//            @Override
+//            public void run() {
+//                JProgressBar progressBar = new JProgressBar();
+//                progressBar.setMinimum(0);
+//                progressBar.setMaximum(100);
+//                while (progressBar.getValue() == progressBar.getMaximum()) {
+//                    progressBar.setValue(progressBar.getValue() + 10);
+//                }
+//            }
+//        };
+////        Integer code = RandomCode.getCode();
+////        EmailSender.guiMail("anhdtph23299@fpt.edu.vn", "Mã Code để lấy mật khẩu mới", "Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu của bạn từ ứng dụng quán trà sữa.<br>"
+////                + "Nhập mã đặt lại mật khẩu sau đây: " + code);
+//    }
 }

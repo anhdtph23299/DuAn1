@@ -22,12 +22,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import net.glxn.qrgen.QRCode;
 import net.glxn.qrgen.image.ImageType;
-import viewmodel.QLNhanVien;
-
-
-
-
-
+import viewmodel.QLPhuKien;
 
 /**
  *
@@ -40,43 +35,38 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        //Tuấn Anh test
-
-
-////kjhsdfhkd   
     }
-    public Main(QLNhanVien nv) {
+
+    public Main(QLPhuKien pk) {
         initComponents();
-        int check = JOptionPane.showConfirmDialog(this, "Bạn có chắc tạo mã cho nhân viên này ? ","Tạo mã nhân viên",JOptionPane.YES_NO_OPTION);
-        if (check!=JOptionPane.YES_OPTION) {
+        int check = JOptionPane.showConfirmDialog(this, "Bạn có chắc tạo qr cho phụ kiện này ? ", "Tạo qr phụ kiện", JOptionPane.YES_NO_OPTION);
+        if (check != JOptionPane.YES_OPTION) {
             return;
         }
-         try {
-            
-            ByteArrayOutputStream out = QRCode.from(nv.toString())
+        try {
+
+            ByteArrayOutputStream out = QRCode.from(pk.toString())
                     .to(ImageType.PNG).stream();
-            
-            String f_name = nv.getMa();
-            String Path_name = "D:\\" ;
-            
-            FileOutputStream fout = new FileOutputStream(new File(Path_name +(f_name + ".PNG")));
+
+            String f_name = pk.getMa();
+            String Path_name = "D:\\";
+
+            FileOutputStream fout = new FileOutputStream(new File(Path_name + (f_name + ".PNG")));
             fout.write(out.toByteArray());
             fout.flush();
-            
+
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-   
-     /*ByteArrayOutputStream out = QRCode.from(QR_id.getText())
+    /*ByteArrayOutputStream out = QRCode.from(QR_id.getText())
                 .to(ImageType.PNG).stream();
                 String fl = QR_id.getText();
                 String fp =  "D:\\" ;
     (FileOutputStream fout = new FileOutputStream(new File(fp + (fl+ ".PNG")))) {
                 fout.write(out.toByteArray());                
                 fout.flush();    */
-     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -150,7 +140,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // MAke Qr code
-        
+
 //        try {
 //            
 //            ByteArrayOutputStream out = QRCode.from(qr_text.getText())
@@ -168,28 +158,24 @@ public class Main extends javax.swing.JFrame {
 //        } catch (Exception e) {
 //            System.out.println(e);
 //        }
-        
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // qr read
-        
+
         try {
-            
+
             InputStream barcodeInputStream = new FileInputStream(QR_path.getText());
             BufferedImage barcBufferedImage = ImageIO.read(barcodeInputStream);
-            
+
             LuminanceSource source = new BufferedImageLuminanceSource(barcBufferedImage);
             BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
             Reader reader = new MultiFormatReader();
             Result reslut = reader.decode(bitmap);
-            
+
             QR_read.setText(reslut.getText());
-            
-            
-            
-            
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -228,6 +214,9 @@ public class Main extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

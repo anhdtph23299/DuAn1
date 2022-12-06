@@ -15,7 +15,7 @@ import viewmodel.QLNhanVien;
  */
 public interface INhanVienRepository {
 
-    List<QLNhanVien> getAll();
+     List<QLNhanVien> getAll();
 
     boolean add(NhanVien nhanVien);
 
@@ -24,4 +24,8 @@ public interface INhanVienRepository {
     boolean delete(UUID id);
 
     List<QLNhanVien> search(String CCCD);
+    
+    List<QLNhanVien> getNVDLV();
+    
+    List<QLNhanVien> getNVDNV();
 }

@@ -21,4 +21,6 @@ public interface IPhuKienRepository {
     boolean delete(UUID id);
     List<PhuKien> getAll1();
     List<QLPhuKien> search(String ten);
+    List<QLPhuKien> getPKDB();
+    List<QLPhuKien> getPKNB();
 }

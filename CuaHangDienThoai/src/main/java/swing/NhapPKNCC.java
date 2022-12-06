@@ -31,9 +31,9 @@ public class NhapPKNCC extends javax.swing.JFrame {
     private IPhuKienNCCService phuKienNccService = new PhuKienNCCService();
     private List<QLPhuKienNCC> list = new ArrayList<>();
     
-    public NhapPKNCC(java.awt.Frame parent, boolean modal, QLPhuKien pk, QLNhaCungCap ncc, DefaultTableModel dtm, QLPhuKienNCC pkNcc) {
+    public NhapPKNCC(java.awt.Frame parent, boolean modal, QLPhuKien pk, QLNhaCungCap ncc, DefaultTableModel dtm, QLPhuKienNCC pkNcc,List<QLPhuKienNCC> list) {
         initComponents();
-        list = phuKienNccService.getAll();
+        this.list = list;
         this.phuKien = pk;
         this.nhaCungCap = ncc;
         this.dtmPkNcc = dtm;
@@ -169,40 +169,71 @@ public class NhapPKNCC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-//        QLPhuKienNCC newPkNcc = new QLPhuKienNCC();
-//        newPkNcc.setMaNhaCungCap();
-//        newPkNcc.setMaphuKien(maphuKien);
-//        newPkNcc.setNgayNhap(new Date());
-//        newPkNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
-//        newPkNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
-//        JOptionPane.showMessageDialog(this, phuKienNccService.save(newPkNcc));
-//        list = phuKienNccService.getAll();
-//        showDataTable();
-//        this.dispose();      
+   if (!"".equals(validateForm())) {
+            JOptionPane.showMessageDialog(this, validateForm(), "Loi", JOptionPane.ERROR_MESSAGE);
+        } else {
+            QLPhuKienNCC newPkNcc = new QLPhuKienNCC();
+            newPkNcc.setInhaCungCap(nhaCungCap.getId());
+            newPkNcc.setIphuKien(phuKien.getId());
+            newPkNcc.setManhaCungCap(nhaCungCap.getMa());
+            newPkNcc.setMaphuKien(phuKien.getMa());
+            newPkNcc.setNgayNhap(new Date());
+            newPkNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
+            newPkNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
+            list.add(newPkNcc);
+            showDataTable();
+            this.dispose();
+        }    
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-//        QLPhuKienNCC newPkNcc = new QLPhuKienNCC();
-//        newPkNcc.setId(phuKienNcc.getId());
-//        newPkNcc.setNhaCungCap(phuKienNcc.getMaNhaCungCap());
-//        newPkNcc.setPhuKien(phuKienNcc.getPhuKien());
-//        newPkNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
-//        newPkNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
-//        JOptionPane.showMessageDialog(this, phuKienNccService.update(newPkNcc));
-//        list = phuKienNccService.getAll();
-//        showDataTable();
-//        this.dispose();   
+        if (!"".equals(validateForm())) {
+            JOptionPane.showMessageDialog(this, validateForm(), "Loi", JOptionPane.ERROR_MESSAGE);
+        } else {
+            QLPhuKienNCC newPkNcc = new QLPhuKienNCC();
+            newPkNcc.setId(phuKienNcc.getId());
+            newPkNcc.setManhaCungCap(phuKienNcc.getManhaCungCap());
+            newPkNcc.setMaphuKien(phuKienNcc.getMaphuKien());
+            newPkNcc.setSoLuongNhap(Integer.valueOf(txtSoLuong.getText()));
+            newPkNcc.setGiaNhap(new BigDecimal(txtGiaTien.getText()));
+            JOptionPane.showMessageDialog(this, phuKienNccService.update(newPkNcc));
+            list = phuKienNccService.getAll();
+            showDataTable();
+            this.dispose();
+        }   
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void showDataTable(){
+ 
+    private void showDataTable() {
         dtmPkNcc.setRowCount(0);
         for (QLPhuKienNCC x : list) {
-            dtmPkNcc.addRow(new Object[]{x.getMaNhaCungCap(), x.getMaphuKien(), x.getSoLuongNhap(), x.getGiaNhap(), x.tongTien(x.getGiaNhap(), x.getSoLuongNhap()
-            )});
+            dtmPkNcc.addRow(new Object[]{x.getManhaCungCap(), x.getMaphuKien(), x.getSoLuongNhap(), x.getGiaNhap(), x.tongTien(x.getGiaNhap(), x.getSoLuongNhap()
+                )});
+        }
+    }
+    
+     private String validateForm() {
+        String tb = "";
+        if (txtGiaTien.getText().isEmpty()) {
+            tb += "Khong duoc de trong gia tien";
+        }
+        if (txtSoLuong.getText().isEmpty()) {
+            tb += " Khong duoc de trong so luong";
+        }
+        if (!tb.equals("")) {
+            return tb;
+        } else {
+            if (!txtGiaTien.getText().matches("^\\d+$")) {
+                tb += "Gia tien phai la so";
+            }
+            if (!txtSoLuong.getText().matches("^\\d+$")) {
+                tb += "So luong phai la so";
+            }
+            return tb;
         }
     }
     

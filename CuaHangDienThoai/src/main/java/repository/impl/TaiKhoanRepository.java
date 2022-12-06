@@ -66,6 +66,7 @@ public class TaiKhoanRepository implements ITaiKhoanRepository {
     public boolean update(TaiKhoan taiKhoan) {
         Transaction transaction = null;
         try ( Session session = HibernatUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
             session.saveOrUpdate(taiKhoan);
             transaction.commit();
             return true;
@@ -115,6 +116,23 @@ public class TaiKhoanRepository implements ITaiKhoanRepository {
             q.setParameter("mk", matKhau);
             TaiKhoan tk = (TaiKhoan) q.getSingleResult();
             return tk;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public TaiKhoan getOne2(String taiKhoan) {
+        String hql = "FROM TaiKhoan WHERE tenTaiKhoan =:ten";
+        try ( Session session = new HibernatUtil().getFACTORY().openSession()) {
+            Query q = session.createQuery(hql);
+            q.setParameter("ten", taiKhoan);
+            List<TaiKhoan> tk = q.getResultList();
+            if (tk.isEmpty()) {
+                return null;
+            }
+            return tk.get(0);
         } catch (Exception e) {
             e.printStackTrace();
         }

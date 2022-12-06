@@ -4,6 +4,7 @@
  */
 package service.impl;
 
+import domainmodel.Hang;
 import domainmodel.PhuKien;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -27,8 +28,10 @@ public class PhuKienService implements IPhuKienService {
         return phuKienRe.getAll();
     }
 
+    @Override
     public String add(QLPhuKien qLPhuKien) {
-        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null,null);
+        Hang hang = new Hang(qLPhuKien.getHang().getId(), qLPhuKien.getHang().getMa(), qLPhuKien.getHang().getTen(), qLPhuKien.getHang().getTrangThai(), null, null);
+        PhuKien phuKien = new PhuKien(null, qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), hang, null, null);
         boolean add = phuKienRe.add(phuKien);
         if (add) {
             return "Add thành công";
@@ -39,7 +42,8 @@ public class PhuKienService implements IPhuKienService {
 
     @Override
     public String update(QLPhuKien qLPhuKien, UUID id) {
-        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), null, null,null);
+        Hang hang = new Hang(qLPhuKien.getHang().getId(), qLPhuKien.getHang().getMa(), qLPhuKien.getHang().getTen(), qLPhuKien.getHang().getTrangThai(), null, null);
+        PhuKien phuKien = new PhuKien(qLPhuKien.getId(), qLPhuKien.getMa(), qLPhuKien.getTen(), qLPhuKien.getSoLuong(), qLPhuKien.getGiaBan(), qLPhuKien.getAnh(), qLPhuKien.getThoiGianBaoHanh(), qLPhuKien.getMoTa(), qLPhuKien.getTrangThai(), hang, null, null);
         boolean update = phuKienRe.update(phuKien, id);
         if (update) {
             return "Update thành công";
@@ -66,6 +70,16 @@ public class PhuKienService implements IPhuKienService {
     @Override
     public List<PhuKien> getAll1() {
         return phuKienRe.getAll1();
+    }
+
+    @Override
+    public List<QLPhuKien> getPKDB() {
+        return phuKienRe.getPKDB();
+    }
+
+    @Override
+    public List<QLPhuKien> getPKNB() {
+        return phuKienRe.getPKNB();
     }
 
 }

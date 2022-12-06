@@ -18,4 +18,7 @@ public interface INhanVienService {
     String update(QLNhanVien qLNhanVien, UUID id);
     String delete(UUID id);
      List<QLNhanVien> search(String CCCD);
+     List<QLNhanVien> getNVDLV();
+    
+    List<QLNhanVien> getNVDNV();
 }
