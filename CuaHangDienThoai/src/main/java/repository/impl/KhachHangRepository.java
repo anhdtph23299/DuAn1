@@ -23,7 +23,7 @@ public class KhachHangRepository implements IKhachHangRepository {
     @Override
     public List<KhachHangViewMD> getAll() {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {//UUID id, String CCCD, String hoTen, String ghiChu, String SDT, String email, String diaChi, Integer diemTichLuy, Integer gioiTinh, Date ngayMua, Integer namSinh
-            Query qr = session.createQuery("SELECT new viewmodel.KhachHangViewMD(kh.id,kh.CCCD,kh.hoTenKH,kh.ghiChu,kh.SDT,kh.email,kh.diaChi,kh.diemTichLuy,kh.gioiTinh,kh.ngayMua,kh.namSinh)FROM KhachHang kh");
+            Query qr = session.createQuery("SELECT new viewmodel.KhachHangViewMD(kh.id,kh.maKH,kh.hoTenKH,kh.ghiChu,kh.SDT,kh.email,kh.diaChi,kh.diemTichLuy,kh.gioiTinh,kh.ngaySinh)FROM KhachHang kh");
             return qr.getResultList();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -51,15 +51,14 @@ public class KhachHangRepository implements IKhachHangRepository {
         try (Session session = HibernatUtil.getFACTORY().openSession()) {
             tran = session.beginTransaction();
             KhachHang kh1 = session.get(KhachHang.class, id);
-            kh1.setCCCD(kh.getCCCD());
+            kh1.setMaKH(kh.getMaKH());
             kh1.setDiaChi(kh.getDiaChi());
             kh1.setDiemTichLuy(kh.getDiemTichLuy());
             kh1.setEmail(kh.getEmail());
             kh1.setGhiChu(kh.getGhiChu());
             kh1.setGioiTinh(kh.getGioiTinh());
             kh1.setHoTenKH(kh.getHoTenKH());
-            kh1.setNamSinh(kh.getNamSinh());
-            kh1.setNgayMua(kh.getNgayMua());
+            kh1.setNgaySinh(kh.getNgaySinh());
             kh1.setSDT(kh.getSDT());
             session.update(kh1);
             tran.commit();
@@ -92,7 +91,7 @@ public class KhachHangRepository implements IKhachHangRepository {
     @Override
     public List<KhachHang> search(String CCCD) {
         try (Session sess = HibernatUtil.getFACTORY().openSession()) {
-            Query qr = sess.createQuery("SELECT k FROM KhachHang k WHERE k.CCCD LIKE CONCAT('%',:CCCD,'%') OR k.hoTenKH LIKE CONCAT('%',:ten,'%') OR k.diaChi LIKE CONCAT('%',:diaChi,'%')");
+            Query qr = sess.createQuery("SELECT k FROM KhachHang k WHERE k.maKH LIKE CONCAT('%',:CCCD,'%') OR k.hoTenKH LIKE CONCAT('%',:ten,'%') OR k.diaChi LIKE CONCAT('%',:diaChi,'%')");
             qr.setParameter("CCCD", CCCD);
             qr.setParameter("ten", CCCD);
             qr.setParameter("diaChi", CCCD);
